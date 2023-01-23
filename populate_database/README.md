@@ -13,8 +13,8 @@ The output is in a form of json files. The index in each refer to the same chapt
 
 What is required is Python > 3.10.0. Any required packages are installed automatically from the requirements.txt file when running the Makefile.
 
-## to run the program
+### run the following to excute
 
-'''bash
-make populate
-'''
+    
+    make populate
+    
