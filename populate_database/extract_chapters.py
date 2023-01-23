@@ -37,9 +37,9 @@ def extract_chapters(pdf_file: str):
 
 
 def parse_chapters(chapters_list: list):
-    parsed_chapter_titles = {}
-    parsed_chapter_subtitles = {}
-    parsed_chapter_subchapters = {}
+    parsed_chapter_titles = []
+    parsed_chapter_subtitles = []
+    parsed_chapter_subchapters = []
 
     for chapter in chapters_list:
         chapter_id = ""
@@ -141,9 +141,9 @@ def parse_chapters(chapters_list: list):
                         break
                 break
 
-        parsed_chapter_titles[chapter_id.group(0)] = chapter_title
-        parsed_chapter_subtitles[chapter_id.group(0)] = chapter_subtitle
-        parsed_chapter_subchapters[chapter_id.group(0)] = subchapters
+        parsed_chapter_titles.append({"id": chapter_id.group(0), "titles": chapter_title})
+        parsed_chapter_subtitles.append({"id": chapter_id.group(0), "subtitles": chapter_subtitle})
+        parsed_chapter_subchapters.append({"id": chapter_id.group(0), "subchapters": subchapters})
 
     return parsed_chapter_titles, parsed_chapter_subtitles, parsed_chapter_subchapters
 
