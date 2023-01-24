@@ -153,15 +153,32 @@ def subchapters_subchapters(subchapters):
     id = 0
     chapters_subchapters = subchapters
     for chapter in chapters_subchapters:
-        if chapter["id"] == 18:  # special case for chapter 18
-            subsub.append({"id": id, "major": "Teeth", "minors": ["General", "incisors", "canine teeth", "molar teeth"]})
+        if chapter["chapterId"] == "18":  # special case for chapter 18
+            subsub.append(
+                {"id": id, "major": "Teeth", "minors": ["General", "incisors", "canine teeth", "molar teeth"]})
             id += 1
             subsub.append({"id": id, "major": "molar teeth", "minors": ["upper teeth", "lower teeth"]})
             id += 1
             for subchapter in chapter["subchapters"]:
                 if "-" in subchapter:
                     chapter["subchapters"].remove(subchapter)
-            print(subsub)
+        elif chapter["chapterId"] == "27":  # special case for chapter 27
+            subsub.append(
+                {"id": id, "major": "Upper abdomen", "minors": ["Pancreas", "Liver", "Gall bladder", "Spleen"]})
+            id += 1
+            subsub.append({"id": id, "major": "Lower abdomen", "minors": ["Ileocecal region"]})
+            id += 1
+            subsub.append({"id": id, "major": "small pelvis", "minors": ["Ileocecal region"]})
+            id += 1
+            subsub.append({"id": id, "major": "Stool consistency", "minors": ["Diarrhea", "Constipation"]})
+            id += 1
+            subsub.append(
+                {"id": id, "major": "Large intestine", "minors": ["Appendix", "vermiform appendix", "Colon", "Rectum"]})
+            id += 1
+            subsub.append(
+                {"id": id, "major": "Flatulence", "minors": ["General", "Flatulency", "Flatulence dislocation"]})
+            id += 1
+            break
         elif "-" in "".join(chapter["subchapters"]) and "one -sided" not in "".join(
                 chapter["subchapters"]):  # special case where subchapter has hyphen
             i = 0
@@ -169,10 +186,9 @@ def subchapters_subchapters(subchapters):
                 if "-" not in chapter["subchapters"][i]:
                     i += 1
                 else:
-                    subsub.append({"id": id, "major": chapter["subchapters"][i-1], "minors": []})
+                    subsub.append({"id": id, "major": chapter["subchapters"][i - 1], "minors": []})
                     subsub[id]["minors"].append(
                         chapter["subchapters"][i].split("-")[1].strip())
-                    print(subsub)
                     for j in range(i + 1, len(chapter["subchapters"])):
                         if "-" not in chapter["subchapters"][j]:
                             id += 1
@@ -181,18 +197,18 @@ def subchapters_subchapters(subchapters):
                         else:
                             subsub[id]["minors"].append(
                                 chapter["subchapters"][j].split("-")[1].strip())
-            for subchapter in chapter["subchapters"]:
-                if "-" in subchapter:
-                    chapter["subchapters"].remove(subchapter)
-    for s in subsub:
-        print(s)
+    for chapter in chapters_subchapters:
+        for subchapter in chapter["subchapters"]:
+            exceptions = ["&", "/", "(", ")", ".", "one-sided"]
+            if not any(exception in subchapter for exception in exceptions) and not subchapter[0].isalpha():
+                chapter["subchapters"].remove(subchapter)
     return subsub, chapters_subchapters
 
 
-def pipeline(input_file ="./input/Chapters.pdf"):
+def pipeline(input_file="./input/Chapters.pdf"):
     chapters_list = extract_chapters(input_file)
     chapters_titles, chapters_subtitles, chapters_subchapters = parse_chapters(chapters_list)
-    #sub_subchapters, chapters_subchapters = subchapters_subchapters(chapters_subchapters)
+    sub_subchapters, chapters_subchapters = subchapters_subchapters(chapters_subchapters)
 
     with open("./output_json_files/chapters.json", "w") as outfile:
         json.dump(chapters_titles, outfile)
@@ -202,6 +218,9 @@ def pipeline(input_file ="./input/Chapters.pdf"):
 
     with open("./output_json_files/subchapters.json", "w") as outfile:
         json.dump(chapters_subchapters, outfile)
+
+    with open("./output_json_files/sub_subchapters.json", "w") as outfile:
+        json.dump(sub_subchapters, outfile)
 
 
 if __name__ == "__main__":
