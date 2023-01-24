@@ -141,48 +141,58 @@ def parse_chapters(chapters_list: list):
                         break
                 break
 
-        parsed_chapter_titles.append({"id": chapter_id.group(0), "titles": chapter_title})
-        parsed_chapter_subtitles.append({"id": chapter_id.group(0), "subtitles": chapter_subtitle})
-        parsed_chapter_subchapters.append({"id": chapter_id.group(0), "subchapters": subchapters})
+        parsed_chapter_titles.append({"chapterId": chapter_id.group(0), "titles": chapter_title})
+        parsed_chapter_subtitles.append({"chapterId": chapter_id.group(0), "subtitles": chapter_subtitle})
+        parsed_chapter_subchapters.append({"chapterId": chapter_id.group(0), "subchapters": subchapters})
 
     return parsed_chapter_titles, parsed_chapter_subtitles, parsed_chapter_subchapters
 
 
 def subchapters_subchapters(subchapters):
-    subsub = {}
+    subsub = []
+    id = 0
     chapters_subchapters = subchapters
     for chapter in chapters_subchapters:
-        if "-" in "".join(chapters_subchapters[chapter]) and "one -sided" not in "".join(
-                chapters_subchapters[chapter]):  # special case where subchapter has hyphen
+        if chapter["id"] == 18:  # special case for chapter 18
+            subsub.append({"id": id, "major": "Teeth", "minors": ["General", "incisors", "canine teeth", "molar teeth"]})
+            id += 1
+            subsub.append({"id": id, "major": "molar teeth", "minors": ["upper teeth", "lower teeth"]})
+            id += 1
+            for subchapter in chapter["subchapters"]:
+                if "-" in subchapter:
+                    chapter["subchapters"].remove(subchapter)
+            print(subsub)
+        elif "-" in "".join(chapter["subchapters"]) and "one -sided" not in "".join(
+                chapter["subchapters"]):  # special case where subchapter has hyphen
             i = 0
-            while i < len(chapters_subchapters[chapter]):
-                if "-" not in chapters_subchapters[chapter][i]:
+            while i < len(chapter["subchapters"]):
+                if "-" not in chapter["subchapters"][i]:
                     i += 1
                 else:
-                    subsub.update({chapters_subchapters[chapter][i - 1]: []})
+                    subsub.append({"id": id, "major": chapter["subchapters"][i-1], "minors": []})
+                    subsub[id]["minors"].append(
+                        chapter["subchapters"][i].split("-")[1].strip())
                     print(subsub)
-                    subsub[chapters_subchapters[chapter][i - 1]].append(
-                        chapters_subchapters[chapter][i].split("-")[1].strip())
-                    for j in range(i + 1, len(chapters_subchapters[chapter])):
-                        if "-" not in chapters_subchapters[chapter][j]:
+                    for j in range(i + 1, len(chapter["subchapters"])):
+                        if "-" not in chapter["subchapters"][j]:
+                            id += 1
                             i = j
                             break
                         else:
-                            subsub[chapters_subchapters[chapter][i - 1]].append(
-                                chapters_subchapters[chapter][j].split("-")[1].strip())
-        if chapters_subchapters[chapter].count(range(0, 10)) > 0:  # case where chapter has subsubchapters
-            for subchapter in chapters_subchapters[chapter]:
-                if chapters_subchapters[chapter][subchapter].isalpha():  # find subsubchapters
-                    if "-" in "".join(chapters_subchapters[chapter][subchapter]) and "one -sided" not in "".join(
-                            chapters_subchapters[chapter]):
-                        del chapters_subchapters[chapter][subchapter]
+                            subsub[id]["minors"].append(
+                                chapter["subchapters"][j].split("-")[1].strip())
+            for subchapter in chapter["subchapters"]:
+                if "-" in subchapter:
+                    chapter["subchapters"].remove(subchapter)
+    for s in subsub:
+        print(s)
     return subsub, chapters_subchapters
 
 
 def pipeline(input_file ="./input/Chapters.pdf"):
     chapters_list = extract_chapters(input_file)
     chapters_titles, chapters_subtitles, chapters_subchapters = parse_chapters(chapters_list)
-    # sub_subchapters, chapters_subchapters = subchapters_subchapters(chapters_subchapters)
+    #sub_subchapters, chapters_subchapters = subchapters_subchapters(chapters_subchapters)
 
     with open("./output_json_files/chapters.json", "w") as outfile:
         json.dump(chapters_titles, outfile)

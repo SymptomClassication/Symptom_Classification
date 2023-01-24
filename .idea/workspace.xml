@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ae4c7a88-c140-4897-a69d-1b5b443e276b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/populate_database/extract-chaptes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/extract-chaptes.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/populate_database/extract_chapters.py" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/extract_chapters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/populate_database/output_json_files/chapters.json" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/output_json_files/chapters.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,14 +31,31 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "PyConsoleConfigurable.Python Console",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings sdk-home="$USER_HOME$/IdeaProjects/extract-chaptes/venv/bin/Python">
+        <option name="sdk">
+          <Sdk />
+        </option>
+        <option name="mySdkHome" value="$USER_HOME$/IdeaProjects/extract-chaptes/venv/bin/Python" />
+        <option name="mySdk">
+          <Sdk />
+        </option>
+      </console-settings>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="symptomsClassification" />
@@ -177,7 +197,10 @@
       <workItem from="1674483100655" duration="184000" />
       <workItem from="1674483301817" duration="18000" />
       <workItem from="1674483337995" duration="57000" />
-      <workItem from="1674483398918" duration="523000" />
+      <workItem from="1674483398918" duration="1847000" />
+      <workItem from="1674554489013" duration="111000" />
+      <workItem from="1674554610122" duration="419000" />
+      <workItem from="1674555086448" duration="2738000" />
     </task>
     <servers />
   </component>
