@@ -163,6 +163,7 @@ def subchapters_subchapters(subchapters):
                 if "-" in subchapter:
                     chapter["subchapters"].remove(subchapter)
         elif chapter["chapterId"] == "27":  # special case for chapter 27
+
             subsub.append(
                 {"id": id, "major": "Upper abdomen", "minors": ["Pancreas", "Liver", "Gall bladder", "Spleen"]})
             id += 1
@@ -176,7 +177,7 @@ def subchapters_subchapters(subchapters):
                 {"id": id, "major": "Large intestine", "minors": ["Appendix", "vermiform appendix", "Colon", "Rectum"]})
             id += 1
             subsub.append(
-                {"id": id, "major": "Flatulence", "minors": ["General", "Flatulency", "Flatulence dislocation"]})
+                {"id": id, "major": "Flatulence", "minors": ["- General", "Flatulency", "Flatulence dislocation"]})
             id += 1
             break
         elif "-" in "".join(chapter["subchapters"]) and "one -sided" not in "".join(
@@ -197,18 +198,16 @@ def subchapters_subchapters(subchapters):
                         else:
                             subsub[id]["minors"].append(
                                 chapter["subchapters"][j].split("-")[1].strip())
-    for chapter in chapters_subchapters:
-        for subchapter in chapter["subchapters"]:
-            exceptions = ["&", "/", "(", ")", ".", "one-sided"]
-            if not any(exception in subchapter for exception in exceptions) and not subchapter[0].isalpha():
-                chapter["subchapters"].remove(subchapter)
-    return subsub, chapters_subchapters
+    return subsub, subchapters
 
 
 def pipeline(input_file="./input/Chapters.pdf"):
     chapters_list = extract_chapters(input_file)
     chapters_titles, chapters_subtitles, chapters_subchapters = parse_chapters(chapters_list)
     sub_subchapters, chapters_subchapters = subchapters_subchapters(chapters_subchapters)
+
+    for chapters_subchapter in chapters_subchapters:
+        print(chapters_subchapter)
 
     with open("./output_json_files/chapters.json", "w") as outfile:
         json.dump(chapters_titles, outfile)

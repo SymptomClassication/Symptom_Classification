@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae4c7a88-c140-4897-a69d-1b5b443e276b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/classify_tests/classify_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/populate_database/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/populate_database/extract_chapters.py" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/extract_chapters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/populate_database/output_json_files/sub_subchapters.json" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/output_json_files/sub_subchapters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/populate_database/output_json_files/subchapters.json" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/output_json_files/subchapters.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,23 +36,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "PyConsoleConfigurable.Python Console",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings sdk-home="$USER_HOME$/IdeaProjects/extract-chaptes/venv/bin/Python">
@@ -198,7 +210,11 @@
       <workItem from="1674483398918" duration="1847000" />
       <workItem from="1674554489013" duration="111000" />
       <workItem from="1674554610122" duration="419000" />
-      <workItem from="1674555086448" duration="5667000" />
+      <workItem from="1674555086448" duration="6266000" />
+      <workItem from="1674640610808" duration="195000" />
+      <workItem from="1674640921763" duration="3843000" />
+      <workItem from="1674644804989" duration="259000" />
+      <workItem from="1674645177949" duration="7738000" />
     </task>
     <servers />
   </component>
