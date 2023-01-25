@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae4c7a88-c140-4897-a69d-1b5b443e276b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/classify_tests/classify_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/populate_database/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/populate_database/extract_chapters.py" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/extract_chapters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/populate_database/output_json_files/sub_subchapters.json" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/output_json_files/sub_subchapters.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/populate_database/output_json_files/subchapters.json" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/output_json_files/subchapters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classify_tests/classify_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/classify_tests/classify_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +209,7 @@
       <workItem from="1674640610808" duration="195000" />
       <workItem from="1674640921763" duration="3843000" />
       <workItem from="1674644804989" duration="259000" />
-      <workItem from="1674645177949" duration="7738000" />
+      <workItem from="1674645177949" duration="11860000" />
     </task>
     <servers />
   </component>

@@ -2,6 +2,7 @@ import PyPDF2 as pdfReader
 import re
 import json
 
+
 def extract_symptoms(pdf_file: str):
     symptoms = []
     pdf_content = []
@@ -23,7 +24,7 @@ def extract_symptoms(pdf_file: str):
             removeStar = re.sub(r"\*", "", removeDot)
             removeBracket = re.sub(r"\[*\]*", "", removeStar)
             removeParenthesis = re.sub(r"\((.*?)\)", "", removeBracket)
-            #removeSignleCharacter = re.sub(r"\s[abcdefg]*\s", "", removeParenthesis)
+            # removeSignleCharacter = re.sub(r"\s[abcdefg]*\s", "", removeParenthesis)
             removeComma = re.sub(r",", "", removeParenthesis)
             removeSemiColon = re.sub(r";", "", removeComma)
             if line[0].isalpha():
@@ -36,8 +37,8 @@ def extract_symptoms(pdf_file: str):
 
     return symptoms
 
-def classify(chapters, subchapters, subtitles, symptoms):
 
+def classify(chapters, subchapters, subtitles, symptoms):
     classified_symptoms = []
 
     for symptom in symptoms:
@@ -87,23 +88,43 @@ def classify(chapters, subchapters, subtitles, symptoms):
         if len(main_chapters) == 0:
             main_chapters.add("unknown")
 
-        classified_symptoms.append({"symptom": symptom, "chapter": list(main_chapters), "subchapter": symptom_subchapters, "subtitle": symptom_subtitles})
+        if len(symptom_subchapters) > 0:
+            main_chapters = match_subchapters(symptom_subchapters, main_chapters, subchapters, chapters)
+
+        classified_symptoms.append(
+            {"symptom": symptom, "chapter": list(main_chapters), "subchapter": symptom_subchapters,
+             "subtitle": symptom_subtitles})
 
     return classified_symptoms
 
 
-
-
 def findChapter(chapter_index, chapters):
-
     for index in chapter_index:
         for chapter in chapters:
             if chapter["chapterId"] == index:
                 return chapter["titles"]
 
 
-def pipeline(input_data = "./input/Symptome_Test.pdf"):
+def match_subchapters(subchapters, chapters, subchapters_dict, chapters_dict):
+    subchapters_set = subchapters
+    chapters_set = list(chapters)
+    ids = []
 
+    for s_list in subchapters_dict:
+        for subchapter in s_list["subchapters"]:
+            for subchapter_set in subchapters_set:
+                if re.search(subchapter, subchapter_set, re.IGNORECASE):
+                    ids.append(s_list["chapterId"])
+    for c_list in chapters_dict:
+        if c_list["chapterId"] in ids:
+            for title in c_list["titles"]:
+                if title not in chapters_set:
+                    chapters_set.append(title)
+
+    return set(chapters_set)
+
+
+def pipeline(input_data="./input/Symptome_Test.pdf"):
     symptoms = extract_symptoms(input_data)
 
     with open("./input/chapters.json", "r") as f:
@@ -120,6 +141,7 @@ def pipeline(input_data = "./input/Symptome_Test.pdf"):
 
     with open("./output_json_files/classified_test.json", "w") as outfile:
         json.dump(classified_symptoms, outfile)
+
 
 if __name__ == "__main__":
     pipeline()
