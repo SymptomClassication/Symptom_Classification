@@ -13,11 +13,12 @@ public class userInterface implements ActionListener {
     public JPanel menuPanel = new JPanel(new GridBagLayout());
 
     public JButton start = new JButton("Start");
+    public JButton edit = new JButton("Edit");
     public JButton exit = new JButton("Exit");
 
     public JLabel title = new JLabel("MY APP");
 
-    public Font buttonsFont=new Font("Digital-7 mono",Font.BOLD,25);
+    public Font buttonsFont=new Font("Monospaced Bold Italic",Font.BOLD,25);
     //to give a specific text style,size
     public GridBagConstraints a = new GridBagConstraints();
     // this line of code above, allow me to align the title and the buttons in rows and columns
@@ -32,7 +33,7 @@ public class userInterface implements ActionListener {
 
         a.gridy=1;
         //vertically aligns the component
-        title.setFont(new Font("Algerian", Font.BOLD, 66));
+        title.setFont(new Font("Monospaced Bold Italic", Font.BOLD, 66));
         menuPanel.add(title,a);
 
         a.gridy=2;
@@ -40,6 +41,10 @@ public class userInterface implements ActionListener {
         menuPanel.add(start,a);
 
         a.gridy=3;
+        setButtonsStyle( edit );
+        menuPanel.add( edit,a );
+
+        a.gridy=4;
         setButtonsStyle(exit);
         menuPanel.add(exit,a);
 
