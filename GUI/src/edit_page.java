@@ -7,7 +7,7 @@ public class edit_page implements ActionListener {
 
     public JFrame menuFrame = new JFrame();
 
-    public JPanel gamePanel = new JPanel();
+    public JPanel panel = new JPanel();
     public JPanel menuPanel = new JPanel(new GridBagLayout());
 
     public JButton chapters = new JButton("Chapters");
@@ -46,9 +46,9 @@ public class edit_page implements ActionListener {
         setButtonsStyle(back );
         menuPanel.add(back,a);
 
-        gamePanel.add( menuPanel );
-        menuFrame.add(gamePanel);
-        menuFrame.setContentPane(gamePanel);
+        panel.add( menuPanel );
+        menuFrame.add( panel );
+        menuFrame.setContentPane( panel );
 
 
         //menuFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -56,6 +56,7 @@ public class edit_page implements ActionListener {
         //with this two line of codes above, the game frame turn to full screen
         //without the taskbar
         menuFrame.setVisible(true);
+        menuFrame.setResizable( false );
     }
     public void setButtonsStyle (JButton button){
         button.setFont(buttonsFont);
@@ -70,6 +71,8 @@ public class edit_page implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==chapters) {
             // open the next window, after clicking on the "START"
+            menuFrame.dispose();
+            new chapters_page();
 
         }
         if(e.getSource()==classified_data){

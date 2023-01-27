@@ -9,7 +9,7 @@ public class menu_page implements ActionListener {
 
     public JFrame menuFrame = new JFrame();
 
-    public JPanel gamePanel = new JPanel();
+    public JPanel panel = new JPanel();
     public JPanel menuPanel = new JPanel(new GridBagLayout());
 
     public JButton start = new JButton("Start");
@@ -48,15 +48,16 @@ public class menu_page implements ActionListener {
         setButtonsStyle(exit);
         menuPanel.add(exit,a);
 
-        gamePanel.add( menuPanel );
-        menuFrame.add(gamePanel);
-        menuFrame.setContentPane(gamePanel);
+        panel.add( menuPanel );
+        menuFrame.add( panel );
+        menuFrame.setContentPane( panel );
 
         //menuFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //menuFrame.setUndecorated(true);
         //with this two line of codes above, the game frame turn to full screen
         //without the taskbar
         menuFrame.setVisible(true);
+        menuFrame.setResizable( false );
     }
     public void setButtonsStyle (JButton button){
         button.setFont(buttonsFont);
@@ -71,6 +72,8 @@ public class menu_page implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==start) {
             // open the next window, after clicking on the "START"
+            menuFrame.dispose();
+            new symptom_page();
 
         }
         if(e.getSource()==edit){

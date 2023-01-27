@@ -3,13 +3,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class symtom_page implements ActionListener {
+public class symptom_page implements ActionListener {
     public JFrame menuFrame = new JFrame();
 
     public JPanel panel = new JPanel();
     public JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JLabel label = new JLabel("Symtoms :");
+    public JLabel label = new JLabel("Symptoms :");
 
     public JTextField input = new JTextField( );
 
@@ -19,7 +19,7 @@ public class symtom_page implements ActionListener {
     public Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
     public GridBagConstraints a = new GridBagConstraints();
 
-    public symtom_page() {
+    public symptom_page() {
 
         menuFrame.setTitle( "MY APP" );
         menuFrame.setBackground( Color.darkGray );
