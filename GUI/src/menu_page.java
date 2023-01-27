@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class userInterface implements ActionListener {
+public class menu_page implements ActionListener {
 
     public JFrame menuFrame = new JFrame();
 
@@ -22,7 +22,7 @@ public class userInterface implements ActionListener {
     //to give a specific text style,size
     public GridBagConstraints a = new GridBagConstraints();
     // this line of code above, allow me to align the title and the buttons in rows and columns
-    public userInterface() {
+    public menu_page() {
 
         menuFrame.setTitle("MY APP");
         menuFrame.setBackground(Color.darkGray);
@@ -52,8 +52,8 @@ public class userInterface implements ActionListener {
         menuFrame.add(gamePanel);
         menuFrame.setContentPane(gamePanel);
 
-        menuFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        menuFrame.setUndecorated(true);
+        //menuFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //menuFrame.setUndecorated(true);
         //with this two line of codes above, the game frame turn to full screen
         //without the taskbar
         menuFrame.setVisible(true);
@@ -62,20 +62,27 @@ public class userInterface implements ActionListener {
         button.setFont(buttonsFont);
         button.setBackground(Color.darkGray);
         button.setForeground(Color.white);
-        button.setPreferredSize(new Dimension(200,60));
+        button.setPreferredSize(new Dimension(300,60));
         button.addActionListener(this);
         button.setEnabled(true);
     }
+
+    @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==start) {
             // open the next window, after clicking on the "START"
+
+        }
+        if(e.getSource()==edit){
+            // open the next window, after clicking on the "START"
+            menuFrame.dispose();
+            new edit_page();
         }
         if(e.getSource()==exit){
             // exit the whole game, end the program after clicking on the "EXIT"
             menuFrame.dispose();
         }
     }
-
 }
 
 
