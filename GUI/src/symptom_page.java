@@ -10,6 +10,9 @@ public class symptom_page implements ActionListener {
     public JPanel menuPanel = new JPanel(new GridBagLayout());
 
     public JLabel label = new JLabel("Symptoms :");
+    public JLabel chapter = new JLabel("Chapter :");
+    public JLabel subchapter = new JLabel("Subchapter :");
+
 
     public JTextField input = new JTextField( );
 
@@ -36,11 +39,11 @@ public class symptom_page implements ActionListener {
         input.setPreferredSize( new Dimension(600,30) );
         menuPanel.add( input,a );
 
-        a.gridy=3;
+        a.gridy=5;
         setButtonsStyle( back );
         menuPanel.add( back,a);
 
-        a.gridy=3;
+        a.gridy=5;
         setButtonsStyle( next );
         menuPanel.add( next,a);
 
@@ -67,8 +70,17 @@ public class symptom_page implements ActionListener {
                 new menu_page();
             }
             if(e.getSource()==next){
-                menuFrame.dispose();
-                // ...
+                a.gridy=3;
+                chapter.setFont( fontStyle );
+                menuPanel.add(chapter,a);
+
+                a.gridy=4;
+                subchapter.setFont( fontStyle );
+                menuPanel.add(subchapter,a);
+
+                menuFrame.setVisible( true );
+                menuFrame.setResizable( false );
+
             }
     }
 }

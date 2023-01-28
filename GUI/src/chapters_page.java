@@ -12,10 +12,14 @@ public class chapters_page implements ActionListener {
     public JButton add = new JButton("Add");
     public JButton remove = new JButton("Remove");
     public JButton subchapters = new JButton("Subchapters");
+    public JButton back = new JButton("Back");
 
+    public JComboBox<String> cb;
 
     public Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
     public GridBagConstraints a = new GridBagConstraints();
+
+    public String selectedChapter;
 
     public chapters_page(){
         menuFrame.setTitle( "MY APP" );
@@ -26,7 +30,7 @@ public class chapters_page implements ActionListener {
 
         a.gridy=1;
         String[] choices = { "CHAPTERS","CHOICE 1","CHOICE 2", "CHOICE 3","CHOICE 4","CHOICE 5"};
-        final JComboBox<String> cb = new JComboBox<String>(choices);
+        cb = new JComboBox<String>(choices);
         cb.setFont( fontStyle );
         cb.setPreferredSize( new Dimension(500,50) );
         cb.setVisible( true );
@@ -43,6 +47,10 @@ public class chapters_page implements ActionListener {
         a.gridy=4;
         setButtonsStyle(subchapters);
         menuPanel.add(subchapters,a);
+
+        a.gridy=5;
+        setButtonsStyle( back );
+        menuPanel.add( back,a );
 
         panel.add( menuPanel );
         menuFrame.add( panel );
@@ -71,7 +79,12 @@ public class chapters_page implements ActionListener {
         }
         if(e.getSource()==subchapters){
             menuFrame.dispose();
-            //..
+            selectedChapter=(String)cb.getSelectedItem();
+            new subchapters_page(selectedChapter);
+        }
+        if(e.getSource()==back){
+            menuFrame.dispose();
+            new menu_page();
         }
     }
 }
