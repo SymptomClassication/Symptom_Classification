@@ -2,6 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import com.google.gson.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class edit_page implements ActionListener {
 
@@ -84,5 +92,59 @@ public class edit_page implements ActionListener {
             menuFrame.dispose();
             new menu_page();
         }
+    }
+    private static final String FETCH_CHAPTERS_API_URL = "http://dagere.comiles.eu:8090/api/v1/chapters/fetchChapters";
+    private static final String SAVE_CHAPTER_API_URL = "http://dagere.comiles.eu:8090/api/v1/chapters/createChapter";
+    public static List<chapter> retrieveChapters() {
+        List<chapter> chapters = new ArrayList<>();
+        try {
+            URL url = new URL(FETCH_CHAPTERS_API_URL);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            int responseCode = conn.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+                JsonElement chaptersJson = new JsonParser().parse(response.toString());
+                JsonArray chaptersArray = chaptersJson.getAsJsonArray();
+                for (JsonElement chapterJson : chaptersArray) {
+                    JsonObject chapterObject = chapterJson.getAsJsonObject();
+                    int id = chapterObject.get("id").getAsInt();
+                    String name = chapterObject.get("name").getAsString();
+                    chapter chapter = new chapter(id, name);
+                    chapters.add(chapter);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error while retrieving chapters: " + e.getMessage());
+        }
+        return chapters;
+    }
+    public static boolean saveChapter(chapter chapter) {
+        boolean success = false;
+        try {
+            URL url = new URL(SAVE_CHAPTER_API_URL);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+            Gson gson = new Gson();
+            String json = gson.toJson(chapter);
+            OutputStreamWriter out = new OutputStreamWriter(conn.getOutputStream());
+            out.write(json);
+            out.close();
+            int responseCode = conn.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK || responseCode == HttpURLConnection.HTTP_CREATED) {
+                success = true;
+            }
+        } catch (Exception e) {
+            System.out.println("Error while saving chapter: " + e.getMessage());
+        }
+        return success;
     }
 }

@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class symptom_page implements ActionListener {
     PythonInterpreter interpreter = new PythonInterpreter();
 
@@ -69,14 +70,15 @@ public class symptom_page implements ActionListener {
         button.setEnabled(true);
     }
         @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) 
+    {
             if(e.getSource()==back) {
                 menuFrame.dispose();
                 new menu_page();
             }
             if(e.getSource()==next){
 
-                interpreter.execfile("C:\\Users\\36303\\Desktop\\StUdyInG\\22_23_studio_project_III\\symptomsClassification\\classifyInput\\test.py");
+                interpreter.execfile("../classifyInput/test.py");
                 String test = "result = pipeline("+"'"+input.getText()+"'"+")";
                 interpreter.exec(test);
                 //System.out.println(input.getText());
@@ -102,4 +104,5 @@ public class symptom_page implements ActionListener {
 
             }
     }
+
 }

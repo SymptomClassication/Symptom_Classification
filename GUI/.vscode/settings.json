@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "d:\\Jython\\jython.jar",
+        "c:\\Users\\maced\\Downloads\\gson-2.10.1.jar"
+    ]
+}
