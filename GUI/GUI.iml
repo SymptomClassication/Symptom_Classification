@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jython" level="project" />
+    <orderEntry type="library" name="project_III_gson-2.10.1" level="project" />
   </component>
 </module>

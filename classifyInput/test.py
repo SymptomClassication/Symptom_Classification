@@ -28,7 +28,7 @@ def pipeline(symptom):
 
     symptom_chapter = classify(symptom, chapters)
 
-    final_output.append(", ".join(symptom_chapter))
+    final_output.append("".join(symptom_chapter))
     final_output.append("no subchapter found")
 
     return final_output

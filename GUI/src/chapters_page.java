@@ -1,7 +1,18 @@
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class chapters_page implements ActionListener {
     public JFrame menuFrame = new JFrame();
@@ -15,6 +26,7 @@ public class chapters_page implements ActionListener {
     public JButton back = new JButton("Back");
 
     public JComboBox<String> cb;
+    public List<chapter> chapterList = retrieveChapters();
 
     public Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
     public GridBagConstraints a = new GridBagConstraints();
@@ -29,7 +41,10 @@ public class chapters_page implements ActionListener {
         a.insets = new Insets( 30,30,15,30);
 
         a.gridy=1;
-        String[] choices = { "CHAPTERS","CHOICE 1","CHOICE 2", "CHOICE 3","CHOICE 4","CHOICE 5"};
+        String[] choices = new String[chapterList.size()];
+        for( int i=0; i<chapterList.size();i++){
+            choices[i]=chapterList.get( i ).getName();
+        }
         cb = new JComboBox<String>(choices);
         cb.setFont( fontStyle );
         cb.setPreferredSize( new Dimension(500,50) );
@@ -71,7 +86,7 @@ public class chapters_page implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==add) {
             menuFrame.dispose();
-            //..
+            new add_page();
         }
         if(e.getSource()==remove){
             menuFrame.dispose();
@@ -86,5 +101,36 @@ public class chapters_page implements ActionListener {
             menuFrame.dispose();
             new menu_page();
         }
+    }
+    private static final String FETCH_CHAPTERS_API_URL = "http://dagere.comiles.eu:8090/api/v1/chapters/fetchChapters";
+    public static java.util.List<chapter> retrieveChapters() {
+        List<chapter> chapters = new ArrayList<>();
+        try {
+            URL url = new URL(FETCH_CHAPTERS_API_URL);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            int responseCode = conn.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+                JsonElement chaptersJson = new JsonParser().parse(response.toString());
+                JsonArray chaptersArray = chaptersJson.getAsJsonArray();
+                for (JsonElement chapterJson : chaptersArray) {
+                    JsonObject chapterObject = chapterJson.getAsJsonObject();
+                    int id = chapterObject.get("id").getAsInt();
+                    String name = chapterObject.get("name").getAsString();
+                    chapter chapter = new chapter(id, name);
+                    chapters.add(chapter);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error while retrieving chapters: " + e.getMessage());
+        }
+        return chapters;
     }
 }

@@ -19,6 +19,7 @@ public class symptom_page implements ActionListener {
     public JLabel chapter = new JLabel("Chapter :");
     public JLabel subchapter = new JLabel("Subchapter :");
     public JLabel databaseRetrieved=new JLabel("");
+    public JLabel successful = new JLabel("");
 
     public JTextField input = new JTextField( );
 
@@ -45,11 +46,11 @@ public class symptom_page implements ActionListener {
         input.setPreferredSize( new Dimension(600,30) );
         menuPanel.add( input,a );
 
-        a.gridy=5;
+        a.gridy=6;
         setButtonsStyle( back );
         menuPanel.add( back,a);
 
-        a.gridy=5;
+        a.gridy=6;
         setButtonsStyle( next );
         menuPanel.add( next,a);
 
@@ -81,23 +82,32 @@ public class symptom_page implements ActionListener {
                 interpreter.execfile("../classifyInput/test.py");
                 String test = "result = pipeline("+"'"+input.getText()+"'"+")";
                 interpreter.exec(test);
-                //System.out.println(input.getText());
-                //String myString = String.format("result = pipeline(%s)", input.getText());
-                //interpreter.exec(myString);
                 PyObject result = interpreter.get("result");
-                System.out.println(result.__getitem__( 0 ));
                 a.gridy=3;
                 chapter.setFont( fontStyle );
                 menuPanel.add(chapter,a);
 
                 menuPanel.remove( databaseRetrieved );
+                menuPanel.remove( successful );
                 databaseRetrieved = new JLabel(result.__getitem__(0).toString());
+                if(databaseRetrieved.getText().equals("")){
+                    successful= new JLabel("Chapter Not Found");
+                    successful.setForeground( Color.red );
+                }
+                else{
+                    successful=new JLabel("Chapter Found");
+                    successful.setForeground( Color.green );
+                }
                 databaseRetrieved.setFont( fontStyle );
                 menuPanel.add(databaseRetrieved,a);
 
                 a.gridy=4;
                 subchapter.setFont( fontStyle );
                 menuPanel.add(subchapter,a);
+
+                a.gridy=5;
+                successful.setFont( fontStyle );
+                menuPanel.add( successful,a );
 
                 menuFrame.setVisible( true );
                 menuFrame.setResizable( false );
