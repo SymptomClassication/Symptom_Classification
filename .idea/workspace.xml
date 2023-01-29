@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae4c7a88-c140-4897-a69d-1b5b443e276b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/classifyInput/classify_input.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classifyInput/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/out/production/GUI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/out/production/GUI/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/out/production/GUI/menu_page.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/out/production/GUI/menu_page.class" afterDir="false" />
@@ -45,7 +45,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -259,7 +259,7 @@
       <workItem from="1674644804989" duration="259000" />
       <workItem from="1674645177949" duration="12044000" />
       <workItem from="1674720363439" duration="394000" />
-      <workItem from="1674936782135" duration="6135000" />
+      <workItem from="1674936782135" duration="7342000" />
     </task>
     <servers />
   </component>
