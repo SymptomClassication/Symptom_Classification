@@ -1,9 +1,14 @@
+import org.python.core.PyObject;
+import org.python.util.PythonInterpreter;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class symptom_page implements ActionListener {
+    PythonInterpreter interpreter = new PythonInterpreter();
+
     public JFrame menuFrame = new JFrame();
 
     public JPanel panel = new JPanel();
@@ -12,7 +17,7 @@ public class symptom_page implements ActionListener {
     public JLabel label = new JLabel("Symptoms :");
     public JLabel chapter = new JLabel("Chapter :");
     public JLabel subchapter = new JLabel("Subchapter :");
-
+    public JLabel databaseRetrieved=new JLabel("");
 
     public JTextField input = new JTextField( );
 
@@ -70,9 +75,23 @@ public class symptom_page implements ActionListener {
                 new menu_page();
             }
             if(e.getSource()==next){
+
+                interpreter.execfile("C:\\Users\\36303\\Desktop\\StUdyInG\\22_23_studio_project_III\\symptomsClassification\\classifyInput\\test.py");
+                String test = "result = pipeline("+"'"+input.getText()+"'"+")";
+                interpreter.exec(test);
+                //System.out.println(input.getText());
+                //String myString = String.format("result = pipeline(%s)", input.getText());
+                //interpreter.exec(myString);
+                PyObject result = interpreter.get("result");
+                System.out.println(result.__getitem__( 0 ));
                 a.gridy=3;
                 chapter.setFont( fontStyle );
                 menuPanel.add(chapter,a);
+
+                menuPanel.remove( databaseRetrieved );
+                databaseRetrieved = new JLabel(result.__getitem__(0).toString());
+                databaseRetrieved.setFont( fontStyle );
+                menuPanel.add(databaseRetrieved,a);
 
                 a.gridy=4;
                 subchapter.setFont( fontStyle );
