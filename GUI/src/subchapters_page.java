@@ -22,7 +22,7 @@ public class subchapters_page implements ActionListener {
     public String selectedSubchapter;
 
     public subchapters_page(String selectedChapter ){
-        menuFrame.setTitle( "MY APP" );
+        menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
 

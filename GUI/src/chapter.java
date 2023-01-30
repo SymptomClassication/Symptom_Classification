@@ -1,22 +1,27 @@
 public class chapter {
-    private final int id;
-    private final String name;
+    private int id;
+    private String name;
 
-    public chapter(int id, String name) 
+    public chapter(int id, String name)
     {
         this.id = id;
         this.name = name;
     }
-    public int getId() 
+
+    public chapter(String name) {
+        this.name = name;
+    }
+
+    public int getId()
     {
         return id;
     }
-    public String getName() 
+    public String getName()
     {
         return name;
     }
     @Override
-    public String toString() 
+    public String toString()
     {
         return "Chapter{" +
                 "id=" + id +

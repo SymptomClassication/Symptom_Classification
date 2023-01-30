@@ -16,8 +16,9 @@ public class symptom_page implements ActionListener {
     public JPanel menuPanel = new JPanel(new GridBagLayout());
 
     public JLabel label = new JLabel("Symptoms :");
-    public JLabel chapter = new JLabel("Chapter :");
-    public JLabel subchapter = new JLabel("Subchapter :");
+    public JLabel classification = new JLabel("Classification :");
+    //public JLabel chapter = new JLabel("Chapter :");
+    //public JLabel subchapter = new JLabel("Subchapter :");
     public JLabel databaseRetrieved=new JLabel("");
     public JLabel successful = new JLabel("");
 
@@ -30,8 +31,7 @@ public class symptom_page implements ActionListener {
     public GridBagConstraints a = new GridBagConstraints();
 
     public symptom_page() {
-
-        menuFrame.setTitle( "MY APP" );
+        menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
 
@@ -70,49 +70,54 @@ public class symptom_page implements ActionListener {
         button.addActionListener(this);
         button.setEnabled(true);
     }
-        @Override
-    public void actionPerformed(ActionEvent e) 
+    @Override
+    public void actionPerformed(ActionEvent e)
     {
-            if(e.getSource()==back) {
-                menuFrame.dispose();
-                new menu_page();
-            }
-            if(e.getSource()==next){
+        if(e.getSource()==back) {
+            menuFrame.dispose();
+            new menu_page();
+        }
+        if(e.getSource()==next){
 
-                interpreter.execfile("../classifyInput/test.py");
-                String test = "result = pipeline("+"'"+input.getText()+"'"+")";
-                interpreter.exec(test);
-                PyObject result = interpreter.get("result");
-                a.gridy=3;
+            interpreter.execfile("../classifyInput/test.py");
+            String test = "result = pipeline("+"'"+input.getText()+"'"+")";
+            interpreter.exec(test);
+            PyObject result = interpreter.get("result");
+/*                a.gridy=3;
                 chapter.setFont( fontStyle );
-                menuPanel.add(chapter,a);
+                menuPanel.add(chapter,a);*/
 
-                menuPanel.remove( databaseRetrieved );
-                menuPanel.remove( successful );
-                databaseRetrieved = new JLabel(result.__getitem__(0).toString());
-                if(databaseRetrieved.getText().equals("")){
-                    successful= new JLabel("Chapter Not Found");
-                    successful.setForeground( Color.red );
-                }
-                else{
-                    successful=new JLabel("Chapter Found");
-                    successful.setForeground( Color.green );
-                }
-                databaseRetrieved.setFont( fontStyle );
-                menuPanel.add(databaseRetrieved,a);
+            a.gridy=3;
+            classification.setFont( fontStyle );
+            menuPanel.add(classification,a);
 
-                a.gridy=4;
-                subchapter.setFont( fontStyle );
-                menuPanel.add(subchapter,a);
-
-                a.gridy=5;
-                successful.setFont( fontStyle );
-                menuPanel.add( successful,a );
-
-                menuFrame.setVisible( true );
-                menuFrame.setResizable( false );
-
+            menuPanel.remove( databaseRetrieved );
+            menuPanel.remove( successful );
+            databaseRetrieved = new JLabel(result.__getitem__(0).toString());
+            //might have to change .equals("") --> .equals("unknown")
+            if(databaseRetrieved.getText().equals("")){
+                successful= new JLabel("Chapter Not Found",SwingConstants.CENTER);
+                successful.setForeground( Color.red );
             }
+            else{
+                successful=new JLabel("Chapter Found");
+                successful.setForeground( Color.green );
+            }
+            databaseRetrieved.setFont( fontStyle );
+            menuPanel.add(databaseRetrieved,a);
+
+/*                a.gridy=4;
+                subchapter.setFont( fontStyle );
+                menuPanel.add(subchapter,a);*/
+
+            a.gridy=5;
+            successful.setFont( fontStyle );
+            menuPanel.add( successful,a );
+
+            menuFrame.setVisible( true );
+            menuFrame.setResizable( false );
+
+        }
     }
 
 }

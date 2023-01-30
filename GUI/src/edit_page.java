@@ -30,7 +30,7 @@ public class edit_page implements ActionListener {
     // this line of code above, allow me to align the title and the buttons in rows and columns
 
     public edit_page(){
-        menuFrame.setTitle("MY APP");
+        menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground(Color.darkGray);
         menuFrame.setBounds(100,200,1200,600);
 

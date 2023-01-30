@@ -34,7 +34,7 @@ public class chapters_page implements ActionListener {
     public String selectedChapter;
 
     public chapters_page(){
-        menuFrame.setTitle( "MY APP" );
+        menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
 

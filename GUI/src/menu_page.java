@@ -16,15 +16,14 @@ public class menu_page implements ActionListener {
     public JButton edit = new JButton("Edit");
     public JButton exit = new JButton("Exit");
 
-    public JLabel title = new JLabel("MY APP");
+    public JLabel title = new JLabel("Symptom Classifier");
 
     public Font buttonsFont=new Font("Monospaced Bold Italic",Font.BOLD,25);
     //to give a specific text style,size
     public GridBagConstraints a = new GridBagConstraints();
     // this line of code above, allow me to align the title and the buttons in rows and columns
     public menu_page() {
-
-        menuFrame.setTitle("MY APP");
+        menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground(Color.darkGray);
         menuFrame.setBounds(100,200,1200,600);
 

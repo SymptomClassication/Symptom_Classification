@@ -29,20 +29,20 @@ public class add_page implements ActionListener {
     public GridBagConstraints a = new GridBagConstraints();
 
     public add_page(){
-        menuFrame.setTitle( "MY APP" );
+        menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
 
         a.insets = new Insets( 30,30,15,30);
         //set the general distance between components
 
-        a.gridy=2;
-        newChapterId.setFont( fontStyle );
-        menuPanel.add( newChapterId,a);
+//        a.gridy=2;
+//        newChapterId.setFont( fontStyle );
+//        menuPanel.add( newChapterId,a);
 
-        a.gridy=2;
-        inputNewChapterId.setPreferredSize( new Dimension(600,30) );
-        menuPanel.add( inputNewChapterId,a );
+//        a.gridy=2;
+//        inputNewChapterId.setPreferredSize( new Dimension(600,30) );
+//        menuPanel.add( inputNewChapterId,a );
 
         a.gridy=3;
         newChapter.setFont( fontStyle );
@@ -84,7 +84,8 @@ public class add_page implements ActionListener {
         }
         if(e.getSource()==next){
             a.gridy=4;
-            if(saveChapter( new chapter( Integer.parseInt(inputNewChapterId.getText()),inputNewChapter.getText()))){
+            System.out.println(saveChapter( new chapter(inputNewChapter.getText())));
+            if(saveChapter( new chapter(inputNewChapter.getText()))){
                 successful= new JLabel("New Chapter Successfully Added");
                 successful.setForeground( Color.green );
             }
