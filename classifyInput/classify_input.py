@@ -14,7 +14,7 @@ def classify(chapters, subchapters, subtitles, symptom):
     #  case 1: chapter/subtitle found
     for s_list in chapters:
         for chapter in s_list["name"].split(" "):
-            if re.search(chapter, symptom, re.IGNORECASE):
+            if re.search(chapter, symptom, re.IGNORECASE) and chapter != " " and chapter != "":
                 if chapter == "inner" or chapter == "outer" or chapter == "internal" or chapter == "external":
                     if s_list["name"].split(" ")[0] not in symptom:
                         continue
@@ -22,7 +22,7 @@ def classify(chapters, subchapters, subtitles, symptom):
                 chapter_indexes.add(s_list["id"])
     if len(main_chapters) == 0:
         for s_list in subtitles:
-            if re.search(s_list["name"], symptom, re.IGNORECASE):
+            if re.search(s_list["name"], symptom, re.IGNORECASE) and s_list["name"] != " " and s_list["name"] != "":
                 symptom_subtitles.add(s_list["name"])
                 chapter_indexes.add(s_list["chapterId"])
                 chapter_names = findChapter(chapter_indexes, chapters)
@@ -33,7 +33,7 @@ def classify(chapters, subchapters, subtitles, symptom):
         different_chapters = True
     else:
         for s_list in subchapters:
-            if re.search(s_list["name"], symptom, re.IGNORECASE):
+            if re.search(s_list["name"], symptom, re.IGNORECASE) and s_list["name"] != " " and s_list["name"] != "":
                 symptom_subchapters.add(s_list["name"])
                 chapter_indexes.add(s_list["chapterId"])
                 if len(main_chapters) == 0:
@@ -52,6 +52,8 @@ def classify(chapters, subchapters, subtitles, symptom):
 
     if len(symptom_subchapters) > 0:
         main_chapters = match_subchapters(symptom_subchapters, main_chapters, subchapters, chapters)
+
+    print(len(chapter_indexes))
 
     return list(main_chapters), list(symptom_subchapters)
 
