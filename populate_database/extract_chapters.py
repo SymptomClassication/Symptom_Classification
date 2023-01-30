@@ -69,6 +69,7 @@ def parse_chapters(chapters_list: list):
             elif i == 1 and chapter[i] == " ":  # case with no subtitles and no subchapters
                 i += 1
             elif i == 1 and "General" in chapter[i]:  # case with no subtitles
+                subchapters.append("General")
                 subchapters.append(chapter[i].strip())
                 for j in range(i + 1, len(chapter)):
                     if chapter[j] != " ":
@@ -177,7 +178,7 @@ def subchapters_subchapters(subchapters):
                 {"id": id, "major": "Large intestine", "minors": ["Appendix", "vermiform appendix", "Colon", "Rectum"]})
             id += 1
             subsub.append(
-                {"id": id, "major": "Flatulence", "minors": ["- General", "Flatulency", "Flatulence dislocation"]})
+                {"id": id, "major": "Flatulence", "minors": ["General", "Flatulency", "Flatulence dislocation"]})
             id += 1
             break
         elif "-" in "".join(chapter["subchapters"]) and "one -sided" not in "".join(
