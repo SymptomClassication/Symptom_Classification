@@ -1,6 +1,7 @@
 import re
 import json
 import requests
+import sys
 
 subchapters_dict = []
 chapters_dict = []
@@ -89,8 +90,9 @@ def match_subchapters(subchapters, chapters, subchapters_origdict, chapters_orig
 
     for s_list in subchapters_origdict:
         for subchapter_set in subchapters_set:
-            if re.search(s_list["name"], subchapter_set, re.IGNORECASE):
+            if re.search(s_list["name"], subchapter_set, re.IGNORECASE) and s_list["name"] != "General":
                 ids.add(s_list["chapterId"])
+
     for c_list in chapters_origdict:
         if c_list["id"] in ids:
             chapters_set.append(c_list["name"].strip())
@@ -144,4 +146,7 @@ def pipeline(symptom):
 
     return " + ".join(list(final_output))
 
+if __name__ == '__main__':
+    classification = pipeline(" ".join(sys.argv[1:]))
+    print(classification)
 
