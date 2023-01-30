@@ -1,13 +1,14 @@
 import re
 import json
 import requests
+import sys
 
 
 def classify(chapters, subchapters, subtitles, symptom):
 
     main_chapters = set()
-    symptom_subtitles = []
-    symptom_subchapters = []
+    symptom_subtitles = set()
+    symptom_subchapters = set()
     chapter_indexes = set()
     different_chapters = True
     #  case 1: chapter/subtitle found
@@ -21,20 +22,19 @@ def classify(chapters, subchapters, subtitles, symptom):
                 chapter_indexes.add(s_list["id"])
     if len(main_chapters) == 0:
         for s_list in subtitles:
-            for subtitle in s_list["subtitles"]:
-                if re.search(subtitle, symptom, re.IGNORECASE):
-                    symptom_subtitles.append(subtitle)
-                    chapter_indexes.add(s_list["chapterId"])
-                    chapter_names = findChapter(chapter_indexes, chapters)
-                    if chapter_names:
-                        for name in chapter_names:
-                            main_chapters.add(name)
-    if len(main_chapters) >= 2:
+            if re.search(s_list["name"], symptom, re.IGNORECASE):
+                symptom_subtitles.add(s_list["name"])
+                chapter_indexes.add(s_list["chapterId"])
+                chapter_names = findChapter(chapter_indexes, chapters)
+                if chapter_names:
+                    for name in chapter_names:
+                        main_chapters.add(name)
+    if len(main_chapters) >= 3:
         different_chapters = True
     else:
         for s_list in subchapters:
             if re.search(s_list["name"], symptom, re.IGNORECASE):
-                symptom_subchapters.append(s_list["name"])
+                symptom_subchapters.add(s_list["name"])
                 chapter_indexes.add(s_list["chapterId"])
                 if len(main_chapters) == 0:
                     chapter_names = findChapter(chapter_indexes, chapters)
@@ -45,8 +45,8 @@ def classify(chapters, subchapters, subtitles, symptom):
     if len(chapter_indexes) != 0 and len(symptom_subchapters) == 0:
         for s_list in subchapters:
             if s_list["chapterId"] in chapter_indexes:
-                if "General" in s_list["name"]:
-                    symptom_subchapters.append("General")
+                if "General" == s_list["name"]:
+                    symptom_subchapters.add("General")
     if len(main_chapters) == 0:
         main_chapters.add("unknown")
 
@@ -71,7 +71,7 @@ def findChapter(chapter_index, chapters):
 
 
 def match_subchapters(subchapters, chapters, subchapters_dict, chapters_dict):
-    subchapters_set = subchapters
+    subchapters_set = list(subchapters)
     chapters_set = list(chapters)
     ids = set()
 
@@ -103,11 +103,11 @@ def pipeline(symptom):
     if chaptersRequest.status_code == 200:
         chapters = chaptersRequest.json()
 
-    subchaptersRequest = requests.get('https://app.swaggerhub.com/apis-docs/ADUSER/SymptomSubchapter/1.0.0')
+    subchaptersRequest = requests.get('http://dagere.comiles.eu:8094/api/v1/subchapters/fetchSubchapters')
     if subchaptersRequest.status_code == 200:
         subchapters = subchaptersRequest.json()
 
-    subtitlesRequest = requests.get('https://app.swaggerhub.com/apis-docs/ADUSER/SymptomSubtitles/1.0.0')
+    subtitlesRequest = requests.get('http://dagere.comiles.eu:8098/api/v1/subtitles/fetchSubtitles')
     if subtitlesRequest.status_code == 200:
         subtitles = subtitlesRequest.json()
 
@@ -118,6 +118,7 @@ def pipeline(symptom):
     if len(symptom_subchapter) == 0:
         symptom_subchapter.append("unknown")
 
-    final_output.append(", ".join(symptom_chapter), ", ".join(symptom_subchapter))
+    final_output.append(symptom_chapter)
+    final_output.append(symptom_subchapter)
 
     return final_output
