@@ -53,8 +53,6 @@ def classify(chapters, subchapters, subtitles, symptom):
     if len(symptom_subchapters) > 0:
         main_chapters = match_subchapters(symptom_subchapters, main_chapters, subchapters, chapters)
 
-    print(len(chapter_indexes))
-
     return list(main_chapters), list(symptom_subchapters)
 
 
