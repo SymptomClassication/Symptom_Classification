@@ -1,9 +1,9 @@
 import re
 import json
 import requests
-import sys
 
-
+subchapters_dict = []
+chapters_dict = []
 def classify(chapters, subchapters, subtitles, symptom):
 
     main_chapters = set()
@@ -14,44 +14,56 @@ def classify(chapters, subchapters, subtitles, symptom):
     #  case 1: chapter/subtitle found
     for s_list in chapters:
         for chapter in s_list["name"].split(" "):
-            if re.search(chapter, symptom, re.IGNORECASE) and chapter != " " and chapter != "":
-                if chapter == "inner" or chapter == "outer" or chapter == "internal" or chapter == "external":
-                    if s_list["name"].split(" ")[0] not in symptom:
-                        continue
-                main_chapters.add(chapter)
-                chapter_indexes.add(s_list["id"])
-    if len(main_chapters) == 0:
-        for s_list in subtitles:
-            if re.search(s_list["name"], symptom, re.IGNORECASE) and s_list["name"] != " " and s_list["name"] != "":
+            if chapter != " " and chapter != "":
+                if re.search(chapter, symptom, re.IGNORECASE):
+                    if chapter == "inner" or chapter == "outer" or chapter == "internal" or chapter == "external":
+                        if s_list["name"].split(" ")[0] not in symptom:
+                            continue
+                    main_chapters.add(chapter)
+                    chapter_indexes.add(s_list["id"])
+                    chapters_dict.append({"id": s_list["id"], "name": s_list["name"].strip()})
+
+    for s_list in subtitles:
+        if s_list["name"] != " " and s_list["name"] != "":
+            if re.search(s_list["name"], symptom, re.IGNORECASE):
                 symptom_subtitles.add(s_list["name"])
                 chapter_indexes.add(s_list["chapterId"])
                 chapter_names = findChapter(chapter_indexes, chapters)
                 if chapter_names:
                     for name in chapter_names:
                         main_chapters.add(name)
+                        chapters_dict.append({"id": s_list["chapterId"], "name": name})
+
     if len(main_chapters) >= 3:
         different_chapters = True
     else:
         for s_list in subchapters:
-            if re.search(s_list["name"], symptom, re.IGNORECASE) and s_list["name"] != " " and s_list["name"] != "":
-                symptom_subchapters.add(s_list["name"])
-                chapter_indexes.add(s_list["chapterId"])
-                if len(main_chapters) == 0:
-                    chapter_names = findChapter(chapter_indexes, chapters)
-                    if chapter_names:
-                        for name in chapter_names:
-                            main_chapters.add(name.strip())
+            if s_list["name"] != " " and s_list["name"] != "":
+                if re.search(s_list["name"], symptom, re.IGNORECASE):
+                    symptom_subchapters.add(s_list["name"])
+                    chapter_indexes.add(s_list["chapterId"])
+                    subchapters_dict.append({"id": s_list["chapterId"], "name": s_list["name"]})
+                    if len(main_chapters) == 0:
+                        chapter_names = findChapter(chapter_indexes, chapters)
+                        if chapter_names:
+                            for name in chapter_names:
+                                main_chapters.add(name.strip())
+                                chapters_dict.append({"id": s_list["chapterId"], "name": name})
+
 
     if len(chapter_indexes) != 0 and len(symptom_subchapters) == 0:
         for s_list in subchapters:
             if s_list["chapterId"] in chapter_indexes:
                 if "General" == s_list["name"]:
                     symptom_subchapters.add("General")
+                    subchapters_dict.append({"id": s_list["chapterId"], "name": "General"})
+
     if len(main_chapters) == 0:
         main_chapters.add("unknown")
 
     if len(symptom_subchapters) > 0:
         main_chapters = match_subchapters(symptom_subchapters, main_chapters, subchapters, chapters)
+
 
     return list(main_chapters), list(symptom_subchapters)
 
@@ -61,33 +73,32 @@ def findChapter(chapter_index, chapters):
     for index in chapter_index:
         for chapter in chapters:
             if chapter["id"] == index:
-                names = chapter["name"].split(" ")
-                titles.extend(names)
+                titles.append(chapter["name"].strip())
     for t in titles:
         if t == "" or t == " ":
             titles.remove(t)
 
+
     return titles
 
 
-def match_subchapters(subchapters, chapters, subchapters_dict, chapters_dict):
+def match_subchapters(subchapters, chapters, subchapters_origdict, chapters_origdict):
     subchapters_set = list(subchapters)
     chapters_set = list(chapters)
     ids = set()
 
-    for s_list in subchapters_dict:
+    for s_list in subchapters_origdict:
         for subchapter_set in subchapters_set:
             if re.search(s_list["name"], subchapter_set, re.IGNORECASE):
                 ids.add(s_list["chapterId"])
-    for c_list in chapters_dict:
+    for c_list in chapters_origdict:
         if c_list["id"] in ids:
-            names = c_list["name"].split(" ")
-            chapters_set.extend(names)
+            chapters_set.append(c_list["name"].strip())
+            chapters_dict.append({"id": c_list["id"], "name": c_list["name"].strip()})
 
     for t in chapters_set:
         if t == "" or t == " ":
             chapters_set.remove(t)
-
     return set(chapters_set)
 def pipeline(symptom):
 
@@ -97,7 +108,7 @@ def pipeline(symptom):
 
     symptom_chapter = []
     symptom_subchapter = []
-    final_output = []
+    final_output = set()
 
     chaptersRequest = requests.get('http://dagere.comiles.eu:8090/api/v1/chapters/fetchChapters')
     if chaptersRequest.status_code == 200:
@@ -118,7 +129,19 @@ def pipeline(symptom):
     if len(symptom_subchapter) == 0:
         symptom_subchapter.append("unknown")
 
-    final_output.append(symptom_chapter)
-    final_output.append(symptom_subchapter)
+    if len(chapters_dict) != 0:
+        for id in chapters_dict:
+            chapter_subchapter = []
+            for chapterId in subchapters_dict:
+                if id["id"] == chapterId["id"]:
+                    chapter_subchapter.append(chapterId["name"])
+            if len(chapter_subchapter) != 0:
+                final_output.add(id["name"] + ", "+ " , ".join(chapter_subchapter))
+            else:
+                final_output.add(id["name"])
+    if len(final_output) == 0:
+        final_output.add("unknown")
 
-    return final_output
+    return " + ".join(list(final_output))
+
+

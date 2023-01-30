@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae4c7a88-c140-4897-a69d-1b5b443e276b" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/GUI/.idea/libraries/project_III_gson_2_10_1.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/GUI/.jython_cache/packages/jython$1.pkc" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/GUI/.jython_cache/packages/project_III_gson-2.10.1.pkc" afterDir="false" />
@@ -19,6 +20,16 @@
       <change beforePath="$PROJECT_DIR$/GUI/src/edit_page.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/edit_page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/src/symptom_page.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/symptom_page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classifyInput/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/classifyInput/test.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/out/production/GUI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/out/production/GUI/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/out/production/GUI/menu_page.class" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/out/production/GUI/menu_page.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/menu_page.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/src/menu_page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classifyInput/classify_input.py" beforeDir="false" afterPath="$PROJECT_DIR$/classifyInput/classify_input.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classifyInput/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/classifyInput/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/populate_database/extract_chapters.py" beforeDir="false" afterPath="$PROJECT_DIR$/populate_database/extract_chapters.py" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +55,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hala/Desktop/symptomsClassification&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+>>>>>>> Stashed changes
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings sdk-home="$USER_HOME$/IdeaProjects/extract-chaptes/venv/bin/Python">
@@ -57,7 +84,47 @@
       </console-settings>
     </option>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager">
+=======
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-16.0.1/Contents/Home" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="frontend.Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="frontend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-16.0.1/Contents/Home" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="frontend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-16.0.1/Contents/Home" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="frontend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="frontend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+>>>>>>> Stashed changes
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="symptomsClassification" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -243,7 +310,7 @@
       <workItem from="1674644804989" duration="259000" />
       <workItem from="1674645177949" duration="12044000" />
       <workItem from="1674720363439" duration="394000" />
-      <workItem from="1674936782135" duration="7342000" />
+      <workItem from="1674936782135" duration="12472000" />
     </task>
     <servers />
   </component>
