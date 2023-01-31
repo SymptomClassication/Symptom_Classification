@@ -103,6 +103,7 @@ public class chapters_page implements ActionListener {
         }
     }
     private static final String FETCH_CHAPTERS_API_URL = "http://dagere.comiles.eu:8090/api/v1/chapters/fetchChapters";
+    @SuppressWarnings("deprecation")
     public static java.util.List<chapter> retrieveChapters() {
         List<chapter> chapters = new ArrayList<>();
         try {
