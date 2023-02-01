@@ -35,6 +35,9 @@ def extract_symptoms(pdf_file: str):
 
     pdf_obj.close()
 
+    for symptom in symptoms:
+        print(symptom)
+
     return symptoms
 
 

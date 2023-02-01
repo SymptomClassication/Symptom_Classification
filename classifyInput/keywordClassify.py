@@ -5,6 +5,8 @@ import sys
 
 subchapters_dict = []
 chapters_dict = []
+chaptersId = set()
+subchaptersId = set()
 def classify(chapters, subchapters, subtitles, symptom):
 
     main_chapters = set()
@@ -23,12 +25,13 @@ def classify(chapters, subchapters, subtitles, symptom):
                     main_chapters.add(chapter)
                     chapter_indexes.add(s_list["id"])
                     chapters_dict.append({"id": s_list["id"], "name": s_list["name"].strip()})
+                    chaptersId.add(s_list["id"])
 
     for s_list in subtitles:
         if s_list["name"] != " " and s_list["name"] != "":
             if re.search(s_list["name"], symptom, re.IGNORECASE):
                 symptom_subtitles.add(s_list["name"])
-                chapter_indexes.add(s_list["chapterId"])
+                chapter_indexes.add(s_list["id"])
                 chapter_names = findChapter(chapter_indexes, chapters)
                 if chapter_names:
                     for name in chapter_names:
@@ -43,6 +46,7 @@ def classify(chapters, subchapters, subtitles, symptom):
                 if re.search(s_list["name"], symptom, re.IGNORECASE):
                     symptom_subchapters.add(s_list["name"])
                     chapter_indexes.add(s_list["chapterId"])
+                    subchaptersId.add(s_list["id"])
                     subchapters_dict.append({"id": s_list["chapterId"], "name": s_list["name"]})
                     if len(main_chapters) == 0:
                         chapter_names = findChapter(chapter_indexes, chapters)
@@ -58,6 +62,7 @@ def classify(chapters, subchapters, subtitles, symptom):
                 if "General" == s_list["name"]:
                     symptom_subchapters.add("General")
                     subchapters_dict.append({"id": s_list["chapterId"], "name": "General"})
+                    subchaptersId.add(s_list["id"])
 
     if len(main_chapters) == 0:
         main_chapters.add("unknown")
@@ -75,6 +80,7 @@ def findChapter(chapter_index, chapters):
         for chapter in chapters:
             if chapter["id"] == index:
                 titles.append(chapter["name"].strip())
+                chaptersId.add(chapter["id"])
     for t in titles:
         if t == "" or t == " ":
             titles.remove(t)
@@ -97,6 +103,8 @@ def match_subchapters(subchapters, chapters, subchapters_origdict, chapters_orig
         if c_list["id"] in ids:
             chapters_set.append(c_list["name"].strip())
             chapters_dict.append({"id": c_list["id"], "name": c_list["name"].strip()})
+            chaptersId.add(c_list["id"])
+
 
     for t in chapters_set:
         if t == "" or t == " ":
@@ -144,7 +152,12 @@ def pipeline(symptom):
     if len(final_output) == 0:
         final_output.add("unknown")
 
-    return " + ".join(list(final_output))
+    if len(chaptersId) == 0:
+        chaptersId.add(-1)
+    if len(subchaptersId) == 0:
+        subchaptersId.add(-1)
+
+    return [" + ".join(list(final_output)), list(chaptersId), list(subchaptersId)]
 
 if __name__ == '__main__':
     classification = pipeline(" ".join(sys.argv[1:]))
