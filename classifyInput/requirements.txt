@@ -1,0 +1,7 @@
+joblib==1.1.0
+spacy==2.3.9
+scikit-learn==1.0.2
+scikit-learn-intelex==2021.20221004.121333
+
+
+

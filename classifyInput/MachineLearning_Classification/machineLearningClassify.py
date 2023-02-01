@@ -1,7 +1,3 @@
-import numpy as np
-import flair
-from flair.embeddings import WordEmbeddings
-from flair.data import Sentence
 from joblib import dump, load
 import spacy
 
