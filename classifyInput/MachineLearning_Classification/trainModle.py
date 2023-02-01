@@ -18,10 +18,10 @@ def train_model():
     train_data = []
     labels = []
 
-    with open('trainingData.json', 'r') as f:
+    with open('trainingData/trainingData.json', 'r') as f:
         train_data = list(json.load(f))
 
-    with open('matchingTrainingData.json', 'r') as f:
+    with open('trainingData/matchingTrainingData.json', 'r') as f:
         labels = list(json.load(f))
 
     # Fit the model and make predictions
