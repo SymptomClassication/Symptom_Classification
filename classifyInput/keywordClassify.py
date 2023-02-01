@@ -152,10 +152,6 @@ def pipeline(symptom):
     if len(final_output) == 0:
         final_output.add("unknown")
 
-    if len(chaptersId) == 0:
-        chaptersId.add(-1)
-    if len(subchaptersId) == 0:
-        subchaptersId.add(-1)
 
     return [" + ".join(list(final_output)), list(chaptersId), list(subchaptersId)]
 
