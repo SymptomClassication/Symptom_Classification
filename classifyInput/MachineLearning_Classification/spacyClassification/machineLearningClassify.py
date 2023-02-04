@@ -9,6 +9,7 @@ def tokenize(text, embeddings=spacy.load("en_core_web_sm")):
 def pipelines():
 
     model = load('model.joblib')
+    print(model.predict(["I have dry eyes"]))
 
 
 

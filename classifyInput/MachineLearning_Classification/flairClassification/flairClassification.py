@@ -88,15 +88,15 @@ def create_model():
     corpus_csv: Corpus = CSVClassificationCorpus(data_folder,column_name_map=column_name_map,skip_header=True,delimiter=',', label_type = "label_topic")
     label_dict_csv = corpus_csv.make_label_dictionary(label_type = "label_topic")
 
-    word_embeddings = [FlairEmbeddings('news-forward-fast'),FlairEmbeddings('news-backward-fast')]
+    word_embeddings = FlairEmbeddings('news-backward-fast')
 
-    document_embeddings = DocumentRNNEmbeddingss(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256)
+    #document_embeddings = DocumentRNNEmbeddingss(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256)
 
-    clf = TextClassifier(document_embeddings,label_dictionary=label_dict_csv)
+    #clf = TextClassifier(document_embeddings,label_dictionary=label_dict_csv)
 
-    trainer = ModelTrainer(clf,corpus_csv)
+    #trainer = ModelTrainer(clf,corpus_csv)
 
-    trainer.train('data_fst/',max_epochs=2)
+    #trainer.train('data_fst/',max_epochs=2)
 
 
 
