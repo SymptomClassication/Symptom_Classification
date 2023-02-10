@@ -1,0 +1,646 @@
+,sentence,label
+1935,"Sentence: ""Drawing extending from the right hip to the sole of the foot the entire day""",94
+1936,"Sentence: ""Coming from college felt a light sensation in the left limb from the hip down""",94
+1937,"Sentence: ""Some pain in lower limbs most in thighs a""",94
+1938,"Sentence: ""Sensation in the left lower extremity as if a mouse were running up and down""",94
+1939,"Sentence: ""Purring in the lower limbs arms and hands""",95
+1940,"Sentence: ""Bruised pain and weakness in the hip-joint worse when rising from a seat so that she cannot walk without holding on to something it became better from continued walking""",95
+1941,"Sentence: ""Pain as if bruised in right hip-joint only when lying on that side""",95
+1942,"Sentence: ""Cramping pain in hip-joint she must walk about to relieve it""",95
+1943,"Sentence: ""Intermittent drawing pressure directly over the right buttock""",95
+1944,"Sentence: ""Rending pressure over the right hip from before backwards""",95
+1945,"Sentence: ""Pressure in the right hip-joint close to the body coming on gradually getting to its height and then gradually going off""",95
+1946,"Sentence: ""Pain in the hip worse from walking a""",95
+1947,"Sentence: ""Pains in hips and thighs extending to near the knees a""",95
+1948,"Sentence: ""My hip seems well so long as I keep still but after moving the pulling commences pain not so severe""",96
+1949,"Sentence: ""Visible but painless jerking in one buttock and corresponding thigh""",96
+1950,"Sentence: ""Trembling of the thigh and knee without chilliness with jerking in the muscles of the thigh""",96
+1951,"Sentence: ""Weakness and aching in the thighs especially when going upstairs a""",96
+1952,"Sentence: ""She felt that she had a weight pressing on her thighs momentary""",96
+1953,"Sentence: ""Cramp in the inner side of the thigh when walking""",96
+1954,"Sentence: ""Cramp in the thigh when walking""",96
+1955,"Sentence: ""Bruised pain in the thighs when touching them with tension therein when walking""",96
+1956,"Sentence: ""At night during sleep severe bruised pain and exhaustion in the thighs and upper arm but only during slumber on awaking it passed off immediately""",96
+1957,"Sentence: ""Paralytic tension in the right thigh and hip-joint when walking""",96
+1958,"Sentence: ""Tension in the left thigh and leg like pain when parts have gone to sleep extending to the sole of the foot""",96
+1959,"Sentence: ""Drawing in the thighs""",96
+1960,"Sentence: ""Drawing pain in the femora from below upward""",96
+1961,"Sentence: ""Spasmodic jerkings in the muscles of the thigh when walking""",96
+1962,"Sentence: ""Tearing in the right thigh when walking with pain of the parts from touch""",96
+1963,"Sentence: ""Tearing in the whole thigh particularly in the knees after dinner and supper""",96
+1964,"Sentence: ""Burning tearing at inner part of left buttock""",96
+1965,"Sentence: ""Short pain in the right thigh in the evening after lying down so severe that she had to lie without being able to move sixteen evenings in succession""",96
+1966,"Sentence: ""Pain in the nates so that he can scarcely sit""",96
+1967,"Sentence: ""The femora are painful when sitting she must change her seat frequently""",96
+1968,"Sentence: ""The posterior muscles of the thigh are very painful when sitting""",96
+1969,"Sentence: ""Undulating pain in the upper part of the femur""",96
+1970,"Sentence: ""Soreness and burning pain between the nates""",96
+1971,"Sentence: ""One day three sudden shoots down right thigh into toes each time making him lift up the foot and shout""",96
+1972,"Sentence: ""Tearing stitches so severe as to make him cry out in the left thigh when at rest afterward ulcerative pain at the same place""",96
+1973,"Sentence: ""Tearing stitches in the thighs when walking momentarily depriving the lower extremities of all power and almost paralyzing them accompanied with chilliness""",96
+1974,"Sentence: ""Painful stitches in the left thigh when walking""",96
+1975,"Sentence: ""Attacks of crawling in the thighs down to the toes frequently lasting one-fourth of an hour a number of days in succession""",97
+1976,"Sentence: ""Painful swelling of the knee with tension in the knee during rest and motion""",97
+1977,"Sentence: ""Soft painless swelling on the patella when kneeling the knee is unyielding and tense the swelling feels numb""",97
+1978,"Sentence: ""Cracking in the knee-joints""",97
+1979,"Sentence: ""Great weakness of the knees""",97
+1980,"Sentence: ""After coition great weakness in the knees""",97
+1981,"Sentence: ""Weak particularly in the knees""",97
+1982,"Sentence: ""Bruised pain in the knee and tibia more when sitting than walking""",97
+1983,"Sentence: ""Tension in the tendons over the knee when going upstairs""",97
+1984,"Sentence: ""Tension in the knee when walking in the open air""",97
+1985,"Sentence: ""Tension around the knee""",97
+1986,"Sentence: ""Boring pain in the knee-joint when at rest""",97
+1987,"Sentence: ""Severe drawing pain in the knees when walking and when rising from a seat""",97
+1988,"Sentence: ""Arthritic drawing in the knees""",97
+1989,"Sentence: ""Drawing pain in the knees""",97
+1990,"Sentence: ""Drawing pain in the knee-joints evenings""",97
+1991,"Sentence: ""Considerable pain in the right knee""",97
+1992,"Sentence: ""Tearing just under the right knee anteriorly""",97
+1993,"Sentence: ""Tearing in the right knee as soon as she grows cold no pain from touch""",97
+1994,"Sentence: ""Tearing around the knees and malleoli only when sitting and lying""",97
+1995,"Sentence: ""Slight tearing between the left knee and calf""",97
+1996,"Sentence: ""Twisting pain in right knee and a kind of drawing pain on inside of same thigh above the knee""",97
+1997,"Sentence: ""Lame feeling in the knee-joints""",97
+1998,"Sentence: ""Sudden paralyzed feeling in one leg lasting two hours""",97
+1999,"Sentence: ""Tearing stitches between the patella and knee-joint""",97
+2000,"Sentence: ""Stitches in the knee""",97
+2001,"Sentence: ""Stitches and cutting in the hollow of the knee""",97
+2002,"Sentence: ""Stitches just under the patella when walking fast""",98
+2003,"Sentence: ""Swelling of both legs""",98
+2004,"Sentence: ""The swelling of the legs up to the knees increases during sitting or standing passes off when walking""",98
+2005,"Sentence: ""Swelling between the tibia and calf""",98
+2006,"Sentence: ""Jerking of the right leg at intervals during the day followed by trembling of the right hand so that he could not write""",98
+2007,"Sentence: ""Jerking of the leg when falling asleep""",98
+2008,"Sentence: ""Uneasiness in the legs every evening with cramp in them""",98
+2009,"Sentence: ""Heaviness of the legs as far as the knees as if they would fall asleep""",98
+2010,"Sentence: ""Aching in the legs and ankles""",98
+2011,"Sentence: ""The limbs from the knees downward ache badly during the afternoon""",98
+2012,"Sentence: ""Bruised pain and lassitude in the legs she sank unavoidably into a slumber full of anxious dreams""",98
+2013,"Sentence: ""Drawing pain deep in the right leg extending down over the malleoli""",98
+2014,"Sentence: ""Drawing pain in the leg down to the heel where it was a stinging pain""",98
+2015,"Sentence: ""Pressure and drawing in the legs from the knees to the toes more when sitting and lying better when walking""",98
+2016,"Sentence: ""Burning in the lower half of the legs at night in bed she had to uncover them""",98
+2017,"Sentence: ""Aching in tibia in lower part of both tibiæ to PM""",98
+2018,"Sentence: ""Bruised pain in the tibiæ""",98
+2019,"Sentence: ""Sore pain in the tibia only during motion""",98
+2020,"Sentence: ""Pain in the tibia and fibula particularly however in the malleoli as if the bones would be forced apart""",98
+2021,"Sentence: ""Pain in the tibia as from a bruise""",98
+2022,"Sentence: ""Tearing in the tibia during the menses""",98
+2023,"Sentence: ""Violent tickling stitch on the lower part of right tibia""",98
+2024,"Sentence: ""Bruised pain in the muscles of the calves and in the hamstrings""",98
+2025,"Sentence: ""Severe cramp in the calves at night in bed when stretching out the legs and days afterward constant tension of calves as if too short""",98
+2026,"Sentence: ""Cramp in the calves at night""",98
+2027,"Sentence: ""Cramplike pains in the calves and shooting pains in the ankles""",98
+2028,"Sentence: ""Tensive pain in the calf""",98
+2029,"Sentence: ""Tension in the calves""",98
+2030,"Sentence: ""Drawing tension like cramps in the calves from the malleoli to the knees""",98
+2031,"Sentence: ""Pressing pain at lower part of right calf as if cramp would set in""",98
+2032,"Sentence: ""Tearing now above and again below the right calf""",99
+2033,"Sentence: ""Pain in the tendons at the ankle as if too short when walking""",99
+2034,"Sentence: ""The ankle joint pains after walking in the open air as if compressed""",99
+2035,"Sentence: ""Tensive pain in the tendo Achillis""",99
+2036,"Sentence: ""Tension at the bend of the ankle-joint as if too short when walking""",99
+2037,"Sentence: ""Pressure in the left ankle-joint as if the boot were too tight""",99
+2038,"Sentence: ""Fetid odor of the feet""",100
+2039,"Sentence: ""The feet become swollen from much walking""",100
+2040,"Sentence: ""Swelling of the feet""",100
+2041,"Sentence: ""Swelling of the feet they burn and are very dry""",100
+2042,"Sentence: ""Heaviness in the feet when taking a walk""",100
+2043,"Sentence: ""Heaviness in the feet when walking""",100
+2044,"Sentence: ""Heaviness in the feet extending to the knee from early in the morning""",100
+2045,"Sentence: ""Feet very tender all day can hardly bear my stockings to touch my feet after walking awhile they feel better corns on toes very sore and toes very much inflamed and sensitive to touch corns very painful""",100
+2046,"Sentence: ""Tearing in the lower part of the right foot""",100
+2047,"Sentence: ""The right foot goes to sleep""",100
+2048,"Sentence: ""The feet go to sleep frequently when sitting especially in the morning""",100
+2049,"Sentence: ""Pains in tendons of right foot about the ankle""",100
+2050,"Sentence: ""Pain in the feet when walking in the open air as if the tendon at the ankle was sprained""",100
+2051,"Sentence: ""Sharp stitching pain on inner side of left foot and underneath the toes after going to bed""",100
+2052,"Sentence: ""Dry burning sensation in soles of feet""",100
+2053,"Sentence: ""Burning in the feet at night""",100
+2054,"Sentence: ""Burning swelled feeling of the feet""",100
+2055,"Sentence: ""Tingling in the feet""",100
+2056,"Sentence: ""Crawling in the feet when standing""",100
+2057,"Sentence: ""Tensive pain in the dorsum of left foot making it impossible for her to walk on the pavement""",100
+2058,"Sentence: ""Stitching in the dorsum of foot especially painful when walking on the pavement""",100
+2059,"Sentence: ""Stitching in the sole of left foot even when sitting""",100
+2060,"Sentence: ""Frequent cramp in the internal border of soles of feet""",100
+2061,"Sentence: ""Long continued cramp in the soles of the feet evening in bed""",100
+2062,"Sentence: ""Pain along the sole of the left foot to a point between the fourth and fifth toes""",100
+2063,"Sentence: ""Tearing in the sole of right foot close to the toes""",100
+2064,"Sentence: ""Frequent stitches in the sole of right foot""",100
+2065,"Sentence: ""Stitching pain in the soles also from touch she can scarcely walk""",100
+2066,"Sentence: ""Crawling or prickling stitches in the sole and under the toes more during rest than during walking""",100
+2067,"Sentence: ""Prickling in soles of feet and pain in the corns""",100
+2068,"Sentence: ""Repeated shooting pains in the heel""",100
+2069,"Sentence: ""Stitches in the heels and corns during the day""",100
+2070,"Sentence: ""Stitching in the heels only at night""",100
+2071,"Sentence: ""Spasmodic stitching in the heel as if the tendons were too short evenings when undressing and extending the feet""",100
+2072,"Sentence: ""Stitching and tearing in the heels day and night more pain when treading on them than when at rest they were pale and cold and felt numb""",100
+2073,"Sentence: ""Burning stitches in the heels wake her several nights""",100
+2074,"Sentence: ""Burning stinging and smarting sore pain in the heel while sitting""",100
+2075,"Sentence: ""A toe-nail which had been crippled for years suppurated and in its stead a new and healthy nail formed""",101
+2076,"Sentence: ""Inflammation of the corns""",101
+2077,"Sentence: ""Sore corroding pain on the upper part of the toes""",101
+2078,"Sentence: ""Cutting in the toes as with a knife at night mostly when lying on the back with redness of the tips of the toes by morning the pain has all gone""",101
+2079,"Sentence: ""Cramp in the toes recurring several days""",101
+2080,"Sentence: ""Bone pain in the ball of the great toe""",101
+2081,"Sentence: ""Tearing in the great toe""",101
+2082,"Sentence: ""Burning stitching in the extreme tip of the great toe""",101
+2083,"Sentence: ""Tickling on the tip of the right great toe""",101
+2084,"Sentence: ""Stitching pressure in the left great toe more during rest than when walking""",101
+2085,"Sentence: ""A shoot into under surface of ungual phalanx of left great toe in the evening after sunset""",101
+2086,"Sentence: ""First tickling then smarting pain in the last joint of left great toe frequently recurring""",101
+2087,"Sentence: ""Cramp in the second toe""",101
+2088,"Sentence: ""Stitching pain in the third toe of the right foot at the same time as the pain in the left lung""",101
+2089,"Sentence: ""Tearing in the right little toe""",101
+2090,"Sentence: ""Drawing pains in the corns in the evening""",101
+2091,"Sentence: ""Drawing in the corns the whole night""",101
+2092,"Sentence: ""Burning and stitches in the corns""",101
+2093,"Sentence: ""Burning-pressing pain in the corn even in wide shoes""",101
+2094,"Sentence: ""Stitches in the corns even during rest when knocking against them stitches so severe as to cause a scream""",101
+2095,"Sentence: ""Swelling of the whole body face abdomen legs and the arms down to the wrist-joint without thirst but with great shortness of breath lasting three weeks fever every two or three days chills and heat alternating coming on at irregular hours even at night the heat accompanied with sweat all over""",102
+2096,"Sentence: ""Attack of sensation as of an icy-cold hand between the scapulæ then coldness over the whole body then spasm of chest as if suffocating lasting several minutes then clonic convulsions of right lower limb with jerking of it and jerking of the right arm when the leg is held quiet lastly there remains a trembling of the lower limb continuing the whole day""",102
+2097,"Sentence: ""Woke with hands clasped lying on right side right hand felt numb possibly from lying on it""",102
+2098,"Sentence: ""I noticed a peculiar quite unpleasant exhalation from the body after getting warm in bed""",102
+2099,"Sentence: ""During a week spasms as from nervous weakness lasting a day at a time pulse somewhat weak then again spasmodic""",102
+2100,"Sentence: ""Tremulous shaking motion of the whole body""",102
+2101,"Sentence: ""Anxious trembling with cold sweat on the forehead""",102
+2102,"Sentence: ""Frequent trembling of the whole body""",102
+2103,"Sentence: ""Extreme nervous restlessness""",102
+2104,"Sentence: ""He must rise at night and walk about for half an hour""",102
+2105,"Sentence: ""Restlessness will not permit her to sleep""",102
+2106,"Sentence: ""Great excitement of the whole body""",102
+2107,"Sentence: ""Uneasiness in the whole body""",102
+2108,"Sentence: ""Attack of drawing pressive pain in the region of navel followed by discharge of mucus from the rectum with violent urging and stitches soon afterwards congestion of blood to chest with anxiety and restlessness which after dinner turned to a sort of fever with alternating internal heat and a chilliness with sweat on the head from to PM then headache which left a pain in nape of neck the following day the same condition returned""",102
+2109,"Sentence: ""Great faintness with heat and then coldness""",102
+2110,"Sentence: ""About midnight a sort fainting fit lasting for one-fourth hour accompanied by profuse sweat with consciousness but without the ability to talk or to move a finger in the midst of the paroxysm he had a sort of dream in which he was fighting with a ghost he had scarcely recovered from this faint before he fell into a second with a dream of being lost in a forest""",102
+2111,"Sentence: ""Faintness in the morning when rising from bed as if he would sink with loss of thought then chilliness with gooseflesh and yawning for one hour tongue very pale pulse weak and slow""",102
+2112,"Sentence: ""Fainting fit in the forenoon""",102
+2113,"Sentence: ""Fainting during a slow ride""",102
+2114,"Sentence: ""Very faint all day""",102
+2115,"Sentence: ""Feels very faint when walking out of doors in the evening for five days""",102
+2116,"Sentence: ""An increase of strength""",102
+2117,"Sentence: ""A few hours after having arisen quite well felt so prostrated and indisposed that he would rather go to sleep than attend to business""",102
+2118,"Sentence: ""So exhausted from a half hours walk that he became sick at the stomach and could not breathe the air-passage seemed drawn together as far down as the pit of the stomach""",102
+2119,"Sentence: ""Great exhaustion in the morning during menses""",102
+2120,"Sentence: ""Great exhaustion and indolence a""",102
+2121,"Sentence: ""Laziness after a meal""",102
+2122,"Sentence: ""After emission indolent languid sensitive to damp air with turbid urine vertigo and constipation""",102
+2123,"Sentence: ""In the afternoon after a meal indolent and sleepy""",102
+2124,"Sentence: ""Indolence of both body and mind with difficult breathing""",102
+2125,"Sentence: ""Feeling of prostration""",102
+2126,"Sentence: ""General languid feeling of the whole body""",102
+2127,"Sentence: ""Remained languid for five days""",102
+2128,"Sentence: ""Languid dull feeling at PM""",102
+2129,"Sentence: ""Lassitude at AM""",102
+2130,"Sentence: ""Great weariness in bed with early waking yet cannot sleep again""",102
+2131,"Sentence: ""Feels weary and trembles all over""",102
+2132,"Sentence: ""Very heavy and drowsy""",102
+2133,"Sentence: ""Heaviness""",102
+2134,"Sentence: ""Very tired in the morning when rising from bed""",102
+2135,"Sentence: ""She became tired and had to lie down in the forenoon""",102
+2136,"Sentence: ""Feel very tired this morning beginning to feel tired and listless at AM feel very sick have a heavy cold never had such before lungs very sore harsh distressing cough worse from going from cold air to warm room and vice versâ very languid all day feel very stupid feeling very tired I took a dose of Nux vomica after which I found all my symptoms returning pustules on the conjunctiva throat and tongue also the loss of memory much better entirely relieved""",102
+2137,"Sentence: ""Felt tired and weak about breakfast time""",102
+2138,"Sentence: ""Tired feeling in the morning""",102
+2139,"Sentence: ""Towards evening a heavy stupid feeling""",102
+2140,"Sentence: ""Speaking caused fatigue if continued for any time""",102
+2141,"Sentence: ""Averse to motion with desire to stretch and very sleepy on waking at AM dulness all day and aversion to motion""",102
+2142,"Sentence: ""Tired feeling at PM a""",102
+2143,"Sentence: ""Unaccountable feeling of weariness a""",102
+2144,"Sentence: ""Tired feeling all over which lasted all day""",102
+2145,"Sentence: ""Feel weak""",102
+2146,"Sentence: ""In the morning when waking weak feeling as from nausea""",102
+2147,"Sentence: ""Soon tired for five days""",102
+2148,"Sentence: ""Everything seems an exertion""",102
+2149,"Sentence: ""Great weakness""",102
+2150,"Sentence: ""So weak that she thought she would faint""",102
+2151,"Sentence: ""Very weak in the morning with uneasiness in the abdomen""",102
+2152,"Sentence: ""Great weakness at PM""",102
+2153,"Sentence: ""Very weak and short-breathed as in continued fever""",102
+2154,"Sentence: ""The least exercise fatigues even going upstairs""",102
+2155,"Sentence: ""A weak feeling all over quite weak wakened weary after sleeping afternoon no disposition to move or talk but to sit quietly and wonder what is the matter with fulness in the temple""",102
+2156,"Sentence: ""Feels dull and drowsy a""",102
+2157,"Sentence: ""General improvement""",102
+2158,"Sentence: ""During the menses she was obliged to remain in bed for two days on account of an uneasiness in the body drawing pain in lower limbs and in abdomen with rumbling on the second day palpitation of the heart for several hours in the forenoon accompanied with dyspnœa""",102
+2159,"Sentence: ""A general good-for-nothing feeling""",102
+2160,"Sentence: ""Feel sick all over""",102
+2161,"Sentence: ""Sick all day in my room""",102
+2162,"Sentence: ""She becomes paralyzed from vexation""",102
+2163,"Sentence: ""Much ebullition of blood in the whole body at night producing restless sleep""",102
+2164,"Sentence: ""Orgasm of blood with congestion of blood to head and chest""",102
+2165,"Sentence: ""Orgasm of blood in body three days in succession""",102
+2166,"Sentence: ""She feels the pulse beating through the body particularly in the whole left chest""",102
+2167,"Sentence: ""Sensation as if the heart filled all the cavities of the body with labored muffled beating""",102
+2168,"Sentence: ""Felt as if the veins were full and ready to burst and as if she could not move at AM took a dose of Aconite d and in a few minutes went to sleep again""",102
+2169,"Sentence: ""She feels the beating of pulse in the head and all the limbs day and night but more at night""",102
+2170,"Sentence: ""Numb feeling in the nerves also in the tongue with dulness of the head and absence of thought in the evening""",102
+2171,"Sentence: ""Two days before the menses shuddering again and again over the whole body the entire day""",102
+2172,"Sentence: ""She feels as if she could easily injure herself strain herself sprain a joint etc""",102
+2173,"Sentence: ""All parts of the body on which she lies or sits are painful""",102
+2174,"Sentence: ""A peculiar wavelike sensation extending through the body a wavelike motion down the arms and legs to near the extremities then a sudden interruption of wave and an expansion with sharp rheumatic pain lasting but a minute and then subsiding""",102
+2175,"Sentence: ""The pains are renewed and increased during and immediately after a meal""",102
+2176,"Sentence: ""Wandering pains continue and seem to increase particularly drawing and expanding pain in the side of the neck a""",102
+2177,"Sentence: ""A lame sore feeling all day""",102
+2178,"Sentence: ""Pains in various parts of the body""",102
+2179,"Sentence: ""All the pains came suddenly leaving more gradually but very soon except the pain in the face and shoulder""",102
+2180,"Sentence: ""Burning pains in different parts of the body especially in the lower part of the left hypochondriac region""",102
+2181,"Sentence: ""Much pain when walking on account of excoriation from the leucorrhœa""",102
+2182,"Sentence: ""Body very sore""",102
+2183,"Sentence: ""Drawing all over even in the bones of the arm""",102
+2184,"Sentence: ""Jerking and stitching here and there in the body""",102
+2185,"Sentence: ""Jerking sensation here and there in the body also in the head right and left sides""",102
+2186,"Sentence: ""Every time I took the medicine I felt as though I had taken a heavy cold""",102
+2187,"Sentence: ""Took no medicine as I was feeling too unwell it was hard work to keep around""",102
+2188,"Sentence: ""Paralytic stitches here and there after each stitch there remained an immobility of the part lasting several minutes""",102
+2189,"Sentence: ""Very sensitive to cold""",102
+2190,"Sentence: ""Sensitiveness to cold air""",102
+2191,"Sentence: ""Cold air is disagreeable to him""",102
+2192,"Sentence: ""Very sensitive to cold north wind""",102
+2193,"Sentence: ""Easily affected by cold after drinking a glass of water excessive chilliness and watery slimy diarrhœa lasting until going to sleep""",102
+2194,"Sentence: ""The complaints are considerably worse evenings and nights than during the day""",102
+2195,"Sentence: ""Symptoms distinct and more severe on the left side""",102
+2196,"Sentence: ""Old symptoms reappear towards evening""",102
+2197,"Sentence: ""Symptoms still return especially marked about to PM and to PM""",102
+2198,"Sentence: ""Felt worse after sleep this afternoon great vascular excitement and felt sore and lame all over did not wish to move""",102
+2199,"Sentence: ""All the symptoms are greatly aggravated on lying I must get up and walk about slowly relieved after supper in all respects""",102
+2200,"Sentence: ""The complaints disappear during violent exercise such as walking in the open air fencing etc and appear most frequently and severely when sitting quiet forenoon and evening""",102
+2201,"Sentence: ""She felt best when at rest and while lying""",102
+2202,"Sentence: ""Local application of warmth relieves the pains""",102
+2203,"Sentence: ""Feel better when out of doors""",102
+2204,"Sentence: ""The distress was all relieved on eating supper""",102
+2205,"Sentence: ""Supper relieved all the symptoms except dryness of the throat sick all day until supper""",102
+2206,"Sentence: ""Rhus relieved""",102
+2207,"Sentence: ""For four months after the proving the Sepia symptoms returned whenever a dose of Nux vomica was taken""",102
+2208,"Sentence: ""The epidermis peels off in large and small mostly roundish spots particularly on the hands and fingers without pain""",103
+2209,"Sentence: ""The skin of the palm of the hand peels off""",103
+2210,"Sentence: ""Long-lasting scurf on the chin""",103
+2211,"Sentence: ""Eruption on the head back and shoulder it itched badly during the evening and all night""",103
+2212,"Sentence: ""Eruption on the face a red roughness of the skin""",103
+2213,"Sentence: ""Painful eruption on the tip of the nose""",103
+2214,"Sentence: ""Eruption in the corner of the mouth with pain from touch""",103
+2215,"Sentence: ""Eruption large and scurfy in the vermilion border of both lips""",103
+2216,"Sentence: ""Eruption on pubes increased""",103
+2217,"Sentence: ""It had almost entirely disappeared a""",103
+2218,"Sentence: ""The sore spot swells and becomes hot accompanies by burning pains""",103
+2219,"Sentence: ""Since taking the medicine any break of the skin or a burn makes a sore which lasts a long time an unusual thing as my skin generally heals quickly""",103
+2220,"Sentence: ""A cicatrix on the tip of the index finger commences to bleed spontaneously""",103
+2221,"Sentence: ""Eruptions Dry""",103
+2222,"Sentence: ""A wart seems to be forming on the outer side of the hand""",103
+2223,"Sentence: ""Herpetic eruption on the lips""",103
+2224,"Sentence: ""Herpes around the mouth""",103
+2225,"Sentence: ""Herpetic blotches around the mouth""",103
+2226,"Sentence: ""Lentil-sized red insensible nodules here and there in the hands which ooze on prickling""",103
+2227,"Sentence: ""After being stung by a bee redness and itching red rash over the whole body inflamed eyes and drops of sweat on the face all coming on in a few minutes""",103
+2228,"Sentence: ""Red herpetic spots on both sides of the neck with much itching""",103
+2229,"Sentence: ""Wine-red spots on the neck and under the chin without sensation""",103
+2230,"Sentence: ""Yellowish-brown spots about the neck that scale off on rubbing""",103
+2231,"Sentence: ""Red spots on the glans""",103
+2232,"Sentence: ""Reddish herpetic spots above the hips""",103
+2233,"Sentence: ""Lentil-sized brown spots on the elbows surrounded with an herpetic-looking skin""",103
+2234,"Sentence: ""A roundish bright-red spot on ball of right hand with violent itching not relieved by scratching evening""",103
+2235,"Sentence: ""Fine rash over her body particularly about the bends of the elbows and knees this was attended by prickling tingling and itching while in a warm room it remained out and she felt well if she passed into a cold room the eruption would disappear and she would then have the most severe rheumatic pains in and about these joints it had extended over the arms to the axillæ and over the lower extremities to the groins when warmly dressed and in a warm room she felt well when exposed to cold or severe weather the eruption and the rheumatic condition returned When the eruption makes its appearance it is attended with profuse sweat which usually lasts two or three days""",103
+2236,"Sentence: ""A kind of red rash came out all over the body the face was first affected then the trunk and lastly the extremities it was accompanied by high fever pulse""",103
+2237,"Sentence: ""Several pimples on cheeks and wrists which are very sore and of a pustular character at first then resemble chicken-pox pimples still on cheeks pimples on cheeks just before and during menstruation the pimples were attended by burning and soreness when opened pus and blood were discharged and a small pit was left at the seat of the pimple""",103
+2238,"Sentence: ""Pimple near the nose resembling a blood blister""",103
+2239,"Sentence: ""Pimple near the right nostril which afterwards formed a large scab""",103
+2240,"Sentence: ""Pimples in the face which itch somewhat""",103
+2241,"Sentence: ""Pimples on the right cheek""",103
+2242,"Sentence: ""Pimply eruption in the centre of the vermilion border of the upper lip""",103
+2243,"Sentence: ""Moist pimply eruption at the margin of the vermilion border of the upper lip""",103
+2244,"Sentence: ""Itching pimples on the chin""",103
+2245,"Sentence: ""Pimples on the chin with ulcerative pain when touched""",103
+2246,"Sentence: ""Itching and itching pimples on the joints particularly on the bends of the elbows popliteal space and ankles worse evening and morning than during the day""",103
+2247,"Sentence: ""Many itching pimples on the legs""",103
+2248,"Sentence: ""Pointed pimples on the calves extending up to the knees they itch and where the clothes touch cause a sticking""",103
+2249,"Sentence: ""Pimples on the dorsum of foot itching severely causing scratching until blood comes""",103
+2250,"Sentence: ""Eruptions Moist and Pustular""",103
+2251,"Sentence: ""Since the thirty-second day I have had a vesicular eruption on the scalp chest back of the shoulders and also on the calves of the legs and on the knee-joints a few of the vesicles became pustules and when squeezed yielded a tough sticky matter but pressure was painful and made them look angry those on the scalp itched brushing the hair was agreeable but combing or scratching made the pustules sore the brush brings off more scales than usual the skin of the nose is also peeling""",103
+2252,"Sentence: ""A few vesicles appear on the upper lip right side sore to the touch""",103
+2253,"Sentence: ""Much purulent eruption on the outer ear""",103
+2254,"Sentence: ""Itching blisters and blotches on the face hands and feet""",103
+2255,"Sentence: ""Large blisters on the right thumb with itching""",103
+2256,"Sentence: ""Blisters form easily on the heel when walking""",103
+2257,"Sentence: ""Painful ulcer on internal surface of lower lip pain ameliorated by cold water""",103
+2258,"Sentence: ""A very painful pustule in the middle of the lower lip""",103
+2259,"Sentence: ""Large blood-boil on the left side of the neck below the inferior maxillary with stinging pain""",103
+2260,"Sentence: ""Pustules in the right groin and between coccyx and anus they feel hard like shot pustules in groin very painful quite a number along the posterior border and inferior angle of the left scapula pustules forming on the crista ilii from the spine to the middle of each bone pustules very painful which make me irritable pustules indistinct on my body""",103
+2261,"Sentence: ""A large blister on each upper arm with violent itching""",103
+2262,"Sentence: ""Panaritium on left index finger with severe beating and stitching in it""",103
+2263,"Sentence: ""Hard and inflamed boil on right nates""",103
+2264,"Sentence: ""Boils on the thigh""",103
+2265,"Sentence: ""The skin of the whole body is painfully sensitive to the slightest knock""",103
+2266,"Sentence: ""Skin seems tender the least scratch heals slowly""",103
+2267,"Sentence: ""Tension and contraction in the skin of the face particularly the forehead""",103
+2268,"Sentence: ""The skin of the whole body pains as if sore""",103
+2269,"Sentence: ""Pricking in the skin in the evening after he gets warm in bed""",103
+2270,"Sentence: ""Burning on the skin of the arm on the outside just below the shoulder-joint as from a blister""",103
+2271,"Sentence: ""Burning and stitching in the ulcer particularly at night""",103
+2272,"Sentence: ""The itching changes to burning""",103
+2273,"Sentence: ""Prickling at the point of eruption before the pimples first appeared""",103
+2274,"Sentence: ""Drawing and tearing in a part of the skin which had once been injured""",103
+2275,"Sentence: ""Itching in various parts of the body relieved by scratching after which there is a pinkish color""",103
+2276,"Sentence: ""Intense itching of the skin""",103
+2277,"Sentence: ""Itching in the ulcer""",103
+2278,"Sentence: ""Itching in the face on the arms hands back hips abdomen and pubes""",103
+2279,"Sentence: ""Itching in the whole face""",103
+2280,"Sentence: ""Itching in the upper part of the cheeks and after rubbing it a burning smarting""",103
+2281,"Sentence: ""Itching on the tip of the nose""",103
+2282,"Sentence: ""Severe itching in the nape of the neck""",103
+2283,"Sentence: ""Itching on the chest""",103
+2284,"Sentence: ""Itching on the upper part of the sternum""",103
+2285,"Sentence: ""Itching of the nipples that at times bleed and seem about to suppurate""",103
+2286,"Sentence: ""Itching on the left nipple it bleeds occasionally and seems as if it would ulcerate""",103
+2287,"Sentence: ""Severe itching on the right side of the pubis worse at night on going to bed becoming moist after scratching and forming a thin scale easily pulled off this eruption has nearly disappeared""",103
+2288,"Sentence: ""Itching in the axillæ""",103
+2289,"Sentence: ""Itching on the bends of the elbows""",103
+2290,"Sentence: ""Itching acridity on the posterior part of each elbow""",103
+2291,"Sentence: ""Severe itching on the tibiæ""",103
+2292,"Sentence: ""Itching on the outer side of the sole of left foot""",103
+2293,"Sentence: ""Itching of the toes""",103
+2294,"Sentence: ""Many dreams at night and loud talking during sleep""",104
+2295,"Sentence: ""Dreams not exhausting the whole night""",104
+2296,"Sentence: ""Vexatious dreadful dreams""",104
+2297,"Sentence: ""Anxious dreams as if the body were disfigured""",104
+2298,"Sentence: ""Anxious dreams of being threatened with rape""",104
+2299,"Sentence: ""Anxious dreams which drive him out of bed""",104
+2300,"Sentence: ""Anxious dreams at night as if he were chased and had to run backwards on awaking he imagined something was coming from above which oppressed his chest followed by crawling and stitches in the chest""",104
+2301,"Sentence: ""Dreams frightful of murder""",104
+2302,"Sentence: ""Frightful dreams as if she were falling from a high mountain""",104
+2303,"Sentence: ""Frightful dream she screams aloud at night""",104
+2304,"Sentence: ""Dreams full of dispute""",104
+2305,"Sentence: ""I had some dreams but cannot recall them except one of a foolish character""",104
+2306,"Sentence: ""Disturbed sleep all night from unpleasant dreams""",104
+2307,"Sentence: ""In the night he dreamed that he was urinating in the chamber instead of which he was wetting the bed""",104
+2308,"Sentence: ""Very distressing dreams and could see mice rats and snakes no pain but very dreamy and restless heard noises in the street and people talking running etc could not sleep from the sights I saw and noises I heard tossing about the bed bad dreams""",104
+2309,"Sentence: ""Lascivious dreams with erections disturbing his sleep at night""",104
+2310,"Sentence: ""Lascivious dreams disturb the sleep""",104
+2311,"Sentence: ""Voluptuous dreams with pollutions""",104
+2312,"Sentence: ""Had a lewd dream""",104
+2313,"Sentence: ""Dreamed that I saw a spectre outside of the window of the room where I was and was alarmed thereat""",104
+2314,"Sentence: ""Yawning and stretching a""",106
+2315,"Sentence: ""Much yawning and stretching""",106
+2316,"Sentence: ""Yawning and stretching in the morning in bed""",106
+2317,"Sentence: ""Much yawning noon and afternoon after taking a walk""",106
+2318,"Sentence: ""Inclination to sleep particularly in the forenoon she must sleep for an hour""",106
+2319,"Sentence: ""Sleepy early in the evening with pressive dulness of the head""",106
+2320,"Sentence: ""When sitting he is sleepy and when reading he falls asleep""",106
+2321,"Sentence: ""Very tired and sleepy during the day yet at night he sleeps well""",106
+2322,"Sentence: ""Sleepiness during the day she falls asleep as soon as she sits down""",106
+2323,"Sentence: ""Extremely sleepy at noon afternoon wakeful again""",106
+2324,"Sentence: ""Very sleepy during the day and averse to everything""",106
+2325,"Sentence: ""Slumbering with sweat of the face""",106
+2326,"Sentence: ""Disposition to sleep""",106
+2327,"Sentence: ""Very sleepy at AM PM sleepy with chilly sensations in the back great drowsiness at AM""",106
+2328,"Sentence: ""Very sleepy all day for five days""",106
+2329,"Sentence: ""Very sleepy inclined to sleep at any time""",106
+2330,"Sentence: ""Sleeps better towards morning with aversion to rising at usual time for five days""",106
+2331,"Sentence: ""Felt sleepy after eating at PM and went to sleep sleeping until PM""",106
+2332,"Sentence: ""Felt sleepy and must lie down relief from lying down""",106
+2333,"Sentence: ""Sleep pretty good but not refreshing I spent hours enough in bed but they did no good""",106
+2334,"Sentence: ""Slept several afternoons""",106
+2335,"Sentence: ""Sleep sound yet with many vivid dreams""",106
+2336,"Sentence: ""He sleeps at night only from to o'clock""",106
+2337,"Sentence: ""Somnolence every third day returning four times the child slept almost the whole day when it sat down it fell asleep and complained also of pain in the forehead""",106
+2338,"Sentence: ""It is hard for him to get up in the morning as he has no desire to rise""",106
+2339,"Sentence: ""Difficult awaking late with weariness of the limbs""",106
+2340,"Sentence: ""Long unrefreshing sleep""",106
+2341,"Sentence: ""Wearisome sleep""",106
+2342,"Sentence: ""A quiet refreshing rest at night waking in the morning always with a consciousness of feeling very well my general condition is exceedingly languid in the morning I cannot get dressed until a cup of café noir is brought to me the third and fourth mornings after taking the medicine I did not care for my coffee""",106
+2343,"Sentence: ""She groans and grunts at night during sleep without remembering any bad dreams""",106
+2344,"Sentence: ""Screaming at night during sleep""",106
+2345,"Sentence: ""He talks aloud during sleep""",106
+2346,"Sentence: ""Starting in the noonday sleep""",106
+2347,"Sentence: ""Sleeplessness at night on account of rush of thoughts""",107
+2348,"Sentence: ""Sleepless at night without anything to complain of only she cannot lie quiet""",107
+2349,"Sentence: ""Sleeplessness at night with fancies during slumber""",107
+2350,"Sentence: ""Little sleep at night on account of pain in hip-joint when moving it""",107
+2351,"Sentence: ""Lies quiet before midnight without sleep""",107
+2352,"Sentence: ""Falls asleep late""",107
+2353,"Sentence: ""Falls asleep late in the evening""",107
+2354,"Sentence: ""Gets to sleep late if she does not lie down quite early and then also awakes early in the morning""",107
+2355,"Sentence: ""I am not drowsy this time as I usually am during the menses )""",107
+2356,"Sentence: ""Sleep at night light with vivid dreams of the events of the previous day""",107
+2357,"Sentence: ""Sleep disturbed through vivid unpleasant dreams""",107
+2358,"Sentence: ""Slept from to PM and then woke feeling as if a load were resting across the epigastrium she took a dose of Aconite d according to her custom when disturbed in her sleep and slept until morning""",107
+2359,"Sentence: ""Restless sleep with frequent waking after midnight""",107
+2360,"Sentence: ""Restless in bed in the evening he wakes very early in the morning""",107
+2361,"Sentence: ""Restless sleep with vexatious dreams he calls loudly stamps with the feet raises his arms which he then slowly lays down again""",107
+2362,"Sentence: ""Restless sleep for several weeks with many dreams and tossing about later quiet sleep""",107
+2363,"Sentence: ""During the first part of the proving I slept soundly but now sleep is restless""",107
+2364,"Sentence: ""Passed a very restless night disturbed sleep do not feel rested in the morning sleep very much disturbed by laborious dreams very tiresome dreams very restless night full of dreams awaking often in fright""",107
+2365,"Sentence: ""Restless sleep confused dreams""",107
+2366,"Sentence: ""Very restless sleep she felt that she had a weight pressing on her thighs momentary""",107
+2367,"Sentence: ""Sleep at night disturbed with pain in small of back""",107
+2368,"Sentence: ""After a short sleep at night he awoke with great bodily restlessness which would scarcely allow him to lie quiet""",107
+2369,"Sentence: ""Restless sleep at night on account of anxious dreams and heat she could not lie quiet for five minutes""",107
+2370,"Sentence: ""Restless all night tossing and turning""",107
+2371,"Sentence: ""Sleep does not refresh but leaves a tired aching feeling all through the body disturbed sleep continued""",107
+2372,"Sentence: ""She could not lie quiet at night on account of great restlessness in the whole body she had to turn continually from side to side and dared not close the eyes as it then became worse""",107
+2373,"Sentence: ""He raised himself about midnight as if in delirium began to laugh on being questioned he closed his eyes tightly sat quite stiff with outstretched arms and hands and tightly set teeth after drinking a swallow of water he asked what he was to do with so much water in his stomach yet he drank more held up his hand bend as if holding the glass laughed and said Now this is strange this water did not agree quite well afterwards talked of three doctors who were coming and referred to persons as if they were standing about""",107
+2374,"Sentence: ""Frequent starting when falling asleep""",107
+2375,"Sentence: ""When falling asleep startled by an oppressive ebullition of blood""",107
+2376,"Sentence: ""When falling asleep he was attacked with an internal trembling and with itching in the thighs going off after scratching""",107
+2377,"Sentence: ""About midnight awaking with chilliness great anxiety jerking and spasmodic drawing in the thighs the chest and the maxillæ lasting half an hour""",107
+2378,"Sentence: ""He awakes at night with violent anxiety and spasms in the abdomen then in the mouth the chest and hip-joints with palpitation of heart""",107
+2379,"Sentence: ""Falls asleep late on account of wakefulness""",107
+2380,"Sentence: ""She wakes at AM and cannot fall asleep again""",107
+2381,"Sentence: ""Remains wakeful late in the evening""",107
+2382,"Sentence: ""Wakeful and excited the whole night and through the whole day feels vigorous""",107
+2383,"Sentence: ""Waked several times during the night restless during the night""",107
+2384,"Sentence: ""Woke at AM without apparent cause and remained awake""",107
+2385,"Sentence: ""Wakened at AM and slept again after which I was dull languid and not disposed to move""",107
+2386,"Sentence: ""Woke at AM could not sleep again for an hour or two at last went to sleep lying on face""",107
+2387,"Sentence: ""Waked at AM a rush of ideas prevented sleep for an hour when I broke out in profuse sweat followed by quiet sleep""",107
+2388,"Sentence: ""Frequent awaking at night on account of drawing pain extending from the molar teeth to the forehead""",107
+2389,"Sentence: ""He awakes at night with inclination to vomit""",107
+2390,"Sentence: ""Frequent awaking at night on account of throbbing in the molar teeth extending over the cheeks back towards the occiput""",107
+2391,"Sentence: ""He awakes in the morning at o'clock and cannot fall asleep again""",107
+2392,"Sentence: ""She awakes at AM and cannot fall asleep again on account of wakefulness""",107
+2393,"Sentence: ""She awakes several mornings at o'clock""",107
+2394,"Sentence: ""Awaking at night with anxious warmth""",107
+2395,"Sentence: ""He awakes at night in a fright and screaming""",107
+2396,"Sentence: ""Waking at night about o'clock with violent colic and at times also pressing pain above and around the navel with trembling motion of the heart which can be felt outwardly with full pulse with this nausea and sensation of great weakness for three nights in succession with great dryness of the mouth""",107
+2397,"Sentence: ""Frequent awaking at night many nights in succession""",107
+2398,"Sentence: ""Violent shaking chill for one hour then great heat with inability to collect one 's senses then profuse sweat in the evening the urine brown and of acrid smell""",109
+2399,"Sentence: ""Severe chilliness lasting one hour after which thirst evening and morning he must lie down in bed""",109
+2400,"Sentence: ""Much chilliness and internal restlessness in the morning when awaking""",109
+2401,"Sentence: ""Constant chilliness day and night with pinching pain in the abdomen for several days""",109
+2402,"Sentence: ""Chilliness with thirst towards evening followed by nightsweat""",109
+2403,"Sentence: ""In the morning some chilliness then the whole day heat of the face and hands with paleness of the face without thirst and without sweat together with pressing pain in the stomach and headache when stooping in the forenoon""",109
+2404,"Sentence: ""Chilliness commencing in the throat three or four times in the evening for five days""",109
+2405,"Sentence: ""The chilliness is felt in evening only for five days""",109
+2406,"Sentence: ""Chilliness for many nights""",109
+2407,"Sentence: ""Chilliness with shivering repeated two or three times""",109
+2408,"Sentence: ""Unusual catarrhal condition after getting wet violent feverish chilliness after several hours attacks of fainting for several days afterwards coryza""",109
+2409,"Sentence: ""A distinct chill at AM followed by fever with chilliness across the stomach and bowels and chilliness between the shoulders the sweat that followed the fever was exceedingly offensive and pungent her feet which had always been subject to perspiration now gave forth a most offensive odor One hour after a dose she felt a coldness between the shoulders and then a general chilliness over the body followed by sudden loss of strength and weakness about the chest and she broke out into a profuse perspiration over the chest and neck the hands and feet became cold as ice her face pale she thought she should vomit but was relieved on getting up and moving about""",109
+2410,"Sentence: ""Constant feverish shivering with the noonday rest""",109
+2411,"Sentence: ""Shivering several times a day without chilliness""",109
+2412,"Sentence: ""In the morning after waking also at intervals feverish shivering with short breath as from internal heat which however did not exist""",109
+2413,"Sentence: ""Shivering until going to bed and heat of the face in bed""",109
+2414,"Sentence: ""Feverish shivering even of the head with icy-cold hands yawning and great weakness""",109
+2415,"Sentence: ""Shuddering with the pains""",109
+2416,"Sentence: ""Feverish chilliness with alternation of heat till in the night""",109
+2417,"Sentence: ""PM chilliness with heat in the forehead lasting half an hour""",109
+2418,"Sentence: ""Continuous chilliness""",109
+2419,"Sentence: ""External warmth was unbearable to her during the violent headache yet she was chilly""",109
+2420,"Sentence: ""Internal chilliness in the warm room the whole day for several days""",109
+2421,"Sentence: ""Chilliness at PM he must lie down""",109
+2422,"Sentence: ""She feels chilly from every motion though in a warm room""",109
+2423,"Sentence: ""Chilly sensation with nausea at AM less severe""",109
+2424,"Sentence: ""At PM had a slight chill at PM flushes of heat the skin getting slightly moist""",109
+2425,"Sentence: ""Icy coldness over the whole body a""",109
+2426,"Sentence: ""She could not get warm although in a warm room the whole day""",109
+2427,"Sentence: ""Coldness in a church so that he could scarcely get warm a""",109
+2428,"Sentence: ""She is either too cold or becomes hot which immediately results in sweat""",109
+2429,"Sentence: ""Coldness over the whole body a""",109
+2430,"Sentence: ""All night likes to be well covered up for five nights""",109
+2431,"Sentence: ""About AM while writing the feet became very cold afterwards the whole body accompanied with shaking chill he had to lie down then became warm and at AM hot with disposition to sweat having had a slight sweat during the night over the whole body""",109
+2432,"Sentence: ""With the earache after midnight a cold sensation all over the head relieved by warmth and sleep sensation of coldness on the head especially at night""",109
+2433,"Sentence: ""Nose cold and pinched""",109
+2434,"Sentence: ""Chilly sensations in the back with the sleepiness at PM""",109
+2435,"Sentence: ""PM a chilly sensation in back and right shoulder running downwards chilliness in the back if lying on either side removed by lying on the back""",109
+2436,"Sentence: ""With icy-cold hands warm feet or vice versâ frequently however both cold at once""",109
+2437,"Sentence: ""Alternate cold hands and feet a""",109
+2438,"Sentence: ""My hands and feet are cold and clammy nose cold and pinched the rest of the body feels warm""",109
+2439,"Sentence: ""Hands cold but moist almost all the time""",109
+2440,"Sentence: ""Hands generally cold but moist with perspiration""",109
+2441,"Sentence: ""Icy coldness of both hands in the warm room they send a chilly feeling through the whole body""",109
+2442,"Sentence: ""Cold knees at night""",109
+2443,"Sentence: ""Icy-cold lower extremities from forenoon until bedtime""",109
+2444,"Sentence: ""Very cold feet particularly in the evening mainly in bed and afterwards when this passes off very cold hands""",109
+2445,"Sentence: ""Very cold feet with headache especially towards evening and in the morning a""",109
+2446,"Sentence: ""Feet cold and damp all day feeling as though I stood in cold water up to my ankles""",109
+2447,"Sentence: ""Icy-cold feet particularly in the evening even for a long time after going to bed cannot warm them""",109
+2448,"Sentence: ""Icy-cold feet afternoon and evening when sitting""",109
+2449,"Sentence: ""Inclination to cold feet""",109
+2450,"Sentence: ""Intermittent fever returning frequently during the day at indefinite periods first general heat with sweat in the face violent thirst and bitterness of the mouth then chill with general coldness even in the face with inclination to vomit pressure in the forehead extending into the temples during the heat vertigo as if he would fall""",110
+2451,"Sentence: ""Fever with pressing first in the temples at intervals of several minutes short breath as from internal heat the whole night through following this in the morning weak in the lower limbs thirst want of appetite sleepiness during the day feverish shivering pain in the throat and swelling of submaxillary glands""",110
+2452,"Sentence: ""At PM fever first thirst and after drinking cold water chilliness and inclination to lie down then sleep and inclination to general slight sweat""",110
+2453,"Sentence: ""Feverish weak hot urine""",110
+2454,"Sentence: ""Fever and sickness all day with thirst""",110
+2455,"Sentence: ""High fever with rash""",110
+2456,"Sentence: ""Very feverish""",110
+2457,"Sentence: ""Feverish heat with chilly shivering accompanied by dull and heavy pain in the forehead after previous flickering before the eyes as from a thousand suns with heat and pressure in the eyes also much nausea great oppression of the chest as if everything were constricted yet without shortness of breath from morning until evening""",110
+2458,"Sentence: ""Almost uninterrupted heat of the whole body with redness of the face and sweat of the head and body accompanied by severe headache like a heaviness also palpitation of the heart and trembling of the whole body after the heat chilliness and coldness with deadness of the hands lasting four days""",110
+2459,"Sentence: ""Continuous dry fever heat with redness of the face great thirst painful swallowing stitches in the left scapula arresting the breathing tearing in the upper and lower limbs""",110
+2460,"Sentence: ""At night feverish heat with anxious fancies and fanciful dreams with sweat of the head""",110
+2461,"Sentence: ""Flashes of heat all over the body about PM""",110
+2462,"Sentence: ""Attacks of flushes of heat as if hot water were poured on one with redness of the face sweat of the whole body and anxiety without thirst yet without dryness of the throat""",110
+2463,"Sentence: ""Flushes of heat she feels in a kind of glow""",110
+2464,"Sentence: ""Flushes of heat after slight exercise""",110
+2465,"Sentence: ""Flushes of heat in the evening then itching""",110
+2466,"Sentence: ""Every evening about PM heat commencing in head where it is most felt lasting till noon next day hands and face continually hot but worse in evening hands feel hot to others the heat is better in open air for five days""",110
+2467,"Sentence: ""At night heat and from this restlessness""",110
+2468,"Sentence: ""She becomes much heated from a little walk""",110
+2469,"Sentence: ""Anxious heat from to AM and from to PM""",110
+2470,"Sentence: ""Attack of heat every afternoon from to o'clock for several days""",110
+2471,"Sentence: ""Great heat until midnight""",110
+2472,"Sentence: ""Felt warm all over perspiration on chest and neck at AM""",110
+2473,"Sentence: ""Febrile excitement immediately after dinner""",110
+2474,"Sentence: ""When awaking in the morning overheated""",110
+2475,"Sentence: ""Hot oppressed and anxious from tobacco-smoking to which he was accustomed""",110
+2476,"Sentence: ""Very warm and oppressed evenings""",110
+2477,"Sentence: ""Temperature / at noon / at noon""",110
+2478,"Sentence: ""She is quite hot then cold with great faintness""",110
+2479,"Sentence: ""Flushes then chills""",110
+2480,"Sentence: ""Alternating heat in the head and chilliness in the lower limbs""",110
+2481,"Sentence: ""Violent rising of heat to the head every five minutes""",110
+2482,"Sentence: ""After a walk violent heat in the head and face""",110
+2483,"Sentence: ""Heat in the head evenings""",110
+2484,"Sentence: ""Great heat in the head in the morning with sensation as if the nose would bleed""",110
+2485,"Sentence: ""At PM head hot with feeling of fulness""",110
+2486,"Sentence: ""Painful heat in the head frequently with flushes of heat over the body""",110
+2487,"Sentence: ""Heat in the head so that it seemed like a burning coming out of the ears causing difficult hearing and dim vision""",110
+2488,"Sentence: ""In the afternoon for two hours heat on the forehead and drawing in the thighs like a fever""",110
+2489,"Sentence: ""Hot flush over face and whole head lasting but a few seconds instantly followed by slight perspiration flush over the head with the headache slight flush with slight perspiration and slight increase of pain in the head flush of heat in face and head followed by perspiration on the same parts""",110
+2490,"Sentence: ""Heat and redness of the ears""",110
+2491,"Sentence: ""Heat in the face every morning on awaking""",110
+2492,"Sentence: ""Heat in the face after a meal""",110
+2493,"Sentence: ""He gets very hot in the face immediately from talking""",110
+2494,"Sentence: ""Heat in the face in the morning pale face in the evening""",110
+2495,"Sentence: ""Great heat and redness of the face at noon with cold feet""",110
+2496,"Sentence: ""Face much heated in the evening with heat in the head""",110
+2497,"Sentence: ""Hot lips""",110
+2498,"Sentence: ""Great heat one day right around lower ribs with fever but a moist sweat around body""",110
+2499,"Sentence: ""Hands hot but moist""",110
+2500,"Sentence: ""Heat in the hands in daytime during mental excitement""",110
+2501,"Sentence: ""Heat in the feet at night""",110
+2502,"Sentence: ""Heat in the tips of left toes shooting like an electric spark through the left side up to the head there leaving a troublesome weakness lasting one half minute""",110
+2503,"Sentence: ""General profuse sweat after dinner with sensation of heat""",112
+2504,"Sentence: ""Profuse sweat during exercise smelling almost like elder blossoms""",112
+2505,"Sentence: ""Profuse sweat with the eruption""",112
+2506,"Sentence: ""Much sweat and exhaustion while walking""",112
+2507,"Sentence: ""Much sweat during sleep particularly on the head""",112
+2508,"Sentence: ""The slightest exercise even writing excites sweat""",112
+2509,"Sentence: ""Much perspiration sometimes hot sometimes cold particularly in the hands and feet constant disposition to sweat both night and day""",112
+2510,"Sentence: ""Profuse sweat while walking""",112
+2511,"Sentence: ""Continuous moisture day and night""",112
+2512,"Sentence: ""Profuse perspiration after coughing""",112
+2513,"Sentence: ""Profuse sweat in drops especially in the bend of the elbow and knee in right side at AM""",112
+2514,"Sentence: ""Profuse perspiration on walking especially in the bends of the joints""",112
+2515,"Sentence: ""Heavy sweat as from a cold""",112
+2516,"Sentence: ""Always slight sweat before going to sleep in the evening""",112
+2517,"Sentence: ""Sweat very easily while walking in the open air even against cold winds""",112
+2518,"Sentence: ""Perspired very freely wetting my clothes around the waist""",112
+2519,"Sentence: ""Sweat over the whole body in the morning after awaking""",112
+2520,"Sentence: ""Profuse morning sweat""",112
+2521,"Sentence: ""Profuse sweat on waking at AM afterwards on walking even against cold winds""",112
+2522,"Sentence: ""Morning sweat for several mornings with anxiety""",112
+2523,"Sentence: ""Sweat in the morning after awaking which continues very profuse the whole day and makes him so weak by evening that he could not stand on his feet""",112
+2524,"Sentence: ""Sweat every morning in bed after awaking mostly on the lower limbs""",112
+2525,"Sentence: ""Slight sweat in the morning after awaking""",112
+2526,"Sentence: ""Slight morning sweat without odor lasting three hours for several successive mornings without subsequent weakness""",112
+2527,"Sentence: ""Sweat every other night""",112
+2528,"Sentence: ""Sourish nightsweat five mornings""",112
+2529,"Sentence: ""Nightsweat from above downwards to the middle of the calves""",112
+2530,"Sentence: ""Profuse general nightsweat from evening till morning""",112
+2531,"Sentence: ""Disagreeable odor of the sweat almost like elder blossoms""",112
+2532,"Sentence: ""Sour-smelling sweat""",112
+2533,"Sentence: ""Profuse sweat in the face after eating warm food""",112
+2534,"Sentence: ""Copious sweat of the male genitals""",112
+2535,"Sentence: ""Profuse sweat on the scrotum""",112
+2536,"Sentence: ""Profuse sweat just over the anus before and during stool""",112
+2537,"Sentence: ""Cold sweat at night on the breast back and thighs""",112
+2538,"Sentence: ""Sweat of the lower limbs during the day so profuse that it penetrates two thickness of clothing""",112
+2539,"Sentence: ""Profuse footsweat but without odor and not causing soreness""",112
+2540,"Sentence: ""Sweat on the feet a""",112
+2541,"Sentence: ""Sweat of the feet""",112
+2542,"Sentence: ""Footsweat particularly at the toes for two weeks""",112
+2543,"Sentence: ""Much footsweat of intolerable smell the toes become sore""",112
+2544,"Sentence: ""Painful confusion of the head particularly of the forehead""",1
+2545,"Sentence: ""Obscuration of the head frequently in the morning when rising from bed""",1
+2546,"Sentence: ""Vertigo while walking as if every object were in motion""",1
+2547,"Sentence: ""Vertigo in the morning in bed when rising as if everything in the room were in motion""",1
+2548,"Sentence: ""Vertigo when she sees a large plain before her""",1
+2549,"Sentence: ""Vertigo only when walking in the open air she must be led""",1
+2550,"Sentence: ""Vertigo so that when looking up while walking he stumbles""",1
+2551,"Sentence: ""Vertigo every afternoon from to o'clock everything turns in a circle around her when walking sitting and lying""",1
+2552,"Sentence: ""Attacks of vertigo when walking in the open air lasting from to minutes it was as if something were rolling about in the head and made her reel followed in the evening by headache and humming in the ears""",1
+2553,"Sentence: ""Vertigo when rising up in bed at night""",1
+2554,"Sentence: ""Attack of vertigo as if fainting lasting two hours with very short breath""",1
+2555,"Sentence: ""Vertigo obliging to steady one 's self after a meal""",1
+2556,"Sentence: ""Vertigo when moving the arms""",1
+2557,"Sentence: ""Slight attack of vertigo and palpitation of heart when walking in the open air""",1
+2558,"Sentence: ""Vertigo with cold hands and feet""",1
+2559,"Sentence: ""Two spells of vertigo when stooping as if the senses would vanish after supper""",1
+2560,"Sentence: ""Vertigo even to falling every morning when rising""",1
+2561,"Sentence: ""Whirling and staggering while sitting after drinking a harmless drink so that he thinks he will have an apoplectic stroke this lasted five minutes afterwards flush of heat lasting five minutes""",1
+2562,"Sentence: ""Staggering vertigo every afternoon from to o'clock when sitting and walking""",1
+2563,"Sentence: ""Whirling and reeling""",1
+2564,"Sentence: ""About PM while walking in the street a sudden dizziness and feeling like a drunken person as though the walk were rising this lasted a minute or two two slight dizzy turns during the afternoon""",1
+2565,"Sentence: ""Dizzy unsteady feeling when getting up to walk dizziness returns when rising to walk the least movement causes dizziness""",1
+2566,"Sentence: ""On blowing my nose I have a dizzy sensation""",1
+2567,"Sentence: ""After a walk of two or three miles just after entering the warm room giddiness when rising from stooping when raising up head after bending it down forwards on the act of sitting down also after shaking head quickly from side to side at AM all gone by AM""",1
+2568,"Sentence: ""Very giddy at times with dislike to all work""",1
+2569,"Sentence: ""Giddiness in the head she can scarcely carry it""",1
+2570,"Sentence: ""Jerking of the head backward in the morning when rising""",3
+2571,"Sentence: ""The head jerks and twitches forward six or seven times with full consciousness in the morning""",3
+2572,"Sentence: ""Rush of blood to the head""",3
+2573,"Sentence: ""Dulness in the head with pressure in the eyes aggravated by walking in the open air""",3
+2574,"Sentence: ""Dulness of the head as from violent coryza with reeling""",3
+2575,"Sentence: ""Dulness of the head""",3
+2576,"Sentence: ""Dull feeling in the head with the pelvic distress""",3
+2577,"Sentence: ""A dull headache all day headache""",3
+2578,"Sentence: ""Dull stupid sleepy confused feeling through the head""",3
+2579,"Sentence: ""Woke with a dull headache which ceased on rising at PM a dull headache through both temples a""",3
