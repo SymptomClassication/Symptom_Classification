@@ -1,13 +1,23 @@
 import random, json, re, pandas as pd
 from flair.data import Corpus
 from flair.data import Sentence
-from flair.embeddings import FlairEmbeddings,WordEmbeddings,DocumentLSTMEmbeddings
+from flair.embeddings import FlairEmbeddings,WordEmbeddings,DocumentLSTMEmbeddings,DocumentRNNEmbeddings
 from flair.models import TextClassifier
 from flair.trainers import ModelTrainer
 import csv
+import re
 import numpy as np
+import torch
+import joblib
 from flair.datasets import CSVClassificationCorpus
 from flair.data import Corpus
+from torch.optim.lr_scheduler import OneCycleLR
+from flair.models import SequenceTagger
+from flair.trainers import ModelTrainer
+from flair.embeddings import TransformerWordEmbeddings
+from flair.datasets import CONLL_03
+
+"""
 def create_corpus_files(info, labels):
     # Split the data into three parts
 
@@ -44,6 +54,7 @@ def create_corpus_files(info, labels):
         for pair in test_data:
             f.write(f"{pair[0]}\t{pair[1]}\n")
 
+"""
 
 def create_model():
     # Define the columns of the file
@@ -71,7 +82,14 @@ def create_model():
         # writing data row-wise into the csv file
         writer.writeheader()
         for i in range(len(infoList)):
-            writer.writerow({'sentence': infoList[i], 'label': labelsList[i]})
+            removeNum = re.sub(r"[0-9]", "", infoList[i])
+            removeDot = re.sub(r"\.", "", removeNum)
+            removeStar = re.sub(r"\*", "", removeDot)
+            removeBracket = re.sub(r"\[*\]*", "", removeStar)
+            removeParenthesis = re.sub(r"\((.*?)\)", "", removeBracket)
+            removeComma = re.sub(r",", "", removeParenthesis)
+            removeSemiColon = re.sub(r";", "", removeComma)
+            writer.writerow({'sentence': Sentence(removeSemiColon),'label':labelsList[i]})
 
     df = pd.read_csv("trainingData.csv")
 
@@ -88,16 +106,19 @@ def create_model():
     corpus_csv: Corpus = CSVClassificationCorpus(data_folder,column_name_map=column_name_map,skip_header=True,delimiter=',', label_type = "label_topic")
     label_dict_csv = corpus_csv.make_label_dictionary(label_type = "label_topic")
 
-    word_embeddings = FlairEmbeddings('news-backward-fast')
+    #word_embeddings = [FlairEmbeddings('news-forward-fast'),FlairEmbeddings('news-backward-fast')]
+    word_embeddings = [FlairEmbeddings('pubmed-forward'),FlairEmbeddings('pubmed-backward')]
 
-    #document_embeddings = DocumentRNNEmbeddingss(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256)
+    document_embeddings = DocumentRNNEmbeddings(word_embeddings,hidden_size=512,reproject_words=True,reproject_words_dimension=256)
 
-    #clf = TextClassifier(document_embeddings,label_dictionary=label_dict_csv)
+    clf = TextClassifier(document_embeddings,label_dictionary=label_dict_csv,label_type='label_topic')
 
-    #trainer = ModelTrainer(clf,corpus_csv)
+    trainer = ModelTrainer(clf,corpus_csv)
 
-    #trainer.train('data_fst/',max_epochs=2)
-
+    #trainer.train('data_fst/',max_epochs=2, mini_batch_size=32)
+    trainer.train('data_fst/',learning_rate=5.0e-6,mini_batch_size=36,mini_batch_chunk_size=1,max_epochs=1,scheduler=OneCycleLR,embeddings_storage_mode='none',weight_decay = 0.,)
+    joblib.dump(trainer, 'data_fst/model.joblib')
+    
 
 
     '''info = []
@@ -126,11 +147,26 @@ def create_model():
 
     # Start training
     trainer.train('models', learning_rate=0.1, mini_batch_size=32, anneal_factor=0.5, patience=5, max_epochs=100)'''
+    
+    
+def load_model():
+    model = TextClassifier.load("data_fst/final-model.pt")
+    s = Sentence("headache")
+    s2 = Sentence("toes pain")
+    model.predict(s)
+    model.predict(s2)
+    print(s)
+    print(s2)
+    
+    
 def pipeline():
 
-    create_corpus_files("trainingData/trainingData.json", "trainingData/matchingTrainingData.json")
+    #create_corpus_files("trainingData/trainingData.json", "trainingData/matchingTrainingData.json")
 
     create_model()
+    load_model()
+    
+
+
 
 pipeline()
-
