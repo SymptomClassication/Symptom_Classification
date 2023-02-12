@@ -1,39 +1,32 @@
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import com.google.gson.*;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
-public class edit_page implements ActionListener {
+public class MenuPage implements ActionListener {
 
     public JFrame menuFrame = new JFrame();
 
     public JPanel panel = new JPanel();
     public JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JButton chapters = new JButton("Chapters");
-    public JButton classified_data = new JButton("Classified Data");
-    public JButton back = new JButton("Back");
+    public JButton start = new JButton("Start");
+    public JButton edit = new JButton("Edit");
+    public JButton exit = new JButton("Exit");
 
-    public JLabel title = new JLabel("MY APP");
+    public JLabel title = new JLabel("Symptom Classifier");
 
     public Font buttonsFont=new Font("Monospaced Bold Italic",Font.BOLD,25);
     //to give a specific text style,size
     public GridBagConstraints a = new GridBagConstraints();
     // this line of code above, allow me to align the title and the buttons in rows and columns
-
-    public edit_page(){
+    public MenuPage() {
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground(Color.darkGray);
         menuFrame.setBounds(100,200,1200,600);
-
+        menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         a.insets=new Insets(30,30,30,30);
         //set the general distance between components
 
@@ -43,21 +36,20 @@ public class edit_page implements ActionListener {
         menuPanel.add(title,a);
 
         a.gridy=2;
-        setButtonsStyle(chapters);
-        menuPanel.add(chapters,a);
+        setButtonsStyle(start);
+        menuPanel.add(start,a);
 
         a.gridy=3;
-        setButtonsStyle( classified_data );
-        menuPanel.add( classified_data,a );
+        setButtonsStyle( edit );
+        menuPanel.add( edit,a );
 
-        a.gridy=5;
-        setButtonsStyle(back );
-        menuPanel.add(back,a);
+        a.gridy=4;
+        setButtonsStyle(exit);
+        menuPanel.add(exit,a);
 
         panel.add( menuPanel );
         menuFrame.add( panel );
         menuFrame.setContentPane( panel );
-
 
         //menuFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         //menuFrame.setUndecorated(true);
@@ -77,20 +69,22 @@ public class edit_page implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==chapters) {
+        if(e.getSource()==start) {
             // open the next window, after clicking on the "START"
             menuFrame.dispose();
-            new chapters_page();
+            new SymptomPage();
 
         }
-        if(e.getSource()==classified_data){
+        if(e.getSource()==edit){
             // open the next window, after clicking on the "START"
             menuFrame.dispose();
+            new EditPage();
         }
-        if(e.getSource()==back){
+        if(e.getSource()==exit){
             // exit the whole game, end the program after clicking on the "EXIT"
             menuFrame.dispose();
-            new menu_page();
         }
     }
 }
+
+

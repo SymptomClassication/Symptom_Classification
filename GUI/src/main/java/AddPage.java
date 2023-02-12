@@ -1,5 +1,4 @@
 import com.google.gson.Gson;
-import org.python.core.PyObject;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class add_page implements ActionListener {
+public class AddPage implements ActionListener {
     public JFrame menuFrame = new JFrame();
 
     public JPanel panel = new JPanel();
@@ -28,11 +27,11 @@ public class add_page implements ActionListener {
     public Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
     public GridBagConstraints a = new GridBagConstraints();
 
-    public add_page(){
+    public AddPage(){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
-
+        menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         a.insets = new Insets( 30,30,15,30);
         //set the general distance between components
 
@@ -80,12 +79,12 @@ public class add_page implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==back) {
             menuFrame.dispose();
-            new chapters_page();
+            new ChaptersPage();
         }
         if(e.getSource()==next){
             a.gridy=4;
-            System.out.println(saveChapter( new chapter(inputNewChapter.getText())));
-            if(saveChapter( new chapter(inputNewChapter.getText()))){
+            System.out.println(saveChapter( new Chapter(inputNewChapter.getText())));
+            if(saveChapter( new Chapter(inputNewChapter.getText()))){
                 successful= new JLabel("New Chapter Successfully Added");
                 successful.setForeground( Color.green );
             }
@@ -100,7 +99,7 @@ public class add_page implements ActionListener {
         }
     }
     private static final String SAVE_CHAPTER_API_URL = "http://dagere.comiles.eu:8090/api/v1/chapters/createChapter";
-    public static boolean saveChapter(chapter chapter) {
+    public static boolean saveChapter(Chapter chapter) {
         boolean success = false;
         try {
             URL url = new URL(SAVE_CHAPTER_API_URL);

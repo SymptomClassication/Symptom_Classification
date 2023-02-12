@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class subchapters_page implements ActionListener {
+public class SubchaptersPage implements ActionListener {
     public JFrame menuFrame = new JFrame();
 
     public JPanel panel = new JPanel();
@@ -21,11 +21,11 @@ public class subchapters_page implements ActionListener {
 
     public String selectedSubchapter;
 
-    public subchapters_page(String selectedChapter ){
+    public SubchaptersPage(String selectedChapter ){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
-
+        menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         a.insets = new Insets( 30,30,15,30);
 
         a.gridy=1;
@@ -81,7 +81,7 @@ public class subchapters_page implements ActionListener {
         }
         if(e.getSource()==back){
             menuFrame.dispose();
-            new chapters_page();
+            new ChaptersPage();
         }
     }
 }

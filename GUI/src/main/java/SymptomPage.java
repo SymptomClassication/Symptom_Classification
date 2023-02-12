@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class symptom_page implements ActionListener {
+public class SymptomPage implements ActionListener {
     PythonInterpreter interpreter = new PythonInterpreter();
 
     public JFrame menuFrame = new JFrame();
@@ -30,11 +30,11 @@ public class symptom_page implements ActionListener {
     public Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
     public GridBagConstraints a = new GridBagConstraints();
 
-    public symptom_page() {
+    public SymptomPage() {
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
-
+        menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         a.insets = new Insets( 30,30,15,30);
         //set the general distance between components
 
@@ -75,7 +75,7 @@ public class symptom_page implements ActionListener {
     {
         if(e.getSource()==back) {
             menuFrame.dispose();
-            new menu_page();
+            new MenuPage();
         }
         if(e.getSource()==next){
 

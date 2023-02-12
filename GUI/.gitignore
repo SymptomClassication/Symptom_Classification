@@ -25,5 +25,4 @@ out/
 *.iml
 *.ipr
 *.iws
-src/
-main/java/*.class
+src/main/java/*.class

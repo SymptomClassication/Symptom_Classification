@@ -1,14 +1,14 @@
-public class chapter {
+public class Chapter {
     private int id;
     private String name;
 
-    public chapter(int id, String name)
+    public Chapter(int id, String name)
     {
         this.id = id;
         this.name = name;
     }
 
-    public chapter(String name) {
+    public Chapter(String name) {
         this.name = name;
     }
 

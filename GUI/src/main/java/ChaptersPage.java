@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class chapters_page implements ActionListener {
+public class ChaptersPage implements ActionListener {
     public JFrame menuFrame = new JFrame();
 
     public JPanel panel = new JPanel();
@@ -26,18 +26,18 @@ public class chapters_page implements ActionListener {
     public JButton back = new JButton("Back");
 
     public JComboBox<String> cb;
-    public List<chapter> chapterList = retrieveChapters();
+    public List<Chapter> chapterList = retrieveChapters();
 
     public Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
     public GridBagConstraints a = new GridBagConstraints();
 
     public String selectedChapter;
 
-    public chapters_page(){
+    public ChaptersPage(){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
-
+        menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         a.insets = new Insets( 30,30,15,30);
 
         a.gridy=1;
@@ -86,7 +86,7 @@ public class chapters_page implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==add) {
             menuFrame.dispose();
-            new add_page();
+            new AddPage();
         }
         if(e.getSource()==remove){
             menuFrame.dispose();
@@ -95,17 +95,17 @@ public class chapters_page implements ActionListener {
         if(e.getSource()==subchapters){
             menuFrame.dispose();
             selectedChapter=(String)cb.getSelectedItem();
-            new subchapters_page(selectedChapter);
+            new SubchaptersPage(selectedChapter);
         }
         if(e.getSource()==back){
             menuFrame.dispose();
-            new menu_page();
+            new MenuPage();
         }
     }
     private static final String FETCH_CHAPTERS_API_URL = "http://dagere.comiles.eu:8090/api/v1/chapters/fetchChapters";
     @SuppressWarnings("deprecation")
-    public static java.util.List<chapter> retrieveChapters() {
-        List<chapter> chapters = new ArrayList<>();
+    public static java.util.List<Chapter> retrieveChapters() {
+        List<Chapter> chapters = new ArrayList<>();
         try {
             URL url = new URL(FETCH_CHAPTERS_API_URL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -125,7 +125,7 @@ public class chapters_page implements ActionListener {
                     JsonObject chapterObject = chapterJson.getAsJsonObject();
                     int id = chapterObject.get("id").getAsInt();
                     String name = chapterObject.get("name").getAsString();
-                    chapter chapter = new chapter(id, name);
+                    Chapter chapter = new Chapter(id, name);
                     chapters.add(chapter);
                 }
             }
