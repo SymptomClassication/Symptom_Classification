@@ -102,7 +102,7 @@ public class ChaptersPage implements ActionListener {
             new MenuPage();
         }
     }
-    private static final String FETCH_CHAPTERS_API_URL = "http://dagere.comiles.eu:8090/api/v1/chapters/fetchChapters";
+    private static final String FETCH_CHAPTERS_API_URL = "http://dagere.comiles.eu:8090/chapters";
     @SuppressWarnings("deprecation")
     public static java.util.List<Chapter> retrieveChapters() {
         List<Chapter> chapters = new ArrayList<>();

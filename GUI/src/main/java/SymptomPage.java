@@ -1,11 +1,21 @@
 import org.python.core.PyObject;
 import org.python.util.PythonInterpreter;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SymptomPage implements ActionListener {
     PythonInterpreter interpreter = new PythonInterpreter();
@@ -79,10 +89,10 @@ public class SymptomPage implements ActionListener {
         }
         if(e.getSource()==next){
 
-            interpreter.execfile("../classifyInput/test.py");
+/*             interpreter.execfile("../classifyInput/test.py");
             String test = "result = pipeline("+"'"+input.getText()+"'"+")";
             interpreter.exec(test);
-            PyObject result = interpreter.get("result");
+            PyObject result = interpreter.get("result"); */
 /*                a.gridy=3;
                 chapter.setFont( fontStyle );
                 menuPanel.add(chapter,a);*/
@@ -93,7 +103,7 @@ public class SymptomPage implements ActionListener {
 
             menuPanel.remove( databaseRetrieved );
             menuPanel.remove( successful );
-            databaseRetrieved = new JLabel(result.__getitem__(0).toString());
+            //databaseRetrieved = new JLabel(result.__getitem__(0).toString());
             //might have to change .equals("") --> .equals("unknown")
             if(databaseRetrieved.getText().equals("")){
                 successful= new JLabel("Chapter Not Found",SwingConstants.CENTER);
@@ -119,5 +129,4 @@ public class SymptomPage implements ActionListener {
 
         }
     }
-
 }
