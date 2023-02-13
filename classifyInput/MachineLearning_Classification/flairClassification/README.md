@@ -8,7 +8,7 @@
       * Contains the list of symptoms 
       * The order is important. Hence, this file is only to be edited later on using the code, to add new symptoms/corrections for retraining
     
-    * "trainingDataMatching.json" 
+    * "matchingTrainingData.json" 
       * Contains the labels for the symptoms in a form of numbers, each indicating the chapter name. You can find the list of chapters and their numbers in the file **"machineLearningChapters.json"**
       * The order is important. Thus, this file is to be edited only by code, to add new symptoms/corrections for retraining
 
@@ -26,7 +26,7 @@
 
 * This file contains the code for training the model and testing it. The model would be found in a new "data_tsf" folder, along with the JOBLIB versions of the model, and the training log.
 
-## 5. "balancedTrainingData.json" file
+## 5. "balance_trainingData.json" file
 
 * I have used this file to generate the diagram of the training data. 
 
@@ -46,8 +46,6 @@
             pip install flair —use-deprecated=backtrack-on-build-failures
 
    * pandas
-   * re
-   * csv
    * torch
    * joblib
    * numpy
