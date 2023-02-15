@@ -19,7 +19,7 @@ def count_chapters():
     plt.bar(range(len(labels_dict)), list(labels_dict.values()), align='center')
     plt.xticks(range(len(labels_dict)), list(labels_dict.keys()), rotation='vertical')
     ax = plt.gca()
-    ax.set_xticks(ax.get_xticks()[::2])
+    ax.set_xticks(ax.get_xticks()[::1])
     #plt.axhline(y= avg, color='r', linestyle='-')
     avg = avg/2.5
     plt.axhline(y= avg + (avg/2), color='y', linestyle='-')
