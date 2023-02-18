@@ -21,7 +21,6 @@ public class ChaptersPage implements ActionListener {
     public JPanel menuPanel = new JPanel(new GridBagLayout());
 
     public JButton add = new JButton("Add");
-    public JButton remove = new JButton("Remove");
     public JButton subchapters = new JButton("Subchapters");
     public JButton back = new JButton("Back");
 
@@ -55,10 +54,6 @@ public class ChaptersPage implements ActionListener {
         setButtonsStyle(add);
         menuPanel.add(add,a);
 
-        a.gridy=3;
-        setButtonsStyle( remove );
-        menuPanel.add( remove,a );
-
         a.gridy=4;
         setButtonsStyle(subchapters);
         menuPanel.add(subchapters,a);
@@ -87,10 +82,6 @@ public class ChaptersPage implements ActionListener {
         if(e.getSource()==add) {
             menuFrame.dispose();
             new AddPage();
-        }
-        if(e.getSource()==remove){
-            menuFrame.dispose();
-            //..
         }
         if(e.getSource()==subchapters){
             menuFrame.dispose();

@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SubchaptersPage implements ActionListener {
@@ -23,11 +24,10 @@ public class SubchaptersPage implements ActionListener {
     public JLabel chapter;
 
     public JButton add = new JButton("Add");
-    public JButton remove = new JButton("Remove");
     public JButton back = new JButton("Back");
 
     public JComboBox<String> cb;
-    public List<Subchapter> subchapterList = retrieveSubchapters();
+    public List<Subchapter> subchapterList;
 
     public Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
     public GridBagConstraints a = new GridBagConstraints();
@@ -51,10 +51,28 @@ public class SubchaptersPage implements ActionListener {
         menuPanel.add( chapter,a );
 
         a.gridy=2;
-        String[] choices = new String[subchapterList.size()];
+        String[] result = selectedChapter.split( " " );
+        for (String a : result) {
+            FETCH_SUBCHAPTERS_API_URL += a + "%20";
+            System.out.println( a );
+        }
+        subchapterList=retrieveSubchapters();
+        String[] choices ;
+        if (subchapterList.isEmpty()){
+            choices= new String[1];
+            choices[0]="No Available Subchapters";
+        }
+        else{
+            choices= new String[subchapterList.size()];
+        }
+        for( int i=0; i<subchapterList.size();i++){
+            choices[i]=subchapterList.get( i ).getName();
+            //System.out.println(choices[i]);
+        }
+
+        System.out.println(FETCH_SUBCHAPTERS_API_URL);
         cb = new JComboBox<String>(choices);
-        FETCH_SUBCHAPTERS_API_URL += selectedChapter;
-        System.out.println(FETCH_SUBCHAPTERS_API_URL+ "" + selectedChapter);
+        FETCH_SUBCHAPTERS_API_URL="http://dagere.comiles.eu:8094/subchapters/chapter/";
         cb.setFont( fontStyle );
         cb.setPreferredSize( new Dimension(500,50) );
         cb.setVisible( true );
@@ -63,10 +81,6 @@ public class SubchaptersPage implements ActionListener {
         a.gridy=3;
         setButtonsStyle(add);
         menuPanel.add(add,a);
-
-        a.gridy=4;
-        setButtonsStyle( remove );
-        menuPanel.add( remove,a );
 
         a.gridy=5;
         setButtonsStyle(back);
@@ -90,10 +104,6 @@ public class SubchaptersPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==add) {
-            menuFrame.dispose();
-            //..
-        }
-        if(e.getSource()==remove){
             menuFrame.dispose();
             //..
         }
