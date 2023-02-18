@@ -1,7 +1,18 @@
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SubchaptersPage implements ActionListener {
     public JFrame menuFrame = new JFrame();
@@ -15,11 +26,16 @@ public class SubchaptersPage implements ActionListener {
     public JButton remove = new JButton("Remove");
     public JButton back = new JButton("Back");
 
+    public JComboBox<String> cb;
+    public List<Subchapter> subchapterList = retrieveSubchapters();
 
     public Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
     public GridBagConstraints a = new GridBagConstraints();
 
-    public String selectedSubchapter;
+    public String selectedChapter;
+    //public String selectedSubchapter;
+
+    private static String FETCH_SUBCHAPTERS_API_URL = "http://dagere.comiles.eu:8094/subchapters/chapter/";
 
     public SubchaptersPage(String selectedChapter ){
         menuFrame.setTitle( "Symptom Classifier" );
@@ -29,14 +45,16 @@ public class SubchaptersPage implements ActionListener {
         a.insets = new Insets( 30,30,15,30);
 
         a.gridy=1;
+        this.selectedChapter=selectedChapter;
         chapter= new JLabel(selectedChapter);
         chapter.setFont( fontStyle );
         menuPanel.add( chapter,a );
 
         a.gridy=2;
-        String[] choices = { "SUBCHAPTERS","CHOICE 1","CHOICE 2", "CHOICE 3","CHOICE 4","CHOICE 5"};
-        JComboBox<String> cb = new JComboBox<String>(choices);
-        selectedSubchapter=(String)cb.getSelectedItem();
+        String[] choices = new String[subchapterList.size()];
+        cb = new JComboBox<String>(choices);
+        FETCH_SUBCHAPTERS_API_URL += selectedChapter;
+        System.out.println(FETCH_SUBCHAPTERS_API_URL+ "" + selectedChapter);
         cb.setFont( fontStyle );
         cb.setPreferredSize( new Dimension(500,50) );
         cb.setVisible( true );
@@ -83,5 +101,38 @@ public class SubchaptersPage implements ActionListener {
             menuFrame.dispose();
             new ChaptersPage();
         }
+    }
+    @SuppressWarnings("deprecation")
+    public static List<Subchapter> retrieveSubchapters() {
+        List<Subchapter> subchapters = new ArrayList<>();
+        try {
+            URL url = new URL(FETCH_SUBCHAPTERS_API_URL);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            int responseCode = conn.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+                JsonElement subchaptersJson = new JsonParser().parse(response.toString());
+                JsonArray subchaptersArray = subchaptersJson.getAsJsonArray();
+                for (JsonElement chapterJson : subchaptersArray) {
+                    JsonObject subchapterObject = chapterJson.getAsJsonObject();
+                    int id = subchapterObject.get("id").getAsInt();
+                    String name = subchapterObject.get("name").getAsString();
+                    int chapterId = subchapterObject.get( "chapterId" ).getAsInt();
+                    System.out.println(id+" "+ name +" "+chapterId);
+                    Subchapter subchapter = new Subchapter(id, name,chapterId);
+                    subchapters.add(subchapter);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error while retrieving chapters: " + e.getMessage());
+        }
+        return subchapters;
     }
 }
