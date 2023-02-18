@@ -24,6 +24,7 @@ public class SubchaptersPage implements ActionListener {
     public JLabel chapter;
 
     public JButton add = new JButton("Add");
+    public JButton update = new JButton("Update");
     public JButton back = new JButton("Back");
 
     public JComboBox<String> cb;
@@ -82,6 +83,10 @@ public class SubchaptersPage implements ActionListener {
         setButtonsStyle(add);
         menuPanel.add(add,a);
 
+        a.gridy=4;
+        setButtonsStyle( update );
+        menuPanel.add( update,a );
+
         a.gridy=5;
         setButtonsStyle(back);
         menuPanel.add(back,a);
@@ -104,6 +109,10 @@ public class SubchaptersPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==add) {
+            menuFrame.dispose();
+            //..
+        }
+        if(e.getSource()==update){
             menuFrame.dispose();
             //..
         }

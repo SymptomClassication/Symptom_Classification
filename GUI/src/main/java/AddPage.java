@@ -98,7 +98,7 @@ public class AddPage implements ActionListener {
             menuFrame.setResizable( false );
         }
     }
-    private static final String SAVE_CHAPTER_API_URL = "http://dagere.comiles.eu:8090/api/v1/chapters/createChapter";
+    private static final String SAVE_CHAPTER_API_URL = "http://dagere.comiles.eu:8090/chapters/create";
     public static boolean saveChapter(Chapter chapter) {
         boolean success = false;
         try {
