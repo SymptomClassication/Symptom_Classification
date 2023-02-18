@@ -90,7 +90,7 @@ public class ChaptersPage implements ActionListener {
         }
         if(e.getSource()==update){
             menuFrame.dispose();
-            //..
+            new UpdateChapterPage();
         }
         if(e.getSource()==subchapters){
             menuFrame.dispose();
