@@ -8,18 +8,18 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class AddPage implements ActionListener {
+public class AddSubchapterPage implements ActionListener {
     public JFrame menuFrame = new JFrame();
 
     public JPanel panel = new JPanel();
     public JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JLabel newChapter = new JLabel("New Chapter Name :");
-    public JLabel newChapterId = new JLabel("New Chapter ID :");
+    public JLabel newChapter = new JLabel("New Subchapter Name :");
+    //public JLabel newChapterId = new JLabel("Chapter ID :");
     public JLabel successful = new JLabel("");
 
-    public JTextField inputNewChapter = new JTextField( );
-    public JTextField inputNewChapterId = new JTextField( );
+    public JTextField inputNewSubchapter = new JTextField( );
+    //public JTextField inputNewChapterId = new JTextField( );
 
     public JButton back = new JButton("Back");
     public JButton next = new JButton("Next");
@@ -27,29 +27,24 @@ public class AddPage implements ActionListener {
     public Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
     public GridBagConstraints a = new GridBagConstraints();
 
-    public AddPage(){
+    public int selectedChapterId;
+
+    public AddSubchapterPage(int selectedChapterId){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
         menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.selectedChapterId=selectedChapterId;
         a.insets = new Insets( 30,30,15,30);
         //set the general distance between components
-
-//        a.gridy=2;
-//        newChapterId.setFont( fontStyle );
-//        menuPanel.add( newChapterId,a);
-
-//        a.gridy=2;
-//        inputNewChapterId.setPreferredSize( new Dimension(600,30) );
-//        menuPanel.add( inputNewChapterId,a );
 
         a.gridy=3;
         newChapter.setFont( fontStyle );
         menuPanel.add( newChapter,a);
 
         a.gridy=3;
-        inputNewChapter.setPreferredSize( new Dimension(600,30) );
-        menuPanel.add( inputNewChapter,a );
+        inputNewSubchapter.setPreferredSize( new Dimension(600,30) );
+        menuPanel.add( inputNewSubchapter,a );
 
         a.gridy=5;
         setButtonsStyle( back );
@@ -83,9 +78,8 @@ public class AddPage implements ActionListener {
         }
         if(e.getSource()==next){
             a.gridy=4;
-            System.out.println(saveChapter( new Chapter(inputNewChapter.getText())));
-            if(saveChapter( new Chapter(inputNewChapter.getText()))){
-                successful= new JLabel("New Chapter Successfully Added");
+            if(saveSubchapter( new Subchapter( inputNewSubchapter.getText(),selectedChapterId))){
+                successful= new JLabel("New Subchapter Successfully Added");
                 successful.setForeground( Color.green );
             }
             else{
@@ -98,17 +92,17 @@ public class AddPage implements ActionListener {
             menuFrame.setResizable( false );
         }
     }
-    private static final String SAVE_CHAPTER_API_URL = "http://dagere.comiles.eu:8090/chapters/create";
-    public static boolean saveChapter(Chapter chapter) {
+    private static final String SAVE_SUBCHAPTER_API_URL = "http://dagere.comiles.eu:8094/subchapters/create";
+    public static boolean saveSubchapter(Subchapter subchapter) {
         boolean success = false;
         try {
-            URL url = new URL(SAVE_CHAPTER_API_URL);
+            URL url = new URL( SAVE_SUBCHAPTER_API_URL );
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
             conn.setDoOutput(true);
             Gson gson = new Gson();
-            String json = gson.toJson(chapter);
+            String json = gson.toJson(subchapter);
             OutputStreamWriter out = new OutputStreamWriter(conn.getOutputStream());
             out.write(json);
             out.close();
@@ -117,7 +111,7 @@ public class AddPage implements ActionListener {
                 success = true;
             }
         } catch (Exception e) {
-            System.out.println("Error while saving chapter: " + e.getMessage());
+            System.out.println("Error while saving subchapter: " + e.getMessage());
         }
         return success;
     }

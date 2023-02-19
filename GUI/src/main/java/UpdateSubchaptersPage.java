@@ -55,9 +55,6 @@ public class UpdateSubchaptersPage implements ActionListener{
         menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         a.insets = new Insets( 30,30,15,30);
 
-
-
-
         a.gridy=1;
         setButtonsStyle( update );
         menuPanel.add( update,a );
@@ -92,7 +89,6 @@ public class UpdateSubchaptersPage implements ActionListener{
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
-            
         }
         if(e.getSource()==back){
             menuFrame.dispose();
@@ -119,7 +115,7 @@ public class UpdateSubchaptersPage implements ActionListener{
         Chapter updatedSubChapterResponse = gson.fromJson(jsonObject, Chapter.class);
 
         // print the updated chapter's ID and name
-        System.out.println("Chapter ID: " + updatedSubChapterResponse.getId());
-        System.out.println("Chapter Name: " + updatedSubChapterResponse.getName());
+        System.out.println("Subchapter ID: " + updatedSubChapterResponse.getId());
+        System.out.println("Subchapter Name: " + updatedSubChapterResponse.getName());
     }
 }

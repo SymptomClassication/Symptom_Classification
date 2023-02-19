@@ -3,6 +3,11 @@ public class Subchapter {
     private String name;
     private int chapterId;
 
+    public Subchapter(String name,int chapterId)
+    {
+        this.name = name;
+        this.chapterId=chapterId;
+    }
     public Subchapter(int id, String name,int chapterId)
     {
         this.id = id;

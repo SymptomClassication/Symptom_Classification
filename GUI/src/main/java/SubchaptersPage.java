@@ -43,11 +43,12 @@ public class SubchaptersPage implements ActionListener {
     public GridBagConstraints a = new GridBagConstraints();
 
     public String selectedChapter;
+    public int selectedChapterId;
     //public String selectedSubchapter;
 
     private static String FETCH_SUBCHAPTERS_API_URL = "http://dagere.comiles.eu:8094/subchapters/chapter/";
 
-    public SubchaptersPage(String selectedChapter ){
+    public SubchaptersPage(String selectedChapter, int selectedChapterId ){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
@@ -57,6 +58,7 @@ public class SubchaptersPage implements ActionListener {
         a.gridy=1;
         this.selectedChapter=selectedChapter;
         chapter= new JLabel(selectedChapter);
+        this.selectedChapterId=selectedChapterId;
         chapter.setFont( fontStyle );
         menuPanel.add( chapter,a );
 
@@ -119,7 +121,7 @@ public class SubchaptersPage implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==add) {
             menuFrame.dispose();
-            //..
+            new AddSubchapterPage(selectedChapterId);
         }
         if(e.getSource()==update){
             menuFrame.dispose();

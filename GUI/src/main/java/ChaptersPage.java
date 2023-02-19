@@ -32,6 +32,7 @@ public class ChaptersPage implements ActionListener {
     public GridBagConstraints a = new GridBagConstraints();
 
     public String selectedChapter;
+    public int selectedChapterId;
 
     public ChaptersPage(){
         menuFrame.setTitle( "Symptom Classifier" );
@@ -86,7 +87,7 @@ public class ChaptersPage implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==add) {
             menuFrame.dispose();
-            new AddPage();
+            new AddChapterPage();
         }
         if(e.getSource()==update){
             menuFrame.dispose();
@@ -95,7 +96,9 @@ public class ChaptersPage implements ActionListener {
         if(e.getSource()==subchapters){
             menuFrame.dispose();
             selectedChapter=(String)cb.getSelectedItem();
-            new SubchaptersPage(selectedChapter);
+            selectedChapterId=cb.getSelectedIndex();
+            System.out.println(selectedChapterId);
+            new SubchaptersPage(selectedChapter,selectedChapterId);
         }
         if(e.getSource()==back){
             menuFrame.dispose();

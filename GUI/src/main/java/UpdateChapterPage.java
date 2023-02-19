@@ -55,9 +55,6 @@ public class UpdateChapterPage implements ActionListener {
         menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         a.insets = new Insets( 30,30,15,30);
 
-
-
-
         a.gridy=1;
         setButtonsStyle( update );
         menuPanel.add( update,a );
@@ -86,9 +83,9 @@ public class UpdateChapterPage implements ActionListener {
     {
         if(e.getSource()==update){
             menuFrame.dispose();
-            Chapter updatedChapter = new Chapter("test");
+            Chapter updatedChapter = new Chapter("test2");
             try {
-            updateChapters(0, updatedChapter);
+            updateChapters(35, updatedChapter);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
