@@ -21,7 +21,7 @@ public class ChaptersPage implements ActionListener {
     public JPanel menuPanel = new JPanel(new GridBagLayout());
 
     public JButton add = new JButton("Add");
-    public JButton remove = new JButton("Remove");
+    public JButton update = new JButton("Update");
     public JButton subchapters = new JButton("Subchapters");
     public JButton back = new JButton("Back");
 
@@ -32,6 +32,7 @@ public class ChaptersPage implements ActionListener {
     public GridBagConstraints a = new GridBagConstraints();
 
     public String selectedChapter;
+    public int selectedChapterId;
 
     public ChaptersPage(){
         menuFrame.setTitle( "Symptom Classifier" );
@@ -56,8 +57,8 @@ public class ChaptersPage implements ActionListener {
         menuPanel.add(add,a);
 
         a.gridy=3;
-        setButtonsStyle( remove );
-        menuPanel.add( remove,a );
+        setButtonsStyle( update );
+        menuPanel.add( update,a );
 
         a.gridy=4;
         setButtonsStyle(subchapters);
@@ -86,16 +87,18 @@ public class ChaptersPage implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==add) {
             menuFrame.dispose();
-            new AddPage();
+            new AddChapterPage();
         }
-        if(e.getSource()==remove){
+        if(e.getSource()==update){
             menuFrame.dispose();
-            //..
+            new UpdateChapterPage();
         }
         if(e.getSource()==subchapters){
             menuFrame.dispose();
             selectedChapter=(String)cb.getSelectedItem();
-            new SubchaptersPage(selectedChapter);
+            selectedChapterId=cb.getSelectedIndex();
+            System.out.println(selectedChapterId);
+            new SubchaptersPage(selectedChapter,selectedChapterId);
         }
         if(e.getSource()==back){
             menuFrame.dispose();
