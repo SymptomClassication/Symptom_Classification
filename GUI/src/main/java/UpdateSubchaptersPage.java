@@ -30,7 +30,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-public class UpdateChapterPage implements ActionListener {
+public class UpdateSubchaptersPage implements ActionListener{
     public JFrame menuFrame = new JFrame();
 
     public JPanel panel = new JPanel();
@@ -48,7 +48,7 @@ public class UpdateChapterPage implements ActionListener {
 
     public String selectedChapter;
 
-    public UpdateChapterPage(){
+    public UpdateSubchaptersPage(){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
@@ -86,9 +86,9 @@ public class UpdateChapterPage implements ActionListener {
     {
         if(e.getSource()==update){
             menuFrame.dispose();
-            Chapter updatedChapter = new Chapter("test");
+            Subchapter updatedSubChapter = new Subchapter("test");
             try {
-            updateChapters(0, updatedChapter);
+            updateSubchapters(0, updatedSubChapter);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -99,13 +99,13 @@ public class UpdateChapterPage implements ActionListener {
             new MenuPage();
         }
     }
-    private final Gson gson = new GsonBuilder().create();
-    private static String UPDATE_CHAPTERS_API_URL = "http://dagere.comiles.eu:8090/chapters/update/";
-    public void updateChapters(int chapterId, Chapter updatedChapter) throws IOException
+    private final Gson gson = new GsonBuilder().create(); 
+    private static String UPDATE_SUBCHAPTERS_API_URL = "http://dagere.comiles.eu:8094/subchapters/update/";
+    public void updateSubchapters(int chapterId, Subchapter updatedSubchapter) throws IOException
     {
-        String json = gson.toJson(updatedChapter);
-        UPDATE_CHAPTERS_API_URL += String.valueOf(chapterId);
-        HttpPut httpPut = new HttpPut(UPDATE_CHAPTERS_API_URL);
+        String json = gson.toJson(updatedSubchapter);
+        UPDATE_SUBCHAPTERS_API_URL += String.valueOf(chapterId);
+        HttpPut httpPut = new HttpPut(UPDATE_SUBCHAPTERS_API_URL);
         httpPut.addHeader("Content-Type","application/json");
         httpPut.setEntity(new StringEntity(json));
         
@@ -116,11 +116,10 @@ public class UpdateChapterPage implements ActionListener {
         HttpEntity entity = response.getEntity();
         String responseJson = EntityUtils.toString(entity);
         JsonObject jsonObject = JsonParser.parseString(responseJson).getAsJsonObject();
-        Chapter updatedChapterResponse = gson.fromJson(jsonObject, Chapter.class);
+        Chapter updatedSubChapterResponse = gson.fromJson(jsonObject, Chapter.class);
 
         // print the updated chapter's ID and name
-        System.out.println("Chapter ID: " + updatedChapterResponse.getId());
-        System.out.println("Chapter Name: " + updatedChapterResponse.getName());
+        System.out.println("Chapter ID: " + updatedSubChapterResponse.getId());
+        System.out.println("Chapter Name: " + updatedSubChapterResponse.getName());
     }
-    //TODO make the update be executed from user input
 }
