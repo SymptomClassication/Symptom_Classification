@@ -91,7 +91,10 @@ public class ChaptersPage implements ActionListener {
         }
         if(e.getSource()==update){
             menuFrame.dispose();
-            new UpdateChapterPage();
+            selectedChapter=(String)cb.getSelectedItem();
+            selectedChapterId=cb.getSelectedIndex();
+            System.out.println(selectedChapterId);
+            new UpdateChapterPage(selectedChapter,selectedChapterId);
         }
         if(e.getSource()==subchapters){
             menuFrame.dispose();
