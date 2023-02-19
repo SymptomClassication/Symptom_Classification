@@ -85,11 +85,10 @@ public class UpdateChapterPage implements ActionListener {
     public void actionPerformed(ActionEvent e) 
     {
         if(e.getSource()==update){
-            System.out.println(requestJson);
             menuFrame.dispose();
             Chapter updatedChapter = new Chapter("test");
             try {
-            updateFunction(0, updatedChapter);
+            updateChapters(0, updatedChapter);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -100,45 +99,9 @@ public class UpdateChapterPage implements ActionListener {
             new MenuPage();
         }
     }
-    private String requestJson ="";
     private final Gson gson = new GsonBuilder().create();
     private static  String UPDATE_CHAPTERS_API_URL = "http://dagere.comiles.eu:8090/chapters/update/1";
-    public void updateChapter(int chapterId, Chapter updatedChapter) throws IOException {
-        String updateUrl = String.format(UPDATE_CHAPTERS_API_URL, chapterId);
-
-        URL url = new URL(updateUrl);
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("PUT");
-        conn.setRequestProperty("Content-Type", "application/json");
-        conn.setDoOutput(true);
-        String chapterName = updatedChapter.getName();
-        requestJson = "{"+"id:"+String.valueOf(chapterId)+",\n"+"name:"+chapterName+"}";
-        System.out.println(requestJson);
-        try (OutputStream os = conn.getOutputStream()) {
-            byte[] input = requestJson.getBytes("utf-8");
-            os.write(input, 0, input.length);
-        }
-
-        BufferedReader responseReader = null;
-        try {
-            responseReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            StringBuilder responseBuilder = new StringBuilder();
-            String line;
-            while ((line = responseReader.readLine()) != null) {
-                responseBuilder.append(line);
-            }
-            String responseJson = responseBuilder.toString();
-
-            // Deserialize the response JSON into a Chapter object
-            Chapter updatedChapterResponse = gson.fromJson(responseJson, Chapter.class);
-            System.out.println("Updated chapter: " + updatedChapterResponse);
-        } finally {
-            if (responseReader != null) {
-                responseReader.close();
-            }
-        }
-    }
-    public void updateFunction(int chapterId, Chapter updatedChapter) throws IOException
+    public void updateChapters(int chapterId, Chapter updatedChapter) throws IOException
     {
         String json = gson.toJson(updatedChapter);
         UPDATE_CHAPTERS_API_URL += String.valueOf(chapterId);
