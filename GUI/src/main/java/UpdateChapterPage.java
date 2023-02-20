@@ -117,6 +117,7 @@ public class UpdateChapterPage implements ActionListener {
     {
         String json = gson.toJson(updatedChapter);
         UPDATE_CHAPTERS_API_URL += String.valueOf(chapterId);
+        System.out.println(UPDATE_CHAPTERS_API_URL);
         HttpPut httpPut = new HttpPut(UPDATE_CHAPTERS_API_URL);
         httpPut.addHeader("Content-Type","application/json");
         httpPut.setEntity(new StringEntity(json));

@@ -16,9 +16,33 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPut;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.util.EntityUtils;
 public class SymptomPage implements ActionListener {
-    PythonInterpreter interpreter = new PythonInterpreter();
 
     public JFrame menuFrame = new JFrame();
 
@@ -39,7 +63,7 @@ public class SymptomPage implements ActionListener {
 
     public Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
     public GridBagConstraints a = new GridBagConstraints();
-
+    private static String CLASSIFY_SYMPTOM_API_URL = "http://dagere.comiles.eu:8090/classifiedSymptoms/classifySymptom/";
     public SymptomPage() {
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
@@ -88,33 +112,49 @@ public class SymptomPage implements ActionListener {
             new MenuPage();
         }
         if(e.getSource()==next){
-
-/*             interpreter.execfile("../classifyInput/test.py");
-            String test = "result = pipeline("+"'"+input.getText()+"'"+")";
-            interpreter.exec(test);
-            PyObject result = interpreter.get("result"); */
-/*                a.gridy=3;
-                chapter.setFont( fontStyle );
-                menuPanel.add(chapter,a);*/
-
             a.gridy=3;
             classification.setFont( fontStyle );
             menuPanel.add(classification,a);
-
             menuPanel.remove( databaseRetrieved );
             menuPanel.remove( successful );
             //databaseRetrieved = new JLabel(result.__getitem__(0).toString());
             //might have to change .equals("") --> .equals("unknown")
-            if(databaseRetrieved.getText().equals("")){
+            if(!input.getText().isEmpty())
+            {
+                try 
+                {
+                    String[] myInput = input.getText().split(" ");
+                    for(String a : myInput)
+                    {
+                        CLASSIFY_SYMPTOM_API_URL += a +"%20";
+                    }
+                    databaseRetrieved.setText(classifySymptom());
+                    successful=new JLabel("Chapter Found");
+                    successful.setForeground( Color.green );
+                    databaseRetrieved.setFont( fontStyle );
+                    menuPanel.add(databaseRetrieved,a);
+                } 
+                catch (IOException e1) 
+                {
+                    e1.printStackTrace();
+                }
+            }
+            CLASSIFY_SYMPTOM_API_URL = "http://dagere.comiles.eu:8090/classifiedSymptoms/classifySymptom/";
+            /* if(databaseRetrieved.getText().equals("")){
                 successful= new JLabel("Chapter Not Found",SwingConstants.CENTER);
                 successful.setForeground( Color.red );
+                try {
+                    classifySymptom(input.getText());
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
             else{
                 successful=new JLabel("Chapter Found");
                 successful.setForeground( Color.green );
-            }
-            databaseRetrieved.setFont( fontStyle );
-            menuPanel.add(databaseRetrieved,a);
+
+            } */
+
 
 /*                a.gridy=4;
                 subchapter.setFont( fontStyle );
@@ -126,7 +166,21 @@ public class SymptomPage implements ActionListener {
 
             menuFrame.setVisible( true );
             menuFrame.setResizable( false );
-
         }
+    }
+    private final Gson gson = new GsonBuilder().create();
+    public static String classifySymptom() throws IOException
+    {
+        StringBuilder result = new StringBuilder();
+        URL url = new URL(CLASSIFY_SYMPTOM_API_URL);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        for (String line; (line = reader.readLine()) != null;)
+        {
+            result.append(line);
+        }
+        //System.out.println(url.toString());
+        //System.out.println(result.toString());
+        return result.toString();
     }
 }

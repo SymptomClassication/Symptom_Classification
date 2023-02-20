@@ -92,14 +92,14 @@ public class ChaptersPage implements ActionListener {
         if(e.getSource()==update){
             menuFrame.dispose();
             selectedChapter=(String)cb.getSelectedItem();
-            selectedChapterId=cb.getSelectedIndex();
+            selectedChapterId=chapterList.get(cb.getSelectedIndex()).getId();
             System.out.println(selectedChapterId);
             new UpdateChapterPage(selectedChapter,selectedChapterId);
         }
         if(e.getSource()==subchapters){
             menuFrame.dispose();
             selectedChapter=(String)cb.getSelectedItem();
-            selectedChapterId=cb.getSelectedIndex();
+            selectedChapterId=chapterList.get(cb.getSelectedIndex()).getId();
             System.out.println(selectedChapterId);
             new SubchaptersPage(selectedChapter,selectedChapterId);
         }
@@ -130,6 +130,7 @@ public class ChaptersPage implements ActionListener {
                 for (JsonElement chapterJson : chaptersArray) {
                     JsonObject chapterObject = chapterJson.getAsJsonObject();
                     int id = chapterObject.get("id").getAsInt();
+                    //System.out.println(id);
                     String name = chapterObject.get("name").getAsString();
                     Chapter chapter = new Chapter(id, name);
                     chapters.add(chapter);

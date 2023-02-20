@@ -83,9 +83,9 @@ public class UpdateSubchaptersPage implements ActionListener{
     {
         if(e.getSource()==update){
             menuFrame.dispose();
-            Subchapter updatedSubChapter = new Subchapter("test");
+            Subchapter updatedSubChapter = new Subchapter("testSubchaptertest");
             try {
-            updateSubchapters(0, updatedSubChapter);
+            updateSubchapters(34, updatedSubChapter);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -112,7 +112,7 @@ public class UpdateSubchaptersPage implements ActionListener{
         HttpEntity entity = response.getEntity();
         String responseJson = EntityUtils.toString(entity);
         JsonObject jsonObject = JsonParser.parseString(responseJson).getAsJsonObject();
-        Chapter updatedSubChapterResponse = gson.fromJson(jsonObject, Chapter.class);
+        Subchapter updatedSubChapterResponse = gson.fromJson(jsonObject, Subchapter.class);
 
         // print the updated chapter's ID and name
         System.out.println("Subchapter ID: " + updatedSubChapterResponse.getId());
