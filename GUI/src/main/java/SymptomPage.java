@@ -1,47 +1,17 @@
-import org.python.core.PyObject;
-import org.python.util.PythonInterpreter;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
 public class SymptomPage implements ActionListener {
 
     public JFrame menuFrame = new JFrame();
@@ -113,32 +83,42 @@ public class SymptomPage implements ActionListener {
         }
         if(e.getSource()==next){
             a.gridy=3;
+            String unknown = "[\"0\"]";
+            System.out.println(unknown);
             classification.setFont( fontStyle );
             menuPanel.add(classification,a);
             menuPanel.remove( databaseRetrieved );
             menuPanel.remove( successful );
             //databaseRetrieved = new JLabel(result.__getitem__(0).toString());
             //might have to change .equals("") --> .equals("unknown")
-            if(!input.getText().isEmpty())
+            try 
             {
-                try 
+                String[] myInput = input.getText().split(" ");
+                for(String a : myInput)
                 {
-                    String[] myInput = input.getText().split(" ");
-                    for(String a : myInput)
-                    {
-                        CLASSIFY_SYMPTOM_API_URL += a +"%20";
-                    }
-                    databaseRetrieved.setText(classifySymptom());
+                    CLASSIFY_SYMPTOM_API_URL += a +"%20";
+                }
+                databaseRetrieved.setText(classifySymptom());
+                System.out.println(databaseRetrieved.getText());
+                if(!databaseRetrieved.getText().equals(unknown))
+                {
                     successful=new JLabel("Chapter Found");
                     successful.setForeground( Color.green );
                     databaseRetrieved.setFont( fontStyle );
                     menuPanel.add(databaseRetrieved,a);
-                } 
-                catch (IOException e1) 
-                {
-                    e1.printStackTrace();
                 }
+                //TODO FIX THIS
+                if(databaseRetrieved.getText().equals(unknown))
+                {
+                    successful = new JLabel("Chapter Not Found", SwingConstants.CENTER);
+                    successful.setForeground(Color.red);
+                }
+            } 
+            catch (IOException e1) 
+            {
+                e1.printStackTrace();
             }
+
             CLASSIFY_SYMPTOM_API_URL = "http://dagere.comiles.eu:8090/classifiedSymptoms/classifySymptom/";
             /* if(databaseRetrieved.getText().equals("")){
                 successful= new JLabel("Chapter Not Found",SwingConstants.CENTER);
@@ -168,7 +148,6 @@ public class SymptomPage implements ActionListener {
             menuFrame.setResizable( false );
         }
     }
-    private final Gson gson = new GsonBuilder().create();
     public static String classifySymptom() throws IOException
     {
         StringBuilder result = new StringBuilder();
