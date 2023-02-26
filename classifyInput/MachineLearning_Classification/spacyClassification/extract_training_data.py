@@ -3,10 +3,10 @@ import random
 
 
 def pipeline():
-    with open("trainingData/matchingTrainingData.json", "r") as f:
+    with open("./trainingData/matchingTrainingData.json", "r") as f:
         labels = list(json.load(f))
 
-    with open("trainingData/trainingData.json", "r") as f:
+    with open("./trainingData/trainingData.json", "r") as f:
         train_data = list(json.load(f))
 
     test_labels = []
@@ -26,10 +26,10 @@ def pipeline():
     to_test = to_shuffle[int(len(to_shuffle) * 0.8):]
     to_test_data, to_test_labels = zip(*to_test)
 
-    json.dump(to_train_data, open("trainingData/to_train_data.json", "w"))
-    json.dump(to_test_data, open("trainingData/to_test_data.json", "w"))
-    json.dump(to_train_labels, open("trainingData/to_train_labels.json", "w"))
-    json.dump(to_test_labels, open("trainingData/to_test_labels.json", "w"))
+    json.dump(to_train_data, open("./trainingData/to_train_data.json", "w"))
+    json.dump(to_test_data, open("./trainingData/to_test_data.json", "w"))
+    json.dump(to_train_labels, open("./trainingData/to_train_labels.json", "w"))
+    json.dump(to_test_labels, open("./trainingData/to_test_labels.json", "w"))
 
 
 pipeline()
