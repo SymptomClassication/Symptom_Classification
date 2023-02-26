@@ -21,10 +21,10 @@ def train_model():
     # Define your training data
     train_data = []
     labels = []
-    with open('./trainingData/to_train_data.json', 'r') as f:
+    with open('symptomsClassification/classifyInput/MachineLearning_Classification/spacyClassification/trainingData/to_train_data.json', 'r') as f:
         train_data = list(json.load(f))
 
-    with open('./trainingData/to_train_labels.json', 'r') as f:
+    with open('symptomsClassification/classifyInput/MachineLearning_Classification/spacyClassification/trainingData/to_train_labels.json', 'r') as f:
         labels = list(json.load(f))
 
     # Fit the model and make predictions
@@ -44,7 +44,7 @@ def train_model():
 
     model.fit(train_data, labels)
 
-    dump(model, './model.joblib')
+    dump(model, 'symptomsClassification/classifyInput/MachineLearning_Classification/spacyClassification/model.joblib')
 
 
 train_model()

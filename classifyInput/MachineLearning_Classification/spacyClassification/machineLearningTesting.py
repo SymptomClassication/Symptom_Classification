@@ -6,10 +6,10 @@ import json
 import re
 
 
-with open('./trainingData/to_test_data.json', 'r') as f:
+with open('symptomsClassification/classifyInput/MachineLearning_Classification/spacyClassification/trainingData/to_test_data.json', 'r') as f:
     symptoms = list(json.load(f))
 
-with open('./trainingData/to_test_labels.json', 'r') as f:
+with open('symptomsClassification/classifyInput/MachineLearning_Classification/spacyClassification/trainingData/to_test_labels.json', 'r') as f:
     correct_labels = list(json.load(f))
 
 predicted_labels = []
