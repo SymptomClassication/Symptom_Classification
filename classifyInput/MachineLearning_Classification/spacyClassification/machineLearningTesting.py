@@ -20,7 +20,7 @@ def tokenize(text, embeddings=spacy.load("en_core_sci_md")):
 
 def pipelines():
 
-    model = load('./model.joblib')
+    model = load('symptomsClassification/classifyInput/MachineLearning_Classification/spacyClassification/model.joblib')
     for s in symptoms:
         removeNum = re.sub(r"[0-9]", "", s)
         removeDot = re.sub(r"\.", "", removeNum)
