@@ -6,13 +6,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -24,17 +18,18 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+
+import javax.swing.*;
 public class UpdateChapterPage implements ActionListener {
     public JFrame menuFrame = new JFrame();
 
     public JPanel panel = new JPanel();
     public JPanel menuPanel = new JPanel(new GridBagLayout());
+
+    public JLabel newChapter;
+    public JLabel successful = new JLabel("");
+
+    public JTextField inputNewChapter = new JTextField( );
 
     public JButton add = new JButton("Add");
     public JButton update = new JButton("Update");
@@ -47,21 +42,33 @@ public class UpdateChapterPage implements ActionListener {
     public GridBagConstraints a = new GridBagConstraints();
 
     public String selectedChapter;
+    public int selectedChapterId;
 
-    public UpdateChapterPage(){
+    public UpdateChapterPage(String selectedChapter, int selectedChapterId){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
         menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.selectedChapter=selectedChapter;
+        this.selectedChapterId=selectedChapterId;
         a.insets = new Insets( 30,30,15,30);
 
-        a.gridy=1;
-        setButtonsStyle( update );
-        menuPanel.add( update,a );
+        a.gridy=3;
+        newChapter=new JLabel("Change Chapter Name ( for "+selectedChapter+") :");
+        newChapter.setFont( fontStyle );
+        menuPanel.add( newChapter,a);
 
-        a.gridy=2;
+        a.gridy=3;
+        inputNewChapter.setPreferredSize( new Dimension(600,30) );
+        menuPanel.add( inputNewChapter,a );
+
+        a.gridy=5;
         setButtonsStyle( back );
         menuPanel.add( back,a );
+
+        a.gridy=5;
+        setButtonsStyle( update );
+        menuPanel.add( update,a );
 
         panel.add( menuPanel );
         menuFrame.add( panel );
@@ -83,13 +90,12 @@ public class UpdateChapterPage implements ActionListener {
     {
         if(e.getSource()==update){
             menuFrame.dispose();
-            Chapter updatedChapter = new Chapter("test2");
+            System.out.println(selectedChapterId +" "+ inputNewChapter.getText());
             try {
-            updateChapters(35, updatedChapter);
+                updateChapters(selectedChapterId, new Chapter( inputNewChapter.getText() ));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
-            
         }
         if(e.getSource()==back){
             menuFrame.dispose();
@@ -102,10 +108,11 @@ public class UpdateChapterPage implements ActionListener {
     {
         String json = gson.toJson(updatedChapter);
         UPDATE_CHAPTERS_API_URL += String.valueOf(chapterId);
+        System.out.println(UPDATE_CHAPTERS_API_URL);
         HttpPut httpPut = new HttpPut(UPDATE_CHAPTERS_API_URL);
         httpPut.addHeader("Content-Type","application/json");
         httpPut.setEntity(new StringEntity(json));
-        
+
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
         CloseableHttpResponse response = httpClient.execute(httpPut);
 
