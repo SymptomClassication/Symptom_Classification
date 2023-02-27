@@ -14,30 +14,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SubchaptersPage implements ActionListener {
-    public JFrame menuFrame = new JFrame();
+    private JFrame menuFrame = new JFrame();
 
-    public JPanel panel = new JPanel();
-    public JPanel menuPanel = new JPanel(new GridBagLayout());
+    private JPanel panel = new JPanel();
+    private JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JLabel chapter;
+    private JLabel chapter;
 
-    public JButton add = new JButton("Add");
-    public JButton update = new JButton("Update");
-    public JButton back = new JButton("Back");
+    private JButton add = new JButton("Add");
+    private JButton update = new JButton("Update");
+    private JButton back = new JButton("Back");
 
-    public JComboBox<String> cb;
-    public List<Subchapter> subchapterList;
+    private JComboBox<String> cb;
+    private List<Subchapter> subchapterList;
 
-    public Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
-    public GridBagConstraints a = new GridBagConstraints();
+    private Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
+    private GridBagConstraints a = new GridBagConstraints();
 
-    public String selectedChapter;
-    public int selectedChapterId;
+    private String selectedChapter;
+    private int selectedChapterId;
     //public String selectedSubchapter;
 
     private static String FETCH_SUBCHAPTERS_API_URL = "http://dagere.comiles.eu:8094/subchapters/chapter/";
 
-    public SubchaptersPage(String selectedChapter, int selectedChapterId ){
+    public SubchaptersPage(String selectedChapternew, int selectedChapterId ){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
@@ -45,7 +45,7 @@ public class SubchaptersPage implements ActionListener {
         a.insets = new Insets( 30,30,15,30);
 
         a.gridy=1;
-        this.selectedChapter=selectedChapter;
+        this.selectedChapter=selectedChapternew;
         chapter= new JLabel(selectedChapter);
         this.selectedChapterId=selectedChapterId;
         chapter.setFont( fontStyle );

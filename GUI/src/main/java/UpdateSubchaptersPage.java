@@ -19,26 +19,19 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 public class UpdateSubchaptersPage implements ActionListener{
-    public JFrame menuFrame = new JFrame();
+    private JFrame menuFrame = new JFrame();
 
-    public JPanel panel = new JPanel();
-    public JPanel menuPanel = new JPanel(new GridBagLayout());
+    private JPanel panel = new JPanel();
+    private JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JButton add = new JButton("Add");
-    public JButton update = new JButton("Update");
-    public JButton subchapters = new JButton("Subchapters");
-    public JButton back = new JButton("Back");
+    private JButton update = new JButton("Update");
+    private JButton back = new JButton("Back");
 
-    public JComboBox<String> cb;
-
-    public Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
-    public GridBagConstraints a = new GridBagConstraints();
-
-    public String selectedChapter;
+    private Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
+    private GridBagConstraints a = new GridBagConstraints();
 
     public UpdateSubchaptersPage(){
         menuFrame.setTitle( "Symptom Classifier" );

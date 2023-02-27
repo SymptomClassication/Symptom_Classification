@@ -16,23 +16,23 @@ public class SymptomPage implements ActionListener {
 
     public JFrame menuFrame = new JFrame();
 
-    public JPanel panel = new JPanel();
-    public JPanel menuPanel = new JPanel(new GridBagLayout());
+    private JPanel panel = new JPanel();
+    private JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JLabel label = new JLabel("Symptoms :");
-    public JLabel classification = new JLabel("Classification :");
+    private JLabel label = new JLabel("Symptoms :");
+    private JLabel classification = new JLabel("Classification :");
     //public JLabel chapter = new JLabel("Chapter :");
     //public JLabel subchapter = new JLabel("Subchapter :");
-    public JLabel databaseRetrieved=new JLabel("");
-    public JLabel successful = new JLabel("");
+    private JLabel databaseRetrieved=new JLabel("");
+    private JLabel successful = new JLabel("");
 
-    public JTextField input = new JTextField( );
+    private JTextField input = new JTextField( );
 
-    public JButton back = new JButton("Back");
-    public JButton next = new JButton("Next");
+    private JButton back = new JButton("Back");
+    private JButton next = new JButton("Next");
 
-    public Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
-    public GridBagConstraints a = new GridBagConstraints();
+    private Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
+    private GridBagConstraints a = new GridBagConstraints();
     private static String CLASSIFY_SYMPTOM_API_URL = "http://dagere.comiles.eu:8090/classifiedSymptoms/classifySymptom/";
     public SymptomPage() {
         menuFrame.setTitle( "Symptom Classifier" );
@@ -84,7 +84,6 @@ public class SymptomPage implements ActionListener {
         if(e.getSource()==next){
             a.gridy=3;
             String unknown = "[\"0\"]";
-            System.out.println(unknown);
             classification.setFont( fontStyle );
             menuPanel.add(classification,a);
             menuPanel.remove( databaseRetrieved );
@@ -107,7 +106,6 @@ public class SymptomPage implements ActionListener {
                     databaseRetrieved.setFont( fontStyle );
                     menuPanel.add(databaseRetrieved,a);
                 }
-                //TODO FIX THIS
                 if(databaseRetrieved.getText().equals(unknown))
                 {
                     successful = new JLabel("Chapter Not Found", SwingConstants.CENTER);
