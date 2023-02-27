@@ -34,5 +34,5 @@ def pipelines(symptom):
     return classification
 
 if __name__ == "__main__":
-    pipelines(" ".join(sys.argv[1:]))
+    print(pipelines(" ".join(sys.argv[1:])))
 
