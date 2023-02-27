@@ -9,26 +9,26 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class AddSubchapterPage implements ActionListener {
-    public JFrame menuFrame = new JFrame();
+    private JFrame menuFrame = new JFrame();
 
-    public JPanel panel = new JPanel();
-    public JPanel menuPanel = new JPanel(new GridBagLayout());
+    private JPanel panel = new JPanel();
+    private JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JLabel newChapter = new JLabel("New Subchapter Name :");
+    private JLabel newChapter = new JLabel("New Subchapter Name :");
     //public JLabel newChapterId = new JLabel("Chapter ID :");
-    public JLabel successful = new JLabel("");
+    private JLabel successful = new JLabel("");
 
-    public JTextField inputNewSubchapter = new JTextField( );
+    private JTextField inputNewSubchapter = new JTextField( );
     //public JTextField inputNewChapterId = new JTextField( );
 
-    public JButton back = new JButton("Back");
-    public JButton next = new JButton("Next");
+    private JButton back = new JButton("Back");
+    private JButton next = new JButton("Next");
 
-    public Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
-    public GridBagConstraints a = new GridBagConstraints();
+    private Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
+    private GridBagConstraints a = new GridBagConstraints();
 
-    public int selectedChapterId;
-
+    private int selectedChapterId;
+    private static final String SAVE_SUBCHAPTER_API_URL = "http://dagere.comiles.eu:8094/subchapters/create";
     public AddSubchapterPage(int selectedChapterId){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
@@ -92,7 +92,7 @@ public class AddSubchapterPage implements ActionListener {
             menuFrame.setResizable( false );
         }
     }
-    private static final String SAVE_SUBCHAPTER_API_URL = "http://dagere.comiles.eu:8094/subchapters/create";
+    
     public static boolean saveSubchapter(Subchapter subchapter) {
         boolean success = false;
         try {

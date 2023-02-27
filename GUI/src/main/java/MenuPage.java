@@ -7,20 +7,20 @@ import java.awt.event.ActionListener;
 
 public class MenuPage implements ActionListener {
 
-    public JFrame menuFrame = new JFrame();
+    private JFrame menuFrame = new JFrame();
 
-    public JPanel panel = new JPanel();
-    public JPanel menuPanel = new JPanel(new GridBagLayout());
+    private JPanel panel = new JPanel();
+    private JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JButton start = new JButton("Start");
-    public JButton edit = new JButton("Edit");
-    public JButton exit = new JButton("Exit");
+    private JButton start = new JButton("Start");
+    private JButton edit = new JButton("Edit");
+    private JButton exit = new JButton("Exit");
 
-    public JLabel title = new JLabel("Symptom Classifier");
+    private JLabel title = new JLabel("Symptom Classifier");
 
-    public Font buttonsFont=new Font("Monospaced Bold Italic",Font.BOLD,25);
+    private Font buttonsFont=new Font("Monospaced Bold Italic",Font.BOLD,25);
     //to give a specific text style,size
-    public GridBagConstraints a = new GridBagConstraints();
+    private GridBagConstraints a = new GridBagConstraints();
     // this line of code above, allow me to align the title and the buttons in rows and columns
     public MenuPage() {
         menuFrame.setTitle( "Symptom Classifier" );

@@ -21,35 +21,32 @@ import org.apache.http.util.EntityUtils;
 
 import javax.swing.*;
 public class UpdateChapterPage implements ActionListener {
-    public JFrame menuFrame = new JFrame();
+    private JFrame menuFrame = new JFrame();
 
-    public JPanel panel = new JPanel();
-    public JPanel menuPanel = new JPanel(new GridBagLayout());
+    private JPanel panel = new JPanel();
+    private JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JLabel newChapter;
-    public JLabel successful = new JLabel("");
+    private JLabel newChapter;
 
-    public JTextField inputNewChapter = new JTextField( );
+    private JTextField inputNewChapter = new JTextField( );
 
-    public JButton add = new JButton("Add");
-    public JButton update = new JButton("Update");
-    public JButton subchapters = new JButton("Subchapters");
-    public JButton back = new JButton("Back");
+    private JButton update = new JButton("Update");
+    private JButton back = new JButton("Back");
 
-    public JComboBox<String> cb;
+    private Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
+    private GridBagConstraints a = new GridBagConstraints();
 
-    public Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
-    public GridBagConstraints a = new GridBagConstraints();
+    private String selectedChapter = "";
+    private int selectedChapterId;
+    private final Gson gson = new GsonBuilder().create();
+    private static String UPDATE_CHAPTERS_API_URL = "http://dagere.comiles.eu:8090/chapters/update/";
 
-    public String selectedChapter;
-    public int selectedChapterId;
-
-    public UpdateChapterPage(String selectedChapter, int selectedChapterId){
+    public UpdateChapterPage(String selectedChapternew, int selectedChapterId){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
         menuFrame.setBounds( 100, 200, 1200, 600 );
         menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.selectedChapter=selectedChapter;
+        this.selectedChapter=selectedChapternew;
         this.selectedChapterId=selectedChapterId;
         a.insets = new Insets( 30,30,15,30);
 
@@ -102,8 +99,7 @@ public class UpdateChapterPage implements ActionListener {
             new MenuPage();
         }
     }
-    private final Gson gson = new GsonBuilder().create();
-    private static String UPDATE_CHAPTERS_API_URL = "http://dagere.comiles.eu:8090/chapters/update/";
+    
     public void updateChapters(int chapterId, Chapter updatedChapter) throws IOException
     {
         String json = gson.toJson(updatedChapter);
@@ -126,5 +122,4 @@ public class UpdateChapterPage implements ActionListener {
         System.out.println("Chapter ID: " + updatedChapterResponse.getId());
         System.out.println("Chapter Name: " + updatedChapterResponse.getName());
     }
-    //TODO make the update be executed from user input
 }

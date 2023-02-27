@@ -5,20 +5,20 @@ import java.awt.event.ActionListener;
 
 public class EditPage implements ActionListener {
 
-    public JFrame menuFrame = new JFrame();
+    private JFrame menuFrame = new JFrame();
 
-    public JPanel panel = new JPanel();
-    public JPanel menuPanel = new JPanel(new GridBagLayout());
+    private JPanel panel = new JPanel();
+    private JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JButton chapters = new JButton("Chapters");
-    public JButton classified_data = new JButton("Classified Data");
-    public JButton back = new JButton("Back");
+    private JButton chapters = new JButton("Chapters");
+    private JButton classifiedData = new JButton("Classified Data");
+    private JButton back = new JButton("Back");
 
-    public JLabel title = new JLabel("MY APP");
+    private JLabel title = new JLabel("MY APP");
 
-    public Font buttonsFont=new Font("Monospaced Bold Italic",Font.BOLD,25);
+    private Font buttonsFont=new Font("Monospaced Bold Italic",Font.BOLD,25);
     //to give a specific text style,size
-    public GridBagConstraints a = new GridBagConstraints();
+    private GridBagConstraints a = new GridBagConstraints();
     // this line of code above, allow me to align the title and the buttons in rows and columns
 
     public EditPage(){
@@ -39,8 +39,8 @@ public class EditPage implements ActionListener {
         menuPanel.add(chapters,a);
 
         a.gridy=3;
-        setButtonsStyle( classified_data );
-        menuPanel.add( classified_data,a );
+        setButtonsStyle( classifiedData );
+        menuPanel.add( classifiedData,a );
 
         a.gridy=5;
         setButtonsStyle(back );
@@ -75,7 +75,7 @@ public class EditPage implements ActionListener {
             new ChaptersPage();
 
         }
-        if(e.getSource()==classified_data){
+        if(e.getSource()==classifiedData){
             // open the next window, after clicking on the "START"
             menuFrame.dispose();
         }

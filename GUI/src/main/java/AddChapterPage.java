@@ -9,24 +9,25 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class AddChapterPage implements ActionListener {
-    public JFrame menuFrame = new JFrame();
+    private JFrame menuFrame = new JFrame();
 
-    public JPanel panel = new JPanel();
-    public JPanel menuPanel = new JPanel(new GridBagLayout());
+    private JPanel panel = new JPanel();
+    private JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JLabel newChapter = new JLabel("New Chapter Name :");
-    public JLabel newChapterId = new JLabel("New Chapter ID :");
-    public JLabel successful = new JLabel("");
+    private JLabel newChapter = new JLabel("New Chapter Name :");
+    //the variable below is not used and will be deleted
+    //private JLabel newChapterId = new JLabel("New Chapter ID :");
+    private JLabel successful = new JLabel("");
 
-    public JTextField inputNewChapter = new JTextField( );
-    public JTextField inputNewChapterId = new JTextField( );
+    private JTextField inputNewChapter = new JTextField( );
+    //public JTextField inputNewChapterId = new JTextField( );
 
-    public JButton back = new JButton("Back");
-    public JButton next = new JButton("Next");
+    private JButton back = new JButton("Back");
+    private JButton next = new JButton("Next");
 
-    public Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
-    public GridBagConstraints a = new GridBagConstraints();
-
+    private Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
+    private GridBagConstraints a = new GridBagConstraints();
+    private static final String SAVE_CHAPTER_API_URL = "http://dagere.comiles.eu:8090/chapters/create";
     public AddChapterPage(){
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
@@ -97,7 +98,6 @@ public class AddChapterPage implements ActionListener {
             menuFrame.setResizable( false );
         }
     }
-    private static final String SAVE_CHAPTER_API_URL = "http://dagere.comiles.eu:8090/chapters/create";
     public static boolean saveChapter(Chapter chapter) {
         boolean success = false;
         try {

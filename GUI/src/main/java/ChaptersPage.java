@@ -15,24 +15,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChaptersPage implements ActionListener {
-    public JFrame menuFrame = new JFrame();
+    private JFrame menuFrame = new JFrame();
 
-    public JPanel panel = new JPanel();
-    public JPanel menuPanel = new JPanel(new GridBagLayout());
+    private JPanel panel = new JPanel();
+    private JPanel menuPanel = new JPanel(new GridBagLayout());
 
-    public JButton add = new JButton("Add");
-    public JButton update = new JButton("Update");
-    public JButton subchapters = new JButton("Subchapters");
-    public JButton back = new JButton("Back");
+    private JButton add = new JButton("Add");
+    private JButton update = new JButton("Update");
+    private JButton subchapters = new JButton("Subchapters");
+    private JButton back = new JButton("Back");
 
-    public JComboBox<String> cb;
-    public List<Chapter> chapterList = retrieveChapters();
+    private JComboBox<String> cb;
+    private List<Chapter> chapterList = retrieveChapters();
 
-    public Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
-    public GridBagConstraints a = new GridBagConstraints();
+    private Font fontStyle =new Font("Monospaced Bold Italic",Font.BOLD,25);
+    private GridBagConstraints a = new GridBagConstraints();
 
-    public String selectedChapter;
-    public int selectedChapterId;
+    private String selectedChapter;
+    private int selectedChapterId;
 
     public ChaptersPage(){
         menuFrame.setTitle( "Symptom Classifier" );
