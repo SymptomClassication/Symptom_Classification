@@ -66,7 +66,6 @@ public class EditPage implements ActionListener {
         button.addActionListener(this);
         button.setEnabled(true);
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==chapters) {
@@ -78,6 +77,7 @@ public class EditPage implements ActionListener {
         if(e.getSource()==classifiedData){
             // open the next window, after clicking on the "START"
             menuFrame.dispose();
+            new ClassifiedDataPage();
         }
         if(e.getSource()==back){
             // exit the whole game, end the program after clicking on the "EXIT"

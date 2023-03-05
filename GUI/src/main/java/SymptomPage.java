@@ -23,7 +23,7 @@ public class SymptomPage implements ActionListener {
     private JLabel classification = new JLabel("Classification :");
     //public JLabel chapter = new JLabel("Chapter :");
     //public JLabel subchapter = new JLabel("Subchapter :");
-    private JLabel databaseRetrieved=new JLabel("");
+    private static JLabel databaseRetrieved=new JLabel("");
     private JLabel successful = new JLabel("");
 
     private JTextField input = new JTextField( );
@@ -34,6 +34,7 @@ public class SymptomPage implements ActionListener {
     private Font fontStyle=new Font("Monospaced Bold Italic",Font.BOLD,25);
     private GridBagConstraints a = new GridBagConstraints();
     private static String CLASSIFY_SYMPTOM_API_URL = "http://dagere.comiles.eu:8090/classifiedSymptoms/classifySymptom/";
+    private static String[] myInput;
     public SymptomPage() {
         menuFrame.setTitle( "Symptom Classifier" );
         menuFrame.setBackground( Color.darkGray );
@@ -74,6 +75,16 @@ public class SymptomPage implements ActionListener {
         button.addActionListener(this);
         button.setEnabled(true);
     }
+    //TESTING STUFF START
+    public static String getInput()
+    {
+        return myInput.toString();
+    }
+    public static String getChapters()
+    {
+        return databaseRetrieved.getText();
+    }
+    //TESTING STUFF END
     @Override
     public void actionPerformed(ActionEvent e)
     {
@@ -83,7 +94,8 @@ public class SymptomPage implements ActionListener {
         }
         if(e.getSource()==next){
             a.gridy=3;
-            String unknown = "[\"0\"]";
+            String unknown = "[{\"result\":\"0\"}]";
+            System.out.println(unknown);
             classification.setFont( fontStyle );
             menuPanel.add(classification,a);
             menuPanel.remove( databaseRetrieved );
@@ -92,7 +104,8 @@ public class SymptomPage implements ActionListener {
             //might have to change .equals("") --> .equals("unknown")
             try 
             {
-                String[] myInput = input.getText().split(" ");
+                myInput = input.getText().split(" ");
+                ClassifiedDataPage.setInput(input.getText());
                 for(String a : myInput)
                 {
                     CLASSIFY_SYMPTOM_API_URL += a +"%20";
@@ -101,6 +114,7 @@ public class SymptomPage implements ActionListener {
                 System.out.println(databaseRetrieved.getText());
                 if(!databaseRetrieved.getText().equals(unknown))
                 {
+                    ClassifiedDataPage.setChapter(databaseRetrieved.getText());
                     successful=new JLabel("Chapter Found");
                     successful.setForeground( Color.green );
                     databaseRetrieved.setFont( fontStyle );
@@ -118,32 +132,13 @@ public class SymptomPage implements ActionListener {
             }
 
             CLASSIFY_SYMPTOM_API_URL = "http://dagere.comiles.eu:8090/classifiedSymptoms/classifySymptom/";
-            /* if(databaseRetrieved.getText().equals("")){
-                successful= new JLabel("Chapter Not Found",SwingConstants.CENTER);
-                successful.setForeground( Color.red );
-                try {
-                    classifySymptom(input.getText());
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-            }
-            else{
-                successful=new JLabel("Chapter Found");
-                successful.setForeground( Color.green );
-
-            } */
-
-
-/*                a.gridy=4;
-                subchapter.setFont( fontStyle );
-                menuPanel.add(subchapter,a);*/
 
             a.gridy=5;
             successful.setFont( fontStyle );
             menuPanel.add( successful,a );
 
             menuFrame.setVisible( true );
-            menuFrame.setResizable( false );
+            menuFrame.setResizable( true );
         }
     }
     public static String classifySymptom() throws IOException
