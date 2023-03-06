@@ -22,6 +22,7 @@ def pipeline():
 
     to_shuffle = list(zip(test_train, test_labels))
 
+
     random.shuffle(to_shuffle)
 
     to_train = to_shuffle[:int(len(to_shuffle) * 0.8)]
