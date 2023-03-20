@@ -4,7 +4,7 @@ import numpy as np
 
 
 def count_chapters():
-    csv = read_csv('trainingData.csv')
+    csv = read_csv('../spacyClassification/trainingData.csv')
     labels = csv['label'].tolist()
     labels_set = set(labels)
     labels_dict = {}

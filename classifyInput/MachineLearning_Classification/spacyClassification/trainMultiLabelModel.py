@@ -5,13 +5,15 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.multioutput import MultiOutputClassifier
 import json
 import re
-import scispacy
 from joblib import dump, load
+
+
 
 def tokenize(text, embeddings=spacy.load("en_core_sci_md")):
     return [token.text for token in embeddings(text)]
 
 def train_model():
+
 
     # Load spaCy model and create a text processing pipeline
     vectorizer = TfidfVectorizer(tokenizer=tokenize)
@@ -21,10 +23,10 @@ def train_model():
     # Define your training data
     train_data = []
     labels = []
-    with open('trainingData/to_train_multidata.json', 'r') as f:
+    with open('trainingData/to_train_multidata_new.json', 'r') as f:
         train_data = list(json.load(f))
 
-    with open('trainingData/to_train_multilabels.json', 'r') as f:
+    with open('trainingData/to_train_multilabels_new.json', 'r') as f:
         labels = list(json.load(f))
 
     # Fit the model and make predictions

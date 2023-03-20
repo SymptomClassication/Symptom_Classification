@@ -9,10 +9,10 @@ from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.metrics import label_ranking_average_precision_score
 
 
-with open('trainingData/to_test_multidata.json', 'r') as f:
+with open('symptomsClassification/classifyInput/MachineLearning_Classification/spacyClassification/trainingData/to_test_multidata_new.json', 'r') as f:
     symptoms = list(json.load(f))
 
-with open('trainingData/to_test_multilabels.json', 'r') as f:
+with open('symptomsClassification/classifyInput/MachineLearning_Classification/spacyClassification/trainingData/to_test_multilabels_new.json', 'r') as f:
     correct_labels = list(json.load(f))
 
 predicted_labels = []
@@ -24,7 +24,7 @@ def tokenize(text, embeddings=spacy.load("en_core_sci_md")):
 
 def pipelines():
 
-    model = load('model.joblib')
+    model = load('symptomsClassification/classifyInput/MachineLearning_Classification/spacyClassification/model.joblib')
     for s in symptoms:
         removeNum = re.sub(r"[0-9]", "", s)
         removeDot = re.sub(r"\.", "", removeNum)

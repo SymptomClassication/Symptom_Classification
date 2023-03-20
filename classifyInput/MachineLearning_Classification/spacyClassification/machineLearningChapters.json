@@ -119,5 +119,11 @@
   {"id": 119, "name": "General", "chapterId": 118},
   {"id": 120, "name": "Uvula and Tonsils", "chapterId": 118},
   {"id": 121, "name": "Fauces and Pharynx", "chapterId": 118},
-  {"id": 122, "name": "Swallowing", "chapterId": 11}
+  {"id": 122, "name": "Swallowing", "chapterId": 11},
+{"id":124, "name": "Mind", "chapterId": 124},
+{"id":125,"name": "Conditions", "chapterId":125},
+{"id":126,"name":"Aggrevation","chapterId":125},
+{"id":127, "name":"Emotional", "chapterId":124},
+{"id":128, "name":"Intellectual", "chapterId":124},
+{"id":129, "name":"Aggravation", "chapterId":129}
 ]

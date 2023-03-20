@@ -1,0 +1,31 @@
+SymptomClassifier (http://dagere.comiles.eu:8090/swagger-ui/index.html)
+1- http://dagere.comiles.eu:8090/keyword/classifySymptom/{name}
+2- http://dagere.comiles.eu:8090/spacy/spacyChapters
+3- http://dagere.comiles.eu:8090/spacy/classifySymptom/{name}
+
+
+TableOperations (http://dagere.comiles.eu:8098/swagger-ui/index.html)
+1- http://dagere.comiles.eu:8098/subtitles
+2- http://dagere.comiles.eu:8098/subtitles/create
+3- http://dagere.comiles.eu:8098/subtitles/subtitle/{name}
+4- http://dagere.comiles.eu:8098/subtitles/update/{id}
+
+5- http://dagere.comiles.eu:8098/chapters
+6- http://dagere.comiles.eu:8098/chapters/create
+7- http://dagere.comiles.eu:8098/chapters/chapter/{name}
+8- http://dagere.comiles.eu:8098/chapters/update/{id}
+
+9- http://dagere.comiles.eu:8098/keywordClassifiedSymptoms
+10- http://dagere.comiles.eu:8098/keywordClassifiedSymptoms/classifiedSymptom/{id}
+11- http://dagere.comiles.eu:8098/keywordClassifiedSymptoms/update/{id}
+
+12- http://dagere.comiles.eu:8098/subchapters
+13- http://dagere.comiles.eu:8098/subchapters/create
+14- http://dagere.comiles.eu:8098/subchapters/subchapter/{name}
+15- http://dagere.comiles.eu:8098/subchapters/update/{id}
+16- http://dagere.comiles.eu:8098/subchapters/chapter/{id}
+
+17- http://dagere.comiles.eu:8098/secondsubchapters
+18- http://dagere.comiles.eu:8098/secondsubchapters/create
+19- http://dagere.comiles.eu:8098/secondsubchapters/secondsubchapter/{name}
+20- http://dagere.comiles.eu:8098/secondsubchapters/update/{id}

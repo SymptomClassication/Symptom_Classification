@@ -21,10 +21,10 @@ def train_model():
     # Define your training data
     train_data = []
     labels = []
-    with open('trainingData/to_train_data.json', 'r') as f:
+    with open('trainingData/to_train_data_new.json', 'r') as f:
         train_data = list(json.load(f))
 
-    with open('trainingData/to_train_labels.json', 'r') as f:
+    with open('trainingData/to_train_labels_new.json', 'r') as f:
         labels = list(json.load(f))
 
     # Fit the model and make predictions

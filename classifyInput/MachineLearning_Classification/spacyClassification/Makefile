@@ -2,11 +2,14 @@ testModel:
 	@echo "Downloading required packages...\n"
 	pip install -r requirements.txt
 	@echo "Downloading required packages... Done\n"
-	@echo "Extracting Training Data...\n"
-	python3 extract_training_data.py
-	@echo "Classifying test symptoms Done\n"
+	@echo "Parsing RTF files...\n"
+	python3 parse_rtf.py
+	@echo "Parsing RTF files Done\n"
+	@echo "Generating multi-labeled training data...\n"
+	python3 generate_multilabels.py
+	@echo "Generating multi-labeled training data... Done\n"
 	@echo "Training model...\n"
-	python3 trainModel.py
+	python3 trainMultiLabelModel.py
 	@echo "Training model... Done\n"
 	@echo "Testing model...\n"
-	python3 machineLearningTesting.py
+	python3 Multi_MachineLearningTesting.py
